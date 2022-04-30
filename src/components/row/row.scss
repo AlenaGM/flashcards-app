@@ -1,0 +1,26 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border: 1px solid rgb(175, 165, 165);
+    padding: 5px 10px
+    ;
+        div {
+            width: 150px;
+        }
+        div:first-of-type {
+            width: 50px;
+        }
+        div:nth-of-type(6) {
+            width: 60px;
+        }
+        div:nth-of-type(7) {
+            width: 45px;
+        }
+        div:nth-of-type(8) {
+            width: 30px;
+        }
+    }

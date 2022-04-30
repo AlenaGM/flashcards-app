@@ -1,7 +1,5 @@
 import './row.scss';
 
-
-
 const Row = (props) => {
     return (
         <div className="table__row row">
