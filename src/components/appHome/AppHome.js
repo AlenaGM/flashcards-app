@@ -1,14 +1,10 @@
 import './appHome.scss';
-import Card from '../card/Card';
+import Table from '../table/Table';
 
 const AppHome = () => {
     return (
-        <div>
-            Вы на главной странице.
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+        <div class="app__home">
+            <Table/>
         </div>
     )
 }

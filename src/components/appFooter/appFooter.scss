@@ -1,12 +1,17 @@
-@import '../../style/variables.scss';
+@import '../../styles/variables.scss';
 
 .app {
     &__footer {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        background-color: #282c34;
+        padding: 24px;
         div {
             font-weight: bold;
-            font-size: 24px;
+            font-size: calc(8px + 2vmin);
+            color: #fff;
             line-height: 32px;
         }
     }

@@ -6,9 +6,9 @@ import AppFooter from '../appFooter/AppFooter';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <AppHeader/>
-      <main>
+      <main className="main">
         <AppHome/>
       </main>
       <AppFooter/>

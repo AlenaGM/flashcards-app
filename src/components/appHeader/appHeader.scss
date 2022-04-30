@@ -1,13 +1,18 @@
-@import '../../style/variables.scss';
+@import '../../styles/variables.scss';
 
 .app {
     &__header {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        background-color: #282c34;
+        padding: 24px;
     }
     &__title {
         font-weight: bold;
-        font-size: 28px;
+        font-size: calc(14px + 2vmin);
+        color: #fff;
         line-height: 37px;
         span {
             color: $main-color;
@@ -18,7 +23,8 @@
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            font-size: 24px;
+            font-size: calc(14px + 2vmin);
+            color: #fff;
             line-height: 32px;
             li {
                 margin: 0 8px;
