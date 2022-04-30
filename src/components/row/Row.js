@@ -12,12 +12,12 @@ const Row = (props) => {
               <button className='button'>Save</button>
             </div>
             <div className="row__cell">
-              <button type="button" className="button">
+              <button type="button" className="button button__edit">
                 <i className="fas fa-edit"></i>
               </button>
             </div>
             <div className="row__cell">
-              <button type="button" className="button">
+              <button type="button" className="button button__delete">
                 <i className="fas fa-trash"></i>
               </button>
             </div>

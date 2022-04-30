@@ -1,8 +1,7 @@
 @import './variables';
 
 .button {
-    //min-width: 50px;
-    padding: 0px 12px;
+    padding: 8px 10px;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -10,82 +9,27 @@
     transition: 0.3s transform;
     border: none;
     border-radius: 8px;
-    background-color: rgb(60, 151, 60);
+    background-color: rgb(55, 141, 55);
+        &:hover {
+            background-color: rgb(124, 191, 124);
+        }
     cursor: pointer;
     &__long {
         display: block;
         width: 170px;
         margin: 45px auto 0 auto;
     }
-    .inner {
-        position: relative;
-        background-color: $main-color;
-        line-height: 18px;
-        padding: 0 18px;
-        transition: none;
-        &::before {
-            border-color: $main-color transparent;
-            border-style: solid;
-            border-width: 0 0 10px 10px;
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            top: -10px;
-            transition: none;
-        }
-        &::after {
-            border-color: $main-color transparent;
-            border-style: solid;
-            border-width: 0 0 10px 10px;
-            content: "";
-            display: block;
-            position: absolute;
-            right: 0;
-            bottom: -10px;
-            transform: rotate(180deg);
-            transition: none;
-        }
-    }
-    &__main, &__secondary {
+    &__edit{
+        background-color: #ffa500;
         &:hover {
-            color: #fff;
+            background-color: #efc982;
         }
     }
-    &__secondary {
-        .inner {
-            background-color: $grey;
-            &::before {
-                border-color: $grey transparent;
-                transition: none;
-            }
-            &::after {
-                border-color: $grey transparent;
-                transition: none;
-            }
+    &__delete {
+        background-color: #ae1d1d9e;
+        &:hover {
+            background-color: #d64a4a9e;
         }
-    }
-    &::before {
-        content: '';
-        display: block;
-        height: 10px;
-        margin-left: 10px;
-        transition: none;
-
-    }
-    &::after {
-        content: '';
-        display: block;
-        height: 10px;
-        margin-right: 10px;
-        transition: none;
-
-    }
-    &.button__main::before, &.button__main::after {
-        background-color: $main-color;
-    }
-    &.button__secondary::before, &.button__secondary::after {
-        background-color: $grey;
     }
     &:hover {
         transform: translateY(-5px);
