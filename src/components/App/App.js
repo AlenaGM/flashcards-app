@@ -1,15 +1,16 @@
-import './App.css';
-import AppHeader from '../App-header/App-header';
-import AppHome from '../App-home/App-home';
-//import AppGame from '../App-game/App-game';
-import AppFooter from '../App-footer/App-footer';
-//import cards from '../mock/cards.json';
+import './app.scss';
+import AppHeader from '../appHeader/AppHeader';
+import AppHome from '../appHome/AppHome';
+//import AppGame from '../appGame/AppGame';
+import AppFooter from '../appFooter/AppFooter';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <AppHeader/>
-      <AppHome/>
+      <main>
+        <AppHome/>
+      </main>
       <AppFooter/>
     </div>
   );
