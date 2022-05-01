@@ -10,8 +10,8 @@ const Row = (props) => {
         <td>{props.isEdit ? <input className="input_edit" value={props.tags}></input> : props.tags}</td>
         <td>{props.isEdit ?
           <div className="buttons">
-            <button className="button">Save</button>
-            <button className="button">Cansel</button>
+            <i className="fas fa-check _edit"></i>
+            <i className='fas fa-ban _edit'></i>
           </div> :
           <i className="fas fa-edit _edit"> </i>
         }

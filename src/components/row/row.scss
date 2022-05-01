@@ -40,7 +40,7 @@
 
 .buttons {
     display: inline-flex;
-    button:not(:last-of-type){
-        margin-right: 5px;
+    i:not(:last-of-type){
+        margin-right: 10px;
     }
 }
