@@ -58,7 +58,31 @@ input::-webkit-inner-spin-button {
 main {
     margin: 5vh auto;
     position: relative;
-    max-width: 1200px;
     display: flex;
     flex-grow: 1;
+}
+
+._edit, ._delete {
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+._edit {
+    color: #ffa500;
+    &:hover {
+        color: #efc982;
+    }
+}
+
+._delete {
+    color: #ae1d1d9e;
+    &:hover {
+        color: #d64a4a9e;
+    }
+}
+
+._hidden{
+    display: none;
 }

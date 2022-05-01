@@ -9,16 +9,12 @@ const Row = (props) => {
         <td>{props.russian}</td>
         <td>{props.tags}</td>
         <td>
-          <button type="button" className="button button__edit">
-            <i className="fas fa-edit"></i>
-          </button>
-          <button className='button hidden'>Save</button>
-          <button className='button hidden'>Cansel</button>
+          <i className="fas fa-edit _edit"></i>
+          <button className='button _hidden'>Save</button>
+          <button className='button _hidden'>Cansel</button>
         </td>
         <td>
-          <button type="button" className="button button__delete">
-            <i className="fas fa-trash"></i>
-          </button>
+          <i className="fas fa-trash _delete"></i>
         </td>
       </>
     )

@@ -19,18 +19,6 @@
         width: 170px;
         margin: 45px auto 0 auto;
     }
-    &__edit{
-        background-color: #ffa500;
-        &:hover {
-            background-color: #efc982;
-        }
-    }
-    &__delete {
-        background-color: #ae1d1d9e;
-        &:hover {
-            background-color: #d64a4a9e;
-        }
-    }
     &:hover {
         transform: translateY(-5px);
     }

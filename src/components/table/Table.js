@@ -5,21 +5,20 @@ import words from '../../resources/data/words.json';
 
 const Table = () => {
     return (
-        <div className="app__table">
-            <table className="table">
-                <caption>Word List</caption>
-                <tr>
+        <>
+            <table className="app__table table">
+                <tr className="table__row">
                     <th>#</th>
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
                     <th>Collection</th>
                     <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Del</th>
                 </tr>
             {
                 words.map((word) =>
-                <tr>
+                <tr className="table__row">
                     <Row
                         id={word.id}
                         english={word.english}
@@ -30,7 +29,7 @@ const Table = () => {
                 )
             }
             </table>
-        </div>
+        </>
     )
 }
 
