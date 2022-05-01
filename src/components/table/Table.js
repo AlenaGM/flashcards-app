@@ -24,7 +24,8 @@ const Table = () => {
                         english={word.english}
                         transcription={word.transcription}
                         russian={word.russian}
-                        tags={word.tags}/>
+                        tags={word.tags}
+                        isEdit={word.isEdit}/>
                 </tr>
                 )
             }
