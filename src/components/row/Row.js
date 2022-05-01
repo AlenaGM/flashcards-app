@@ -5,13 +5,16 @@ const Row = (props) => {
       <>
         <td>{props.isEdit ? <input className="input_edit" value={props.id}></input> : props.id}</td>
         <td>{props.isEdit ? <input className="input_edit" value={props.english}></input> : props.english}</td>
-        <td>{props.isEdit ? <input className="input_edit" value={props.transciption}></input> : props.transcription}</td>
-        <td>{props.isEdit ? <input className="input_edit" value={props.russia}></input> : props.russian}</td>
+        <td>{props.isEdit ? <input className="input_edit" value={props.transcription}></input> : props.transcription}</td>
+        <td>{props.isEdit ? <input className="input_edit" value={props.russian}></input> : props.russian}</td>
         <td>{props.isEdit ? <input className="input_edit" value={props.tags}></input> : props.tags}</td>
-        <td>
-          <i className="fas fa-edit _edit"></i>
-          <button className='button _hidden'>Save</button>
-          <button className='button _hidden'>Cansel</button>
+        <td>{props.isEdit ?
+          <div className="buttons">
+            <button className="button">Save</button>
+            <button className="button">Cansel</button>
+          </div> :
+          <i className="fas fa-edit _edit"> </i>
+        }
         </td>
         <td>
           <i className="fas fa-trash _delete"></i>
