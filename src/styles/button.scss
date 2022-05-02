@@ -1,39 +1,57 @@
 @import './variables';
 
 .button {
-    padding: 8px 10px;
-    color: #fff;
+    background-color: $btn;
+    padding: 6px 12px;
+    color: $text-status;
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
-    transition: 0.3s transform;
     border: none;
     border-radius: 8px;
-        &:hover {
-            background-color: rgb(124, 191, 124);
-        }
     cursor: pointer;
+        &:hover {
+            background-color: $btn-hover;
+            transform: translateY(-5px);
+        }
     &__long {
         display: block;
         width: 170px;
         margin: 45px auto 0 auto;
     }
-    &__save {
-        background-color: $text-main;
+}
+
+.icon {
+    &__edit {
+        color: $text-main;
         &:hover {
-            background-color: $btn-ok;
+            color: $info;
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+    }
+    &__delete {
+        color: $text-main;
+        &:hover {
+            color: $error;
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+    }
+    &__save {
+        color: $text-main;
+        &:hover {
+            color: $success;
+            transform: translateY(-5px);
+            cursor: pointer;
         }
     }
     &__cancel {
-        background-color: $text-main;
+        color: $text-main;
         &:hover {
-            background-color: $btn-no;
+            color: $error;
+            transform: translateY(-5px);
+            cursor: pointer;
         }
-    }
-    &__edit {
-        color: $text-second;
-    }
-    &__delete {
-        color: $text-second;
     }
 }

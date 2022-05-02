@@ -14,8 +14,7 @@ const Table = (props) => {
                     <th>Transcription</th>
                     <th>Russian</th>
                     <th>Collection</th>
-                    <th>Edit</th>
-                    <th>Del</th>
+                    <th>Action</th>
                 </tr>
             {
                 words.map((word) =>

@@ -6,12 +6,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: #282c34;
+        background-color: #4c3c3c;
         padding: 24px;
+        min-height: 80px;
         div {
             font-weight: bold;
             font-size: calc(8px + 2vmin);
-            color: #fff;
+            color: #FBFBFB;
             line-height: 32px;
         }
     }

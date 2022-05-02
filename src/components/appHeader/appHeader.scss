@@ -6,16 +6,17 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: #282c34;
+        background-color: #805F63;
         padding: 24px;
     }
     &__title {
+        color: #FBFBFB;
         font-weight: bold;
         font-size: calc(14px + 2vmin);
-        color: #fff;
+        ;
         line-height: 37px;
         span {
-            color: $btn-pink;
+            color: #3ABDB5;
         }
     }
     &__menu {
@@ -24,12 +25,13 @@
             justify-content: space-between;
             font-weight: bold;
             font-size: calc(14px + 2vmin);
-            color: #fff;
             line-height: 32px;
+            color: #FBFBFB;
             li {
+                color: #FBFBFB;
                 margin: 0 8px;
                 a:hover {
-                    color: $btn-inact;
+                    color: #3ABDB5;
                 }
             }
         }
