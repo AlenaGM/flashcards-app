@@ -1,5 +1,5 @@
 @import './variables';
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;900&family=Pacifico&display=swap');
 @import './button';
 
 body {
@@ -62,27 +62,3 @@ main {
     flex-grow: 1;
 }
 
-._edit, ._delete {
-    cursor: pointer;
-    &:hover {
-        transform: translateY(-5px);
-    }
-}
-
-._edit {
-    color: #ffa500;
-    &:hover {
-        color: #efc982;
-    }
-}
-
-._delete {
-    color: #ae1d1d9e;
-    &:hover {
-        color: #d64a4a9e;
-    }
-}
-
-._hidden{
-    display: none;
-}

@@ -9,7 +9,6 @@
     transition: 0.3s transform;
     border: none;
     border-radius: 8px;
-    background-color: rgb(55, 141, 55);
         &:hover {
             background-color: rgb(124, 191, 124);
         }
@@ -19,7 +18,22 @@
         width: 170px;
         margin: 45px auto 0 auto;
     }
-    &:hover {
-        transform: translateY(-5px);
+    &__save {
+        background-color: $text-main;
+        &:hover {
+            background-color: $btn-ok;
+        }
+    }
+    &__cancel {
+        background-color: $text-main;
+        &:hover {
+            background-color: $btn-no;
+        }
+    }
+    &__edit {
+        color: $text-second;
+    }
+    &__delete {
+        color: $text-second;
     }
 }

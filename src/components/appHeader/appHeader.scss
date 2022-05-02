@@ -15,7 +15,7 @@
         color: #fff;
         line-height: 37px;
         span {
-            color: $main-color;
+            color: $btn-pink;
         }
     }
     &__menu {
@@ -29,7 +29,7 @@
             li {
                 margin: 0 8px;
                 a:hover {
-                    color: $main-color;
+                    color: $btn-inact;
                 }
             }
         }
