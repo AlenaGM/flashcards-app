@@ -6,17 +6,16 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: #805F63;
+        background-color: $bg-header;
         padding: 24px;
     }
     &__title {
-        color: #FBFBFB;
+        color: $text-status;
         font-weight: bold;
         font-size: calc(14px + 2vmin);
-        ;
         line-height: 37px;
         span {
-            color: #3ABDB5;
+            color: $text-color;
         }
     }
     &__menu {
@@ -26,12 +25,12 @@
             font-weight: bold;
             font-size: calc(14px + 2vmin);
             line-height: 32px;
-            color: #FBFBFB;
+            color: $text-status;
             li {
-                color: #FBFBFB;
+                color: $text-status;
                 margin: 0 8px;
                 a:hover {
-                    color: #3ABDB5;
+                    color: $text-color;
                 }
             }
         }

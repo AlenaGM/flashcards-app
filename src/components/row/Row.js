@@ -33,6 +33,3 @@ const Row = (props) => {
 }
 
 export default Row;
-
-
-const isEditStyle = {backgroundColor:'#f33'};

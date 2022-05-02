@@ -2,9 +2,7 @@ import './table.scss';
 import Row from '../row/Row';
 import words from '../../resources/data/words.json';
 
-const style={backgroundColor: 'red'}
-
-const Table = (props) => {
+const Table = () => {
     return (
         <>
             <table className="app__table table">

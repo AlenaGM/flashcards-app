@@ -6,13 +6,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: #4c3c3c;
+        background-color: $bg-header;
         padding: 24px;
         min-height: 80px;
         div {
             font-weight: bold;
             font-size: calc(8px + 2vmin);
-            color: #FBFBFB;
+            color: $text-status;
             line-height: 32px;
         }
     }
