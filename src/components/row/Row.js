@@ -11,8 +11,8 @@ const Row = (props) => {
         <td><input className="input_edit" value={props.russian}></input></td>
         <td><input className="input_edit" value={props.tags}></input></td>
         <td>
-            <i className="fas fa-check icon__save"> </i>
-            <i className="fas fa-ban icon__cancel"></i>
+            <i className="fas fa-check icon icon__save"> </i>
+            <i className="fas fa-ban icon icon__cancel"></i>
         </td>
         </>
         :
@@ -23,8 +23,8 @@ const Row = (props) => {
         <td>{props.russian}</td>
         <td>{props.tags}</td>
         <td>
-            <i className="fas fa-pen icon__edit"> </i>
-            <i className="fas fa-trash icon__delete"></i>
+            <i className="fas fa-pen icon icon__edit"> </i>
+            <i className="fas fa-trash icon icon__delete"></i>
         </td>
         </>
       }
