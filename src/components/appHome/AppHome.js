@@ -5,7 +5,6 @@ const AppHome = () => {
     return (
         <div class="app__home">
             <Table/>
-            <button className='button'>Test</button>
         </div>
     )
 }

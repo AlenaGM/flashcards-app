@@ -1,10 +1,10 @@
 import './appGame.scss';
+import Playground from '../playground/Playground';
 
 const AppGame = () => {
     return (
-        <div>
-            Вы на странице с флаш-картами.
-            Тут будут карточки
+        <div class="app__game">
+            <Playground/>
         </div>
     )
 }
