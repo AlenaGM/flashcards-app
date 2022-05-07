@@ -10,6 +10,10 @@ const Row = (props) => {
       console.log('edit');
   }
 
+  const handleDeleteClick = () => {
+    console.log('delete');
+  }
+
   const handleSaveClick = () => {
     setEdit(!edit);
     console.log('save');
@@ -24,11 +28,11 @@ const handleCancelClick = () => {
       <>
         {edit ?
         <>
-        <td><input className="input_edit" value={props.id}></input></td>
-        <td><input className="input_edit" value={props.english}></input></td>
-        <td><input className="input_edit" value={props.transcription}></input></td>
-        <td><input className="input_edit" value={props.russian}></input></td>
-        <td><input className="input_edit" value={props.tags}></input></td>
+        <td><input className="input_edit" defaultValue={props.id}></input></td>
+        <td><input className="input_edit" defaultValue={props.english}></input></td>
+        <td><input className="input_edit" defaultValue={props.transcription}></input></td>
+        <td><input className="input_edit" defaultValue={props.russian}></input></td>
+        <td><input className="input_edit" defaultValue={props.tags}></input></td>
         <td>
             <i className="fas fa-check icon icon__save" onClick = {handleSaveClick}> </i>
             <i className="fas fa-ban icon icon__cancel" onClick = {handleCancelClick}></i>
@@ -43,7 +47,7 @@ const handleCancelClick = () => {
         <td>{props.tags}</td>
         <td>
             <i className="fas fa-pen icon icon__edit" onClick = {handleEditClick}> </i>
-            <i className="fas fa-trash icon icon__delete"></i>
+            <i className="fas fa-trash icon icon__delete" onClick = {handleDeleteClick}></i>
         </td>
         </>
       }

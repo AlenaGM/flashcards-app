@@ -32,8 +32,12 @@ const Table = () => {
                     </>
                     )
                 }
-                <tr className="table__row">Здесь будет количество строк на странице и пагинация</tr>
                 </tbody>
+                <tfoot>
+                    <tr className="table__row">
+                        <th>Здесь будет количество строк на странице и пагинация</th>
+                    </tr>
+                </tfoot>
             </table>
         </>
     )
