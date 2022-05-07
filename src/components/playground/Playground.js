@@ -3,6 +3,7 @@ import Card from '../card/Card';
 import words from '../../resources/data/words.json';
 
 const Playground = () => {
+
     return (
         <>
             <div className="app__playground playground">
