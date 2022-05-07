@@ -20,17 +20,6 @@ const Table = () => {
                 {
                     words.map((word) =>
                     <>
-                    {word.isEdit ?
-                        <tr className="table__row row_edit">
-                            <Row
-                                id={word.id}
-                                english={word.english}
-                                transcription={word.transcription}
-                                russian={word.russian}
-                                tags={word.tags}
-                                isEdit={word.isEdit}/>
-                        </tr>
-                        :
                         <tr className="table__row">
                             <Row
                                 id={word.id}
@@ -40,7 +29,6 @@ const Table = () => {
                                 tags={word.tags}
                                 isEdit={word.isEdit}/>
                         </tr>
-                    }
                     </>
                     )
                 }

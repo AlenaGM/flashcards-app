@@ -9,7 +9,6 @@ const Card = (props) => {
 
     const handleClick = () => {
         setPressed(!pressed);
-        console.log('privet')
     }
 
     return (
@@ -26,4 +25,3 @@ const Card = (props) => {
 }
 
 export default Card;
-
