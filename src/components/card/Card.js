@@ -1,17 +1,29 @@
+import React, {useState} from "react";
 import './card.scss';
 import '../../styles/button.scss';
 
+
 const Card = (props) => {
+
+    const [pressed, setPressed] = useState( false);
+
+    const handleClick = () => {
+        setPressed(!pressed);
+        console.log('privet')
+    }
+
     return (
     <>
         <div>{props.english}</div>
         <div>{props.transcription}</div>
-        <div>{props.russian}</div>
-        <div>
-            <button className="button">Проверить</button>
+        <div onClick = {handleClick}>
+            {pressed ?
+                <div className="card_translation">{props.russian}</div> :
+                <button className="button">Проверить</button>}
         </div>
     </>
     )
 }
 
 export default Card;
+

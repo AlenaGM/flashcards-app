@@ -3,7 +3,7 @@ import Table from '../table/Table';
 
 const AppHome = () => {
     return (
-        <div class="app__home">
+        <div className="app__home">
             <Table/>
         </div>
     )

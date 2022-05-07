@@ -3,7 +3,7 @@ import Playground from '../playground/Playground';
 
 const AppGame = () => {
     return (
-        <div class="app__game">
+        <div className="app__game">
             <Playground/>
         </div>
     )

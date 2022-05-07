@@ -8,36 +8,26 @@
     width: 100%;
     max-width: 1000px;
     margin: 4vw auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
     column-gap: 2vw;
     row-gap: 4vw;
     &__card {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         text-align: left;
+        width: 175px;
+        min-height: 190px;
         border-radius: 6px;
         box-shadow: 0px 1px 2px 0px #0000001F;
-        padding: 24px;
+        padding: 14px;
         background-color: $table-bg;
 
-        div:not(:last-of-type) {
-            padding-bottom: 10px;
-        }
-
-        div:first-of-type {
-            color: $btn;
+        div:first-of-type:not(.card_translation) {
+            color: $text-color;
             font-size: calc(12px + 2vmin);
             text-transform: capitalize;
-        }
-
-        div:nth-of-type(3) {
-            display: none;
-        }
-
-        div:last-of-type {
-            padding-top: 30px;
         }
 
         &:hover{
@@ -45,4 +35,10 @@
         }
     }
 }
-//Change to here
+
+.card_translation {
+    color: $btn;
+    font-size: calc(6px + 2vmin);
+    text-transform: capitalize;
+    padding: 0px 28px 12px 28px;
+}
