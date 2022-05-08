@@ -10,10 +10,7 @@ const Playground = () => {
             {
                 words.map((word) =>
                     <div className="playground__card card" key={word.id}>
-                            <Card
-                                english={word.english}
-                                transcription={word.transcription}
-                                russian={word.russian}/>
+                            <Card {...word}/>
                     </div>
                 )
             }

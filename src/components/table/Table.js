@@ -20,13 +20,7 @@ const Table = () => {
                 {
                     words.map((word) =>
                         <tr className="table__row" key={word.id}>
-                            <Row
-                                id={word.id}
-                                english={word.english}
-                                transcription={word.transcription}
-                                russian={word.russian}
-                                tags={word.tags}
-                                isEdit={word.isEdit}/>
+                            <Row {...word}/>
                         </tr>
                     )
                 }
