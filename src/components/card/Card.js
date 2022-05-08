@@ -12,15 +12,15 @@ const Card = ({english, transcription, russian}) => {
     }
 
     return (
-    <>
-        <div>{english}</div>
-        <div>{transcription}</div>
-        <div onClick = {handleClick}>
-            {pressed ?
-                <div className="card_translation">{russian}</div> :
-                <button className="button">Проверить</button>}
+        <div className="playground__card card">
+            <div>{english}</div>
+            <div>{transcription}</div>
+            <div onClick = {handleClick}>
+                {pressed ?
+                    <div className="card_translation">{russian}</div> :
+                    <button className="button">Проверить</button>}
+            </div>
         </div>
-    </>
     )
 }
 

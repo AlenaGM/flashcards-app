@@ -4,7 +4,6 @@ import words from '../../resources/data/words.json';
 
 const Table = () => {
 
-
     return (
         <>
             <table className="app__table table">
@@ -20,9 +19,12 @@ const Table = () => {
                 </thead>
                 <tbody>
                 {
-                    words.map((word) =>
-                            <Row {...word}/>
-                    )
+                    words.map((word) => {
+                        const {id, ...wordProps} =word;
+                        return (
+                            <Row key={id} {...wordProps}/>
+                        )
+                    })
                 }
                 </tbody>
                 <tfoot>

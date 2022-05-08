@@ -31,7 +31,7 @@ const handleCancelClick = () => {
 }
 
     return (
-      <tr className={classNames} key={id}>
+      <tr className={classNames}>
         {isEdit ?
         <>
         <td><input className="input_edit" defaultValue={id}></input></td>

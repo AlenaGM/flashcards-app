@@ -8,11 +8,12 @@ const Playground = () => {
         <>
             <div className="app__playground playground">
             {
-                words.map((word) =>
-                    <div className="playground__card card" key={word.id}>
-                            <Card {...word}/>
-                    </div>
-                )
+                words.map((word) => {
+                    const {id, ...wordProps} =word;
+                    return (
+                            <Card key={id} {...wordProps}/>
+                    )
+                })
             }
             </div>
         </>
