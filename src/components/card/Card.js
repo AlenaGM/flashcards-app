@@ -3,7 +3,7 @@ import './card.scss';
 import '../../styles/button.scss';
 
 
-const Card = (props) => {
+const Card = ({english, transcription, russian}) => {
 
     const [pressed, setPressed] = useState( false);
 
@@ -13,11 +13,11 @@ const Card = (props) => {
 
     return (
     <>
-        <div>{props.english}</div>
-        <div>{props.transcription}</div>
+        <div>{english}</div>
+        <div>{transcription}</div>
         <div onClick = {handleClick}>
             {pressed ?
-                <div className="card_translation">{props.russian}</div> :
+                <div className="card_translation">{russian}</div> :
                 <button className="button">Проверить</button>}
         </div>
     </>

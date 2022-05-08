@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './row.scss';
 
-const Row = (props) => {
+const Row = ({id, english, transcription, russian, tags, onClick}) => {
 
   const [edit, setEdit] = useState( false);
 
@@ -28,11 +28,11 @@ const handleCancelClick = () => {
       <>
         {edit ?
         <>
-        <td><input className="input_edit" defaultValue={props.id}></input></td>
-        <td><input className="input_edit" defaultValue={props.english}></input></td>
-        <td><input className="input_edit" defaultValue={props.transcription}></input></td>
-        <td><input className="input_edit" defaultValue={props.russian}></input></td>
-        <td><input className="input_edit" defaultValue={props.tags}></input></td>
+        <td><input className="input_edit" defaultValue={id}></input></td>
+        <td><input className="input_edit" defaultValue={english}></input></td>
+        <td><input className="input_edit" defaultValue={transcription}></input></td>
+        <td><input className="input_edit" defaultValue={russian}></input></td>
+        <td><input className="input_edit" defaultValue={tags}></input></td>
         <td>
             <i className="fas fa-check icon icon__save" onClick = {handleSaveClick}> </i>
             <i className="fas fa-ban icon icon__cancel" onClick = {handleCancelClick}></i>
@@ -40,11 +40,11 @@ const handleCancelClick = () => {
         </>
         :
         <>
-        <td>{props.id}</td>
-        <td>{props.english}</td>
-        <td>{props.transcription}</td>
-        <td>{props.russian}</td>
-        <td>{props.tags}</td>
+        <td>{id}</td>
+        <td>{english}</td>
+        <td>{transcription}</td>
+        <td>{russian}</td>
+        <td>{tags}</td>
         <td>
             <i className="fas fa-pen icon icon__edit" onClick = {handleEditClick}> </i>
             <i className="fas fa-trash icon icon__delete" onClick = {handleDeleteClick}></i>
