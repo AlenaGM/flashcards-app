@@ -17,19 +17,19 @@ const Row = ({id, english, transcription, russian, tags, onDelete}) => {
 
   const handleSaveClick = () => {
     setEdit(!isEdit);
-}
+  }
 
-const handleCancelClick = () => {
-  setEdit(!isEdit);
-}
+  const handleCancelClick = () => {
+    setEdit(!isEdit);
+  }
 
-const [state = {id:'', english:'', transcription:'', russian:'', tags:''}, setState] = useState(false);
+  const [state = {id:'', english:'', transcription:'', russian:'', tags:''}, setState] = useState();
 
-const onValueChange = (e) => {
-  setState (!state,{
-    [e.target.name] : e.target.value
-  })
-}
+  const onValueChange = (e) => {
+    setState (!state, {
+      [e.target.name] : e.target.value
+    })
+  }
 
     return (
 
