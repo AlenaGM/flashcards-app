@@ -22,7 +22,11 @@ const Table = () => {
                     words.map((word) => {
                         const {id, ...wordProps} = word;
                         return (
-                            <Row key={id} id={id} {...wordProps} />
+                            <Row
+                                key={id}
+                                id={id}
+                                {...wordProps}
+                                onDelete={()=> console.log('deleted!')} />
                         )
                     })
                 }
