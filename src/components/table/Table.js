@@ -3,6 +3,8 @@ import Row from '../row/Row';
 import words from '../../resources/data/words.json';
 
 const Table = () => {
+
+
     return (
         <>
             <table className="app__table table">
@@ -19,9 +21,7 @@ const Table = () => {
                 <tbody>
                 {
                     words.map((word) =>
-                        <tr className="table__row" key={word.id}>
                             <Row {...word}/>
-                        </tr>
                     )
                 }
                 </tbody>

@@ -1,12 +1,18 @@
 import React, {useState} from "react";
 import './row.scss';
 
-const Row = ({id, english, transcription, russian, tags, onClick}) => {
+const Row = ({id, english, transcription, russian, tags}) => {
 
-  const [edit, setEdit] = useState( false);
+  let classNames ='table__row';
+
+  const [isEdit, setEdit] = useState(false);
+
+  if(isEdit){
+    classNames += ' row_edit';
+  }
 
   const handleEditClick = () => {
-      setEdit(!edit);
+      setEdit(!isEdit);
       console.log('edit');
   }
 
@@ -15,18 +21,18 @@ const Row = ({id, english, transcription, russian, tags, onClick}) => {
   }
 
   const handleSaveClick = () => {
-    setEdit(!edit);
+    setEdit(!isEdit);
     console.log('save');
 }
 
 const handleCancelClick = () => {
-  setEdit(!edit);
+  setEdit(!isEdit);
   console.log('cancel');
 }
 
     return (
-      <>
-        {edit ?
+      <tr className={classNames} key={id}>
+        {isEdit ?
         <>
         <td><input className="input_edit" defaultValue={id}></input></td>
         <td><input className="input_edit" defaultValue={english}></input></td>
@@ -51,7 +57,7 @@ const handleCancelClick = () => {
         </td>
         </>
       }
-      </>
+      </tr>
     )
 }
 
