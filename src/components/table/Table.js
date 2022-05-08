@@ -26,7 +26,7 @@ const Table = () => {
                                 key={id}
                                 id={id}
                                 {...wordProps}
-                                onDelete={()=> console.log('deleted!')} />
+                                onDelete={()=> console.log('deleted! '+id)} />
                         )
                     })
                 }
