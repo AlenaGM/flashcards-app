@@ -1,6 +1,5 @@
 import './table.scss';
 import Row from '../row/Row';
-import words from '../../resources/data/words.json';
 
 const Table = ({words, onDelete}) => {
 

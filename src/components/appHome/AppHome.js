@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import './appHome.scss';
 import Table from '../table/Table';
-import words from '../../resources/data/words.json';
 
 class AppHome extends Component {
 
