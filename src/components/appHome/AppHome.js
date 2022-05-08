@@ -140,12 +140,17 @@ class AppHome extends Component {
         })
     }
 
+    onItemSave = (id) => {
+        console.log(`save this ${id}`)
+    }
+
     render() {
         return (
             <div className="app__home">
                 <Table
                     words={this.state.words}
-                    onDelete={this.deleteItem}/>
+                    onDelete={this.deleteItem}
+                    onItemSave={this.onItemSave}/>
             </div>
         )
     }

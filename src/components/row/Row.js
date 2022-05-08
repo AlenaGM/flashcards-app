@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './row.scss';
 
-const Row = ({id, english, transcription, russian, tags, onDelete}) => {
+const Row = ({id, english, transcription, russian, tags, onDelete, onItemSave}) => {
 
   const [isEdit, setEdit] = useState(false);
 
@@ -15,9 +15,9 @@ const Row = ({id, english, transcription, russian, tags, onDelete}) => {
       setEdit(!isEdit);
   }
 
-  const handleSaveClick = () => {
-    setEdit(!isEdit);
-  }
+  //const handleSaveClick = () => {
+  //  setEdit(!isEdit);
+  //}
 
   const handleCancelClick = () => {
     setEdit(!isEdit);
@@ -42,7 +42,7 @@ const Row = ({id, english, transcription, russian, tags, onDelete}) => {
           <td><input className="input_edit" name="russian" defaultValue={russian} onChange={handleChange}></input></td>
           <td><input className="input_edit" defaultValue={tags} onChange={handleChange}></input></td>
           <td>
-              <i className="fas fa-check icon icon__save" onClick = {handleSaveClick}> </i>
+              <i className="fas fa-check icon icon__save" onClick = {onItemSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {handleCancelClick}></i>
           </td>
           </>

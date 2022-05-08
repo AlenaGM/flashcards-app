@@ -1,7 +1,7 @@
 import './table.scss';
 import Row from '../row/Row';
 
-const Table = ({words, onDelete}) => {
+const Table = ({words, onDelete, onItemSave}) => {
 
     return (
             <table className="app__table table">
@@ -24,7 +24,8 @@ const Table = ({words, onDelete}) => {
                                 key={id}
                                 id={id}
                                 {...wordProps}
-                                onDelete={()=> onDelete(id)} />
+                                onDelete={()=> onDelete(id)}
+                                onItemSave={()=> onItemSave(id)}/>
                         )
                     })
                 }
