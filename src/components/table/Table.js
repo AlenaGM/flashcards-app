@@ -5,7 +5,6 @@ import words from '../../resources/data/words.json';
 const Table = () => {
 
     return (
-        <>
             <table className="app__table table">
                 <thead>
                     <tr className="table__row">
@@ -37,7 +36,6 @@ const Table = () => {
                     </tr>
                 </tfoot>
             </table>
-        </>
     )
 }
 
