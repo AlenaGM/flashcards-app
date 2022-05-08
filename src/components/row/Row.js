@@ -3,15 +3,15 @@ import './row.scss';
 
 const Row = ({id, english, transcription, russian, tags, onDelete}) => {
 
-  let classNames ='table__row';
-
   const [isEdit, setEdit] = useState(false);
+
+  let classNames ='table__row';
 
   if(isEdit){
     classNames += ' row_edit';
   }
 
-  const handleEditClick = () => {
+  const onEdit = () => {
       setEdit(!isEdit);
   }
 
@@ -54,7 +54,7 @@ const Row = ({id, english, transcription, russian, tags, onDelete}) => {
           <td>{russian}</td>
           <td>{tags}</td>
           <td>
-              <i className="fas fa-pen icon icon__edit" onClick = {handleEditClick}> </i>
+              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
           </td>
           </>

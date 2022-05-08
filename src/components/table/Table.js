@@ -2,7 +2,7 @@ import './table.scss';
 import Row from '../row/Row';
 import words from '../../resources/data/words.json';
 
-const Table = () => {
+const Table = ({words, onDelete}) => {
 
     return (
             <table className="app__table table">
@@ -25,7 +25,7 @@ const Table = () => {
                                 key={id}
                                 id={id}
                                 {...wordProps}
-                                onDelete={()=> console.log('deleted! '+id)} />
+                                onDelete={()=> onDelete(id)} />
                         )
                     })
                 }
