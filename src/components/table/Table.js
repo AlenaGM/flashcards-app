@@ -20,9 +20,9 @@ const Table = () => {
                 <tbody>
                 {
                     words.map((word) => {
-                        const {id, ...wordProps} =word;
+                        const {id, ...wordProps} = word;
                         return (
-                            <Row key={id} {...wordProps}/>
+                            <Row key={id} id={id} {...wordProps} />
                         )
                     })
                 }
