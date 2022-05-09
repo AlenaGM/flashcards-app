@@ -14,7 +14,8 @@ class AppHome extends Component {
                     "transcription": "[ ˈkærət ]",
                     "russian": "морковь",
                     "tags": "овощи",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "2",
@@ -22,7 +23,8 @@ class AppHome extends Component {
                     "transcription": "[ ˈbʌtəflaɪ ]",
                     "russian": "бабочка",
                     "tags": "насекомые",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "3",
@@ -30,7 +32,8 @@ class AppHome extends Component {
                     "transcription": "[ stri:t ]",
                     "russian": "улица",
                     "tags": "город",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "4",
@@ -38,7 +41,8 @@ class AppHome extends Component {
                     "transcription": "[ kɑ: ]",
                     "russian": "автомобиль",
                     "tags": "транспорт",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "5",
@@ -46,7 +50,8 @@ class AppHome extends Component {
                     "transcription": "[ ɑ:m ]",
                     "russian": "рука",
                     "tags": "тело",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "6",
@@ -54,7 +59,8 @@ class AppHome extends Component {
                     "transcription": "[  eər ]",
                     "russian": "воздух",
                     "tags": "природа",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "7",
@@ -62,7 +68,8 @@ class AppHome extends Component {
                     "transcription": "[ fɒks ]",
                     "russian": "лиса",
                     "tags": "животные",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "8",
@@ -70,7 +77,8 @@ class AppHome extends Component {
                     "transcription": "[ ˈræbɪt ]",
                     "russian": "кролик",
                     "tags": "животные",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "9",
@@ -78,7 +86,8 @@ class AppHome extends Component {
                     "transcription": "[ aʊl ]",
                     "russian": "сова",
                     "tags": "птицы",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "10",
@@ -86,7 +95,8 @@ class AppHome extends Component {
                     "transcription": "[ maʊs]",
                     "russian": "мышь",
                     "tags": "животные",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "11",
@@ -94,7 +104,8 @@ class AppHome extends Component {
                     "transcription": "[ tiː ]",
                     "russian": "чай",
                     "tags": "напитки",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "12",
@@ -102,7 +113,8 @@ class AppHome extends Component {
                     "transcription": "[ ɡuːs ]",
                     "russian": "гусь",
                     "tags": "птицы",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "13",
@@ -110,7 +122,8 @@ class AppHome extends Component {
                     "transcription": "[ ˈflaʊər ]",
                     "russian": "цветок",
                     "tags": "растения",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 },
                 {
                     "id": "14",
@@ -118,7 +131,8 @@ class AppHome extends Component {
                     "transcription": "[ be:d ]",
                     "russian": "птица",
                     "tags": "птицы",
-                    "isEdit": true
+                    "isEdit": true,
+                    "isSave": false
                 },
                 {
                     "id": "15",
@@ -126,7 +140,8 @@ class AppHome extends Component {
                     "transcription": "[ kæt ]",
                     "russian": "кот",
                     "tags": "животные",
-                    "isEdit": false
+                    "isEdit": false,
+                    "isSave": false
                 }
             ]
         }
@@ -142,6 +157,14 @@ class AppHome extends Component {
 
     onItemSave = (id) => {
         console.log(`save this ${id}`)
+        this.setState(({words}) => ({
+            words: words.map(word => {
+                if (word.id === id) {
+                    return {...word, onItemSave:!word.onItemSave}
+                }
+                return word;
+            })
+        }))
     }
 
     render() {

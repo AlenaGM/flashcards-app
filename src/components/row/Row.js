@@ -15,10 +15,6 @@ const Row = ({id, english, transcription, russian, tags, onDelete, onItemSave}) 
       setEdit(!isEdit);
   }
 
-  //const handleSaveClick = () => {
-  //  setEdit(!isEdit);
-  //}
-
   const handleCancelClick = () => {
     setEdit(!isEdit);
   }
