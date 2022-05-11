@@ -131,7 +131,7 @@ class AppHome extends Component {
                     "transcription": "[ be:d ]",
                     "russian": "птица",
                     "tags": "птицы",
-                    "isEdit": true,
+                    "isEdit": false,
                     "isSave": false
                 },
                 {
