@@ -33,7 +33,6 @@ class AppHome extends Component {
 
 
     render() {
-
         return (
             <div className="app__home">
                 <Table

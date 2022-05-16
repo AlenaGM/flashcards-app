@@ -5,7 +5,7 @@ import '../../styles/button.scss';
 
 const Card = ({english, transcription, russian}) => {
 
-    const [pressed, setPressed] = useState( false);
+    const [pressed, setPressed] = useState(false);
 
     const handleClick = () => {
         setPressed(!pressed);
