@@ -16,21 +16,21 @@ const Row = (props) => {
       setEdit(!isEdit);
   }
 
-  const handleChange= () => {
+  const handleChange= (e) => {
     onClick(id);
+    console.log(id);
+    setState (state, {
+      [e.target.name] : e.target.value
+    })
   }
 
-  //const onCancel = () => {
-  //  setEdit(!isEdit);
-  //}
+ const onCancel = () => {
+   setEdit(!isEdit);
+ }
 
-  //const [state, setState] = useState({id:'', english:'', transcription:'', russian:'', tags:''});
+  const [state, setState] = useState({id:'', english:'', transcription:'', russian:'', tags:''});
 
-  //const handleChange = (e) => {
-  //  setState (state, {
-  //    [e.target.name] : e.target.value
-  //  })
-  //}
+
 
     return (
 
@@ -45,7 +45,7 @@ const Row = (props) => {
           <td>
               <i className="fas fa-check icon icon__save" onClick = {handleChange}> </i>
               <i className="fas fa-ban icon icon__cancel"
-              //</td>onClick = {onCancel}
+              onClick = {onCancel}
               ></i>
           </td>
           </>
