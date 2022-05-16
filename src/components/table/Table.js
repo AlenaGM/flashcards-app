@@ -1,7 +1,21 @@
-import './table.scss';
 import Row from '../row/Row';
+import './table.scss';
 
-const Table = ({words, onDelete, onItemSave}) => {
+const Table = ({words, onDelete, onSave}) => {
+
+    const elements = words.map(word => {
+
+        const {id, ...wordProps} = word;
+
+        return (
+        <Row
+            key={id}
+            id={id}
+            {...wordProps}
+            onDelete={()=> onDelete(id)}
+            onSave={()=> onSave(id)}/>
+        )
+    })
 
     return (
             <table className="app__table table">
@@ -16,19 +30,7 @@ const Table = ({words, onDelete, onItemSave}) => {
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    words.map((word) => {
-                        const {id, ...wordProps} = word;
-                        return (
-                            <Row
-                                key={id}
-                                id={id}
-                                {...wordProps}
-                                onDelete={()=> onDelete(id)}
-                                onItemSave={()=> onItemSave(id)}/>
-                        )
-                    })
-                }
+                    {elements}
                 </tbody>
                 <tfoot>
                     <tr className="table__row">
