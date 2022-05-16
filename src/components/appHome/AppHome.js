@@ -19,25 +19,8 @@ class AppHome extends Component {
         })
     }
 
-    //editItem = (id, english, transcription, russian, tags) => {
-    //    const newWord= {
-    //        id,
-    //        english,
-    //        transcription,
-    //        russian,
-    //        tags,
-    //        isEdit: false
-    //    }
-    //    this.setState(({words}) => {
-    //        const newArr = [...words, newWord];
-    //        return {
-    //            words: newArr
-    //        }
-    //    });
-    //}
-
     saveItem = (id) => {
-        console.log(`save this ${id}`)
+        console.log(`save this ${id}`);
         this.setState(({words}) => ({
             words: words.map(word => {
                 if (word.id === id) {
@@ -48,6 +31,7 @@ class AppHome extends Component {
         }))
     }
 
+
     render() {
 
         return (
@@ -55,7 +39,6 @@ class AppHome extends Component {
                 <Table
                     words={this.state.words}
                     onDelete={this.deleteItem}
-                    //onEdit={this.editItem}
                     onSave={this.saveItem}
                     />
             </div>
