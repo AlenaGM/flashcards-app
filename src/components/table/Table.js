@@ -1,4 +1,3 @@
-
 import Row from '../row/Row';
 import './table.scss';
 
