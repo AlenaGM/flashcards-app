@@ -1,7 +1,7 @@
 import './app.scss';
 import AppHeader from '../appHeader/AppHeader';
 import AppHome from '../appHome/AppHome';
-//import AppGame from '../appGame/AppGame';
+import AppGame from '../appGame/AppGame';
 import AppFooter from '../appFooter/AppFooter';
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
       <AppHeader/>
       <main className="main">
         <AppHome/>
+        <AppGame/>
       </main>
       <AppFooter/>
     </div>
