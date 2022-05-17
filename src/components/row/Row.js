@@ -18,7 +18,7 @@ class Row extends Component {
 
   }
 
-  onCancel = (isEdit) => {
+  onCancel = () => {
     this.setState(({isEdit}) => ({
       isEdit:!isEdit
     }))
@@ -46,11 +46,11 @@ class Row extends Component {
       <tr className={classNames}>
         {isEdit ?
           <>
-          <td><input className="input_edit" name="id" defaultValue={id} onChange={this.handleChange}></input></td>
-          <td><input className="input_edit" name="english" defaultValue={english} onChange={this.handleChange}></input></td>
-          <td><input className="input_edit" name="transcription" defaultValue={transcription} onChange={this.handleChange}></input></td>
-          <td><input className="input_edit" name="russian" defaultValue={russian} onChange={this.handleChange}></input></td>
-          <td><input className="input_edit" name="tags" defaultValue={tags} onChange={this.handleChange}></input></td>
+          <td><input type="text" className="input_edit" name="id" defaultValue={id} onChange={this.handleChange}></input></td>
+          <td><input type="text" className="input_edit" name="english" defaultValue={english} onChange={this.handleChange}></input></td>
+          <td><input type="text" className="input_edit" name="transcription" defaultValue={transcription} onChange={this.handleChange}></input></td>
+          <td><input type="text" className="input_edit" name="russian" defaultValue={russian} onChange={this.handleChange}></input></td>
+          <td><input type="text" className="input_edit" name="tags" defaultValue={tags} onChange={this.handleChange}></input></td>
           <td>
               <i className="fas fa-check icon icon__save" onClick={this.onSave}> </i>
               <i className="fas fa-ban icon icon__cancel"
