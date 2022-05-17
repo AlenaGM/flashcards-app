@@ -8,7 +8,8 @@
     width: 100%;
     max-width: 1000px;
     margin: 4vw auto;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     column-gap: 2vw;
     row-gap: 4vw;
     &__card {
@@ -17,16 +18,18 @@
         justify-content: space-around;
         align-items: center;
         text-align: left;
-        width: 175px;
-        min-height: 190px;
+        font-size: calc(7px + 2vmin);
+        width: 220px;
+        min-height: 285px;
         border-radius: 6px;
         box-shadow: 0px 1px 2px 0px #0000001F;
         padding: 14px;
+        margin: 24px;
         background-color: $table-bg;
 
         div:first-of-type:not(.card_translation) {
             color: $text-color;
-            font-size: calc(12px + 2vmin);
+            font-size: calc(24px + 2vmin);
             text-transform: capitalize;
         }
 
@@ -38,7 +41,7 @@
 
 .card_translation {
     color: $btn;
-    font-size: calc(6px + 2vmin);
+    font-size: calc(12px + 2vmin);
     text-transform: capitalize;
     padding: 0px 28px 12px 28px;
 }

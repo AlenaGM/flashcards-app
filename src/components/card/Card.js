@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import './card.scss';
 import '../../styles/button.scss';
 
 

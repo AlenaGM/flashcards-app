@@ -33,9 +33,9 @@ const Playground = () => {
     return (
         <>
             <div className="app__playground playground">
-                <div><i className="fas fa-arrow-left" onClick = {prevSlide}></i></div>
+                <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
                 {cards[slideIndex-1]}
-                <div><i className="fas fa-arrow-right" onClick = {nextSlide}></i></div>
+                <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
             </div>
         </>
     )

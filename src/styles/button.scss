@@ -2,7 +2,7 @@
 
 .button {
     color: $text-status;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     text-transform: uppercase;
     padding: 12px 28px;
@@ -23,11 +23,6 @@
             top: 3px;
             box-shadow: 0 0px 0 #23262f3b;
         }
-    &__long {
-        display: block;
-        width: 170px;
-        margin: 45px auto 0 auto;
-    }
 }
 
 .icon {
@@ -36,6 +31,10 @@
     &:hover{
         transform: translateY(-3px);
         cursor: pointer;
+    }
+    &:active {
+        top: 3px;
+        color: $text-second;
     }
     &__edit {
         color: $text-main;
@@ -61,9 +60,12 @@
             color: $error;
         }
     }
-    &:active {
-        top: 3px;
-        color: $text-second;
+    &__arrow {
+        color: $text-main;
+        font-size: 24px;
+        &:hover {
+            color: $text-color;
+        }
     }
 }
 
