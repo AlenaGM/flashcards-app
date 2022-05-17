@@ -1,49 +1,60 @@
-import React, {useState} from "react";
-import './row.scss';
+import {Component} from "react";
+import words from '../../resources/data/words.json';
 
-const Row = (props) => {
+class Row extends Component {
 
-  const {id, english, transcription, russian, tags, onDelete, onSave} = props;
-  const [isEdit, setEdit] = useState(false);
-
-  let classNames ='table__row';
-
-  if(isEdit){
-    classNames += ' row_edit';
+  constructor(props){
+    super(props);
+    this.state = {
+      words,
+      isEdit: false
+    }
   }
 
-  const onEdit = () => {
-      setEdit(!isEdit);
+  onEdit = () => {
+    this.setState(({isEdit}) => ({
+      isEdit:!isEdit
+    }))
+
   }
 
-  const handleChange= (e) => {
-    setState (state, {
+  onCancel = (isEdit) => {
+    this.setState(({isEdit}) => ({
+      isEdit:!isEdit
+    }))
+
+  }
+
+  handleChange= (e) => {
+    this.setState ({
       [e.target.name] : e.target.value
     })
   }
 
-  const onCancel = () => {
-    setEdit(!isEdit);
-  }
+  render() {
+    const {id, english, transcription, russian, tags} = this.props;
+    const {isEdit} = this.state;
 
-  const [state, setState] = useState({id:'', english:'', transcription:'', russian:'', tags:''});
+    let classNames ='table__row';
 
-
+    if(isEdit){
+      classNames += ' row_edit';
+    }
 
     return (
 
       <tr className={classNames}>
         {isEdit ?
           <>
-          <td><input className="input_edit" name="id" defaultValue={id} onClick={handleChange}></input></td>
-          <td><input className="input_edit" name="english" defaultValue={english} onClick={handleChange}></input></td>
-          <td><input className="input_edit" name="transcription" defaultValue={transcription} onClick={handleChange}></input></td>
-          <td><input className="input_edit" name="russian" defaultValue={russian} onClick={handleChange}></input></td>
-          <td><input className="input_edit" name="tags" defaultValue={tags} onClick={handleChange}></input></td>
+          <td><input className="input_edit" name="id" defaultValue={id} onChange={this.handleChange}></input></td>
+          <td><input className="input_edit" name="english" defaultValue={english} onChange={this.handleChange}></input></td>
+          <td><input className="input_edit" name="transcription" defaultValue={transcription} onChange={this.handleChange}></input></td>
+          <td><input className="input_edit" name="russian" defaultValue={russian} onChange={this.handleChange}></input></td>
+          <td><input className="input_edit" name="tags" defaultValue={tags} onChange={this.handleChange}></input></td>
           <td>
-              <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
+              <i className="fas fa-check icon icon__save" onClick={this.onSave}> </i>
               <i className="fas fa-ban icon icon__cancel"
-              onClick = {onCancel}
+              onClick = {this.onCancel}
               ></i>
           </td>
           </>
@@ -55,13 +66,14 @@ const Row = (props) => {
           <td>{russian}</td>
           <td>{tags}</td>
           <td>
-              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
+              <i className="fas fa-pen icon icon__edit" onClick = {this.onEdit}> </i>
+              <i className="fas fa-trash icon icon__delete" onClick = {this.onDelete}></i>
           </td>
           </>
         }
       </tr>
     )
+  }
 }
 
 export default Row;

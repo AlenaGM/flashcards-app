@@ -4,119 +4,104 @@
         "english": "carrot",
         "transcription": "[ ˈkærət ]",
         "russian": "морковь",
-        "tags": "овощиTEST",
-        "isEdit": false
+        "tags": "овощиTEST"
     },
     {
         "id": "2",
         "english": "buttefly",
         "transcription": "[ ˈbʌtəflaɪ ]",
         "russian": "бабочка",
-        "tags": "насекомые",
-        "isEdit": false
+        "tags": "насекомые"
     },
     {
         "id": "3",
         "english": "street",
         "transcription": "[ stri:t ]",
         "russian": "улица",
-        "tags": "город",
-        "isEdit": false
+        "tags": "город"
     },
     {
         "id": "4",
         "english": "car",
         "transcription": "[ kɑ: ]",
         "russian": "автомобиль",
-        "tags": "транспорт",
-        "isEdit": false
+        "tags": "транспорт"
     },
     {
         "id": "5",
         "english": "arm",
         "transcription": "[ ɑ:m ]",
         "russian": "рука",
-        "tags": "тело",
-        "isEdit": false
+        "tags": "тело"
     },
     {
         "id": "6",
         "english": "air",
         "transcription": "[  eər ]",
         "russian": "воздух",
-        "tags": "природа",
-        "isEdit": false
+        "tags": "природа"
     },
     {
         "id": "7",
         "english": "fox",
         "transcription": "[ fɒks ]",
         "russian": "лиса",
-        "tags": "животные",
-        "isEdit": false
+        "tags": "животные"
     },
     {
         "id": "8",
         "english": "rabbit",
         "transcription": "[ ˈræbɪt ]",
         "russian": "кролик",
-        "tags": "животные",
-        "isEdit": false
+        "tags": "животные"
     },
     {
         "id": "9",
         "english": "owl",
         "transcription": "[ aʊl ]",
         "russian": "сова",
-        "tags": "птицы",
-        "isEdit": false
+        "tags": "птицы"
     },
     {
         "id": "10",
         "english": "mouse",
         "transcription": "[ maʊs]",
         "russian": "мышь",
-        "tags": "животные",
-        "isEdit": false
+        "tags": "животные"
     },
     {
         "id": "11",
         "english": "tea",
         "transcription": "[ tiː ]",
         "russian": "чай",
-        "tags": "напитки",
-        "isEdit": false
+        "tags": "напитки"
     },
     {
         "id": "12",
         "english": "goose",
         "transcription": "[ ɡuːs ]",
         "russian": "гусь",
-        "tags": "птицы",
-        "isEdit": false
+        "tags": "птицы"
     },
     {
         "id": "13",
         "english": "flower",
         "transcription": "[ ˈflaʊər ]",
         "russian": "цветок",
-        "tags": "растения",
-        "isEdit": false
+        "tags": "растения"
     },
     {
         "id": "14",
         "english": "bird",
         "transcription": "[ be:d ]",
         "russian": "птица",
-        "tags": "птицы",
-        "isEdit": true
+        "tags": "птицы"
     },
     {
         "id": "15",
         "english": "cat",
         "transcription": "[ kæt ]",
         "russian": "кот",
-        "tags": "животные",
-        "isEdit": false
+        "tags": "животные"
     }
 ]
