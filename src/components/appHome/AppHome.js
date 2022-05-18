@@ -21,7 +21,7 @@ class AppHome extends Component {
         })
     }
 
-    saveItem = (id, english) => {
+    saveItem = (id) => {
         console.log(`save this ${id}`);
 
         this.setState(prevState => ({
