@@ -1,15 +1,16 @@
 import { Component } from 'react';
 import './table.scss';
+import words from '../../resources/data/words.json';
 
 class AddForm extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            english: '',
-            transcription: '',
-            russian: '',
-            tags: ''
+            english: 'dog',
+            transcription: '[ˈdɑɡ]',
+            russian: 'собака',
+            tags:'животные',
         }
     }
 
