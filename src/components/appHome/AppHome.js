@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Table from '../table/Table';
+import AddForm from '../table/AddForm';
 import words from '../../resources/data/words.json';
 import './appHome.scss';
 class AppHome extends Component {
@@ -9,6 +10,7 @@ class AppHome extends Component {
         this.state = {
             words
         }
+        this.maxId = 16;
     }
 
     deleteItem = (id) => {
@@ -31,6 +33,21 @@ class AppHome extends Component {
         }))
     }
 
+    addItem = (english, transcription, russian, tags) => {
+        const newItem = {
+            english,
+            transcription,
+            russian,
+            tags,
+            id: this.maxId++
+        }
+        this.setState(({words}) => {
+            const newArr = [...words, newItem];
+            return {
+                words: newArr
+            }
+        });
+    }
 
     render() {
         return (
@@ -40,6 +57,7 @@ class AppHome extends Component {
                     onDelete={this.deleteItem}
                     onSave={this.saveItem}
                     />
+                <AddForm onAdd={this.addItem}/>
             </div>
         )
     }
