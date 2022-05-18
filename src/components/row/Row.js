@@ -25,35 +25,6 @@ class Row extends Component {
     }))
   }
 
-//  onSave = () => {
-//    let english = this.props.english;
-//      if(this.state.english){
-//        english = this.state.english;
-//      }
-//    let transcription = this.props.transcription;
-//      if(this.state.transcription){
-//        transcription = this.state.transcription;
-//      }
-//    let russian = this.props.russian;
-//      if(this.state.russian){
-//        russian = this.state.russian;
-//      }
-//    let tags = this.props.tags;
-//      if(this.state.tags){
-//        tags = this.state.tags;
-//      }
-//
-//    const updatedWord = {
-//      id: this.props.id,
-//      english: english,
-//      transcription: transcription,
-//      russian: russian,
-//      tags: tags
-//    }
-//
-//    console.log(updatedWord);
-//  }
-
   handleChange = (e) => {
     this.setState ({
       [e.target.name] : e.target.value
@@ -61,8 +32,8 @@ class Row extends Component {
   }
 
   render() {
-    const {id} = this.props;
-    const {english, transcription, russian, tags, isEdit, onDelete, onSave} = this.state;
+    const {id, onDelete, onSave} = this.props;
+    const {english, transcription, russian, tags, isEdit} = this.state;
 
 
     let classNames ='table__row';
