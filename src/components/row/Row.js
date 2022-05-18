@@ -61,8 +61,9 @@ class Row extends Component {
   }
 
   render() {
-    const {id, english, transcription, russian, tags, onDelete, onSave} = this.props;
-    const {isEdit} = this.state;
+    const {id} = this.props;
+    const {english, transcription, russian, tags, isEdit, onDelete, onSave} = this.state;
+
 
     let classNames ='table__row';
 
