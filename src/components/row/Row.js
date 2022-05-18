@@ -1,12 +1,14 @@
 import {Component} from "react";
-import words from '../../resources/data/words.json';
 
 class Row extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      words,
+      english : props.english,
+      transcription : props.transcription,
+      russian: props.russian,
+      tags: props.tags,
       isEdit: false
     }
   }

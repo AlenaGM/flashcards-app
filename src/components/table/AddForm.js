@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import './table.scss';
-import words from '../../resources/data/words.json';
 
 class AddForm extends Component {
 
