@@ -1,19 +1,20 @@
 import Row from '../row/Row';
 import './table.scss';
 
-const Table = ({words, onDelete, onSave}) => {
+const Table = ({words, onDelete, onSave, handleChange}) => {
 
     const elements = words.map(word => {
 
-        const {id, ...wordProps} = word;
+        const {id,english, ...wordProps} = word;
 
         return (
         <Row
             key={id}
             id={id}
+            english={english}
             {...wordProps}
             onDelete={()=> onDelete(id)}
-            onSave={()=> onSave(id)}/>
+            onSave={()=> onSave(id, english)}/>
         )
     })
 

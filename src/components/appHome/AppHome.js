@@ -21,15 +21,13 @@ class AppHome extends Component {
         })
     }
 
-    saveItem = (id) => {
+    saveItem = (id, english) => {
         console.log(`save this ${id}`);
-        this.setState(({words}) => ({
-            words: words.map(word => {
-                if (word.id === id) {
-                    return {...word, onSave:!word.onSave}
-                }
-                return word;
-            })
+
+        this.setState(prevState => ({
+            words: prevState.words.map(
+                word => word.id === id? {...words, id:'18', english:'state.english', transcription:'transcription' , russian:'russian', tags:'tags' }: word
+            )
         }))
     }
 

@@ -31,6 +31,7 @@ class Row extends Component {
     })
   }
 
+
   render() {
     const {id, onDelete, onSave} = this.props;
     const {english, transcription, russian, tags, isEdit} = this.state;
