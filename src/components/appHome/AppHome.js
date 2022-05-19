@@ -24,9 +24,9 @@ class AppHome extends Component {
     saveItem = (id) => {
         console.log(`save this ${id}`);
 
-        this.setState(prevState => ({
-            words: prevState.words.map(
-                word => word.id === id? {id:'18', english:'state.english', transcription:'transcription' , russian:'russian', tags:'tags' }: word
+        this.setState(({words}) => ({
+            words: words.map(
+                word => word.id === id? {...word, id:'18', english:'english', transcription:'transcription' , russian:'russian', tags:'tags' }: word
             )
         }))
     }
