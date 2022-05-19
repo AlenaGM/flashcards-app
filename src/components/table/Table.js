@@ -1,7 +1,7 @@
 import Row from '../row/Row';
 import './table.scss';
 
-const Table = ({words, onDelete, onSave, onItemSave}) => {
+const Table = ({words, onDelete, onSave}) => {
 
     const elements = words.map(word => {
 
@@ -13,8 +13,7 @@ const Table = ({words, onDelete, onSave, onItemSave}) => {
             id={id}
             {...wordProps}
             onDelete={()=> onDelete(id)}
-            onSave={()=> onSave(id)}
-            onItemSave={()=>onItemSave(id)}/>
+            onSave={()=> onSave(id)}/>
         )
     })
 

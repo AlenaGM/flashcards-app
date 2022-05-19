@@ -26,7 +26,14 @@ class AppHome extends Component {
 
         this.setState(({words}) => ({
             words: words.map(
-                word => word.id === id? {...word, id:'18', english:'english', transcription:'transcription' , russian:'russian', tags:'tags' }: word
+                word => word.id === id?
+                {...word,
+                    id:'18',
+                    english:'english',
+                    transcription:'transcription',
+                    russian:'russian',
+                    tags:'tags'}
+                : word
             )
         }))
     }
