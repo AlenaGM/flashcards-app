@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+
+.form {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0vw auto 4vw auto;
+
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    background-color: $table-bg;
+    padding: 12px 14px;
+
+    border-bottom: 1px solid $row-border;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px 0px #0000001F;
+
+    input {
+        width: 22%;
+        border: solid 1px $table-border;
+        padding: 8px 5px;
+
+        &:last-of-type {
+        @media screen and (max-width: 765px){
+            display: none;
+            }
+        }
+    }
+    div {
+        width: 10%;
+        text-align: center;
+        font-size: larger;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+}

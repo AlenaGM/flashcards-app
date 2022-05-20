@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Table from '../table/Table';
-import AddForm from '../table/AddForm';
+import AddForm from '../addForm/AddForm';
 import words from '../../resources/data/words.json';
 import './appHome.scss';
 class AppHome extends Component {
