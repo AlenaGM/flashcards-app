@@ -33,7 +33,7 @@ class AppHome extends Component {
 //    }
 
     addItem = (english, transcription, russian, tags) => {
-        const newItem = {
+        const newWord = {
             english,
             transcription,
             russian,
@@ -41,7 +41,7 @@ class AppHome extends Component {
             id: this.maxId++
         }
         this.setState(({words}) => {
-            const newArr = [...words, newItem];
+            const newArr = [...words, newWord];
             return {
                 words: newArr
             }
