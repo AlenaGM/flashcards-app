@@ -19,9 +19,19 @@ class Row extends Component {
     }))
   }
 
-  onCancel = () => {
+  onSave = () => {
     this.setState(({isEdit}) => ({
       isEdit:!isEdit
+    }))
+  }
+
+  onCancel = () => {
+    this.setState(({isEdit}) => ({
+      isEdit:!isEdit,
+      english:this.props.english,
+      transcription:this.props.transcription,
+      russian:this.props.russian,
+      tags:this.props.tags
     }))
   }
 
@@ -33,9 +43,8 @@ class Row extends Component {
 
 
   render() {
-    const {id, onDelete, onSave} = this.props;
+    const {id, onDelete} = this.props;
     const {english, transcription, russian, tags, isEdit} = this.state;
-
 
     let classNames ='table__row';
 
@@ -54,7 +63,7 @@ class Row extends Component {
             <td><input type="text" className="input_edit" name="russian" defaultValue={russian} onChange={this.handleChange}/></td>
             <td><input type="text" className="input_edit" name="tags" defaultValue={tags} onChange={this.handleChange}/></td>
             <td>
-                <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
+                <i className="fas fa-check icon icon__save" onClick={this.onSave}> </i>
                 <i className="fas fa-ban icon icon__cancel" onClick = {this.onCancel}></i>
             </td>
           </>
