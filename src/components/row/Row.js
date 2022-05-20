@@ -19,6 +19,12 @@ class Row extends Component {
     }))
   }
 
+  handleChange = (e) => {
+    this.setState ({
+      [e.target.name] : e.target.value
+    })
+  }
+
   onSave = () => {
     this.setState(({isEdit}) => ({
       isEdit:!isEdit
@@ -35,13 +41,6 @@ class Row extends Component {
     }))
   }
 
-  handleChange = (e) => {
-    this.setState ({
-      [e.target.name] : e.target.value
-    })
-  }
-
-
   render() {
     const {id, onDelete} = this.props;
     const {english, transcription, russian, tags, isEdit} = this.state;
@@ -53,7 +52,6 @@ class Row extends Component {
     }
 
     return (
-
       <tr className={classNames}>
         {isEdit ?
           <>

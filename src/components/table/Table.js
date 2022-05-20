@@ -4,10 +4,8 @@ import './table.scss';
 const Table = ({words, onDelete}) => {
 
     const elements = words.map(word => {
-
-        const {id, ...wordProps} = word;
-
-        return (
+    const {id, ...wordProps} = word;
+    return (
         <Row
             key={id}
             id={id}
