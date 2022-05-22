@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Card from '../card/Card';
-import words from '../../resources/data/words.json';
+
 
 import './appGame.scss';
 

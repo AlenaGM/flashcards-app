@@ -43,6 +43,10 @@ class App extends Component {
         });
     }
 
+    saveItem = (id) => {
+        console.log(`save me! ${id}`)
+    }
+
     render(){
         return (
             <div className="app">
@@ -52,6 +56,7 @@ class App extends Component {
                         <Table
                             words={this.state.words}
                             onDelete={this.deleteItem}
+                            onSave={this.saveItem}
                             />
                         <AddForm onAdd={this.addItem}/>
                     </div>
