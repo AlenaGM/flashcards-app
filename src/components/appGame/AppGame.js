@@ -6,7 +6,7 @@ import words from '../../resources/data/words.json';
 import './appGame.scss';
 
 
-const AppGame = () => {
+const AppGame = ({words}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
 

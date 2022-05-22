@@ -55,7 +55,8 @@ class App extends Component {
                             />
                         <AddForm onAdd={this.addItem}/>
                     </div>
-                    <AppGame/>
+                    <AppGame
+                        words={this.state.words}/>
                 </main>
                 <AppFooter/>
             </div>
