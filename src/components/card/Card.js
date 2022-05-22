@@ -1,39 +1,26 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import '../../styles/button.scss';
 
-class Card extends Component {
+const Card = (props) => {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            english : props.english,
-            transcription : props.transcription,
-            russian: props.russian,
-            pressed: false
-        }
+    const [pressed, setPressed] = useState(false)
+
+    const handleClick = () => {
+            setPressed(!pressed)
     }
-
-    handleClick = () => {
-        this.setState(({pressed}) => ({
-            pressed:!pressed
-        }))
-    }
-
-    render(){
-        const {english, transcription, russian, pressed} = this.state;
 
         return (
             <div className="game__card card">
-                <div>{english}</div>
-                <div>{transcription}</div>
-                <div onClick = {this.handleClick}>
+                <div>{props.english}</div>
+                <div>{props.transcription}</div>
+                <div onClick = {handleClick}>
                     {pressed ?
-                        <div className="card_translation">{russian}</div> :
+                        <div className="card_translation">{props.russian}</div> :
                         <button className="button">Проверить</button>}
                 </div>
             </div>
         )
     }
-}
+
 
 export default Card;

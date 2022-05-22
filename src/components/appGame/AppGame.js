@@ -1,8 +1,5 @@
 import { useState } from 'react';
-
 import Card from '../card/Card';
-
-
 import './appGame.scss';
 
 
@@ -27,7 +24,7 @@ const AppGame = ({words}) => {
     };
 
     const cards = words.map((word) => {
-        const {id, ...wordProps} =word;
+        const {id, ...wordProps} = word;
         return (
                 <Card
                     key={id}
