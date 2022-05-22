@@ -1,5 +1,4 @@
 import {Component} from "react";
-
 class Row extends Component {
 
   constructor(props){
