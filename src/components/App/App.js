@@ -1,72 +1,58 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
 import AppHeader from '../appHeader/AppHeader';
 import Table from '../table/Table';
 import AddForm from '../addForm/AddForm';
 import AppGame from '../appGame/AppGame';
 import AppFooter from '../appFooter/AppFooter';
-import words from '../../resources/data/words.json';
+import library from '../../resources/data/words.json';
 
 import './app.scss';
 
-class App extends Component {
+function App() {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            words
-        }
-        this.maxId = 16;
+    const [words, setWords] = useState(library);
+
+    const deleteItem = (id) => {
+        setWords(words.filter(word => word.id !== id));
     }
 
-    deleteItem = (id) => {
-        this.setState(({words}) => {
-            return {
-                words: words.filter(word => word.id !== id)
-            }
-        })
-    }
+    const addItem = (english, transcription, russian, tags, id) => {
 
-    addItem = (english, transcription, russian, tags) => {
         const newWord = {
             english,
             transcription,
             russian,
             tags,
-            id: this.maxId++
+            id
         }
-        this.setState(({words}) => {
-            const newArr = [...words, newWord];
-            return {
-                words: newArr
-            }
-        });
+
+        const newArr = [...words, newWord];
+        setWords(newArr);
     }
 
-    saveItem = (id) => {
+    const saveItem = (id) => {
         console.log(`save me! ${id}`)
     }
 
-    render(){
-        return (
-            <div className="app">
-                <AppHeader/>
-                <main className="main">
-                    <div className="app__home">
-                        <Table
-                            words={this.state.words}
-                            onDelete={this.deleteItem}
-                            onSave={this.saveItem}
-                            />
-                        <AddForm onAdd={this.addItem}/>
-                    </div>
-                    <AppGame
-                        words={this.state.words}/>
-                </main>
-                <AppFooter/>
-            </div>
-        );
-    }
+    return (
+        <div className="app">
+            <AppHeader/>
+            <main className="main">
+                <div className="app__home">
+                    <Table
+                        words={words}
+                        onDelete={deleteItem}
+                        onSave={saveItem}
+                        />
+                    <AddForm onAdd={addItem}/>
+                </div>
+                <AppGame
+                    words={words}/>
+            </main>
+            <AppFooter/>
+        </div>
+    );
 }
 
 export default App;

@@ -9,7 +9,8 @@ class AddForm extends Component {
             english: '',
             transcription: '',
             russian: '',
-            tags:''
+            tags:'',
+            id:''
         }
     }
 
@@ -20,21 +21,30 @@ class AddForm extends Component {
     }
 
     onSubmit = () => {
-        if (this.state.english.length < 1 || this.state.english.length < 1) return;
-        this.props.onAdd(this.state.english, this.state.transcription, this.state.russian, this.state.tags);
+
+        if (this.state.english.length < 1 || this.state.english.length < 1 || !this.state.id) return;
+        this.props.onAdd(this.state.english, this.state.transcription, this.state.russian, this.state.tags, this.state.id);
         this.setState({
             english: '',
             transcription: '',
             russian: '',
-            tags:''
+            tags:'',
+            id:''
         })
     }
 
     render() {
-        const {english, russian, transcription, tags} = this.state;
+        const {english, russian, transcription, tags, id} = this.state;
 
         return(
             <form className="app__table table form" onSubmit = {this.onSubmit}>
+                <input
+                    type="number"
+                    className="input_edit"
+                    placeholder="ID"
+                    name="id"
+                    defaultValue={id}
+                    onChange={this.onValueChange}/>
                 <input
                     type="text"
                     className="input_edit"

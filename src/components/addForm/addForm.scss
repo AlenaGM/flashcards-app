@@ -24,7 +24,15 @@
         border: solid 1px $table-border;
         padding: 8px 5px;
 
+        &:first-of-type {
+            width:6%;
+            @media screen and (max-width: 765px){
+                display: none;
+                }
+            }
+
         &:last-of-type {
+            width: 16%;
         @media screen and (max-width: 765px){
             display: none;
             }
