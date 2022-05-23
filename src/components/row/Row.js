@@ -4,6 +4,7 @@ class Row extends Component {
   constructor(props){
     super(props);
     this.state = {
+      id: props.id,
       english : props.english,
       transcription : props.transcription,
       russian: props.russian,
@@ -27,6 +28,7 @@ class Row extends Component {
   onSave = () => {
     this.setState(({isEdit}) => ({
       isEdit:!isEdit,
+      id : this.state.id,
       english : this.state.english,
       transcription : this.state.transcription,
       russian: this.state.russian,
@@ -37,6 +39,7 @@ class Row extends Component {
   onCancel = () => {
     this.setState(({isEdit}) => ({
       isEdit:!isEdit,
+      id:this.props.id,
       english:this.props.english,
       transcription:this.props.transcription,
       russian:this.props.russian,
@@ -45,8 +48,8 @@ class Row extends Component {
   }
 
   render() {
-    const {id, onDelete} = this.props;
-    const {english, transcription, russian, tags, isEdit} = this.state;
+    const {onDelete} = this.props;
+    const {id, english, transcription, russian, tags, isEdit} = this.state;
 
     let classNames ='table__row';
 
@@ -58,7 +61,7 @@ class Row extends Component {
       <tr className={classNames}>
         {isEdit ?
           <>
-            <td>{id}</td>
+            <td><input type="text" className="input_edit" name="id" defaultValue={id} onChange={this.handleChange}/></td>
             <td><input type="text" className="input_edit" name="english" defaultValue={english} onChange={this.handleChange}/></td>
             <td><input type="text" className="input_edit" name="transcription" defaultValue={transcription} onChange={this.handleChange}/></td>
             <td><input type="text" className="input_edit" name="russian" defaultValue={russian} onChange={this.handleChange}/></td>
