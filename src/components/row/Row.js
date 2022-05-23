@@ -26,7 +26,11 @@ class Row extends Component {
 
   onSave = () => {
     this.setState(({isEdit}) => ({
-      isEdit:!isEdit
+      isEdit:!isEdit,
+      english : this.state.english,
+      transcription : this.state.transcription,
+      russian: this.state.russian,
+      tags: this.state.tags,
     }))
   }
 
