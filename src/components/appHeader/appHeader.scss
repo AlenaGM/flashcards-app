@@ -10,12 +10,24 @@
         padding: 24px;
     }
     &__title {
+        display: inline-flex;
+        align-items: center;
         color: $text-status;
         font-weight: bold;
         font-size: calc(14px + 2vmin);
         line-height: 37px;
+        &:hover {
+            color: $text-color;
+        }
         span {
             color: $text-color;
+        }
+        .logo {
+            max-width: 60px;
+            margin-right: 5px;
+        }
+        &:hover {
+            cursor:pointer;
         }
     }
     &__menu {
@@ -36,3 +48,4 @@
         }
     }
 }
+
