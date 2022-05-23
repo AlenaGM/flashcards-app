@@ -7,24 +7,29 @@
         justify-content: space-between;
         align-items: center;
         background-color: $bg-header;
-        padding: 24px;
+        padding: 14px;
+        div{
+            display: flex;
+            .logo {
+                max-width: 80px;
+                margin-right: 5px;
+            }
+        }
     }
     &__title {
-        display: inline-flex;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 500;
+        font-size: calc(4px + 2vmin);
         color: $text-status;
-        font-weight: bold;
-        font-size: calc(14px + 2vmin);
-        line-height: 37px;
-        &:hover {
-            color: $text-color;
-        }
         span {
+            font-weight: bold;
+            font-size: calc(20px + 2vmin);
             color: $text-color;
-        }
-        .logo {
-            max-width: 60px;
-            margin-right: 5px;
+            &:hover {
+                color: $text-status;
+            }
         }
         &:hover {
             cursor:pointer;

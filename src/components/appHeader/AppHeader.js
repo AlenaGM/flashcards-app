@@ -4,10 +4,10 @@ import './appHeader.scss';
 const AppHeader = () => {
     return (
         <header className="app__header">
-            <h1 className="app__title">
+            <div>
                 <img className="logo" src={logo} alt="logo"></img>
-                <span>My</span> Flashcards
-            </h1>
+                <h1 className="app__title"><span>Wordy</span> English Vocabulary Cards</h1>
+            </div>
             <nav className="app__menu">
                 <ul>
                     <li><a href="#">Home</a></li>
