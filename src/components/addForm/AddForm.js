@@ -19,14 +19,14 @@ class AddForm extends Component {
         })
     }
 
-    onSubmit = (e) => {
+    onSubmit = () => {
         if (this.state.english.length < 1 || this.state.english.length < 1) return;
         this.props.onAdd(this.state.english, this.state.transcription, this.state.russian, this.state.tags);
         this.setState({
             english: '',
             transcription: '',
             russian: '',
-            tags:'',
+            tags:''
         })
     }
 
