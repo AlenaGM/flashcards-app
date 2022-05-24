@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-import {HomePage, GamePage} from '../pages';
+import {HomePage, GamePage, Page404} from '../pages';
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
 
@@ -18,6 +18,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<HomePage/>}/>
                         <Route path="/game" element={<GamePage/>}/>
+                        <Route path="*" element={<Page404/>}/>
                     </Routes>
                 </main>
                 <AppFooter/>
