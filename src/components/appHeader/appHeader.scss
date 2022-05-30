@@ -53,7 +53,7 @@
             li {
                 color: $text-status;
                 margin: 0 8px;
-                a:hover {
+                &:hover {
                     color: $text-color;
                 }
             }
