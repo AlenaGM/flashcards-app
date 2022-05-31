@@ -1,21 +1,13 @@
-import ErrorMessage from "../errorMessage/ErrorMessage";
 import {Link} from 'react-router-dom';
+import ErrorMessage from "../errorMessage/ErrorMessage";
+import './page404.scss';
 
 const Page404 = () => {
     return (
-            <div style={{
-                'display': 'flex',
-                'flexDirection': 'column',
-                'flexGrow': '1',
-                'width': '100%',
-                'max-width': '1000px',
-                'margin': '4vw auto',
-                'justifyContent': 'center',
-                'alignItems': 'center',
-                'padding': '16px'}}>
+        <div className="errorMessage">
             <ErrorMessage/>
-            <p style={{'textAlign': 'center', 'fontWeight': 'bold', 'fontSize': '24px', 'color':'#FB7575','marginTop': '30px'}}>This page doesn't exist</p>
-            <Link style={{'display': 'block', 'textAlign': 'center', 'fontWeight': 'bold', 'fontSize': '24px', 'color':'#3ABDB5', 'marginTop': '24px'}} to="/">Back to home page</Link>
+            <p>This page doesn't exist</p>
+            <Link className="backHomeLink" to="/">Back to home page</Link>
         </div>
     )
 }
