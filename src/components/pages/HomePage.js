@@ -4,7 +4,7 @@ import Table from '../table/Table';
 import AddForm from '../addForm/AddForm';
 import library from '../../resources/data/words.json';
 
-import '../app/app.scss';
+import '../App/App.scss';
 
 
 const HomePage = () => {

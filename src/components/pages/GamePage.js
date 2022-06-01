@@ -1,6 +1,6 @@
 import AppGame from '../appGame/AppGame';
 import words from '../../resources/data/words.json';
-import '../app/app.scss';
+import '../App/App.scss';
 
 const GamePage = () => {
 

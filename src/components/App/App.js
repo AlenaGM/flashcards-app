@@ -5,7 +5,7 @@ import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
 
 
-import './app.scss';
+import './App.scss';
 
 
 function App() {
