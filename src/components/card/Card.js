@@ -3,10 +3,10 @@ import '../../styles/button.scss';
 
 const Card = (props) => {
 
-    const [pressed, setPressed] = useState(false)
+    const [pressed, setPressed] = useState(false);
 
     const handleClick = () => {
-            setPressed(!pressed)
+            setPressed(!pressed);
     }
 
         return (
@@ -16,7 +16,7 @@ const Card = (props) => {
                 <div onClick = {handleClick}>
                     {pressed ?
                         <div className="card_translation">{props.russian}</div> :
-                        <button className="button">Проверить</button>}
+                        <button className="button" onClick = {props.onCheck}>Проверить</button>}
                 </div>
             </div>
         )
