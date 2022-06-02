@@ -24,9 +24,10 @@ const AppGame = ({words}) => {
         }
     };
 
-    const addLearned = () => {
+    const addLearned = (id) => {
         setWordsLearned(wordsLearned + 1);
     }
+
 
     const cards = words.map((word) => {
         const {id, ...wordProps} = word;

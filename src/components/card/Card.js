@@ -4,10 +4,14 @@ import '../../styles/button.scss';
 const Card = (props) => {
 
     const [pressed, setPressed] = useState(false);
+    const [wordsShown, setWordsShown] = useState(false);
 
     const handleClick = () => {
             setPressed(!pressed);
+            setWordsShown(true);
     }
+
+    console.log(wordsShown);
 
         return (
             <div className="game__card card">
