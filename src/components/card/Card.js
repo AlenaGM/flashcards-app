@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '../../styles/button.scss';
 
 const Card = (props) => {
 
     const [pressed, setPressed] = useState(false);
-    const [wordsShown, setWordsShown] = useState(false);
+    const btnRef = useRef();
+
+    useEffect(()=>{
+        btnRef.current.focus();
+    }, []);
 
     const handleClick = () => {
             setPressed(!pressed);
-            setWordsShown(true);
+            props.addLearned(props.id);
     }
-
-    console.log(wordsShown);
 
         return (
             <div className="game__card card">
@@ -20,7 +22,7 @@ const Card = (props) => {
                 <div onClick = {handleClick}>
                     {pressed ?
                         <div className="card_translation">{props.russian}</div> :
-                        <button className="button" onClick = {props.onCheck}>Проверить</button>}
+                        <button className="button" ref={btnRef} onClick = {props.onCheck}>Проверить</button>}
                 </div>
             </div>
         )

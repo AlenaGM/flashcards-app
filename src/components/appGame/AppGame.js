@@ -6,7 +6,8 @@ import './appGame.scss';
 const AppGame = ({words}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
-    const [wordsLearned, setWordsLearned] = useState(0);
+    const [learnedNumber, setLearnedNumber] = useState(0);
+    const [wordsLearned, setWordsLearned] = useState([]);
 
     const nextSlide = () => {
         if (slideIndex !== words.length) {
@@ -25,7 +26,17 @@ const AppGame = ({words}) => {
     };
 
     const addLearned = (id) => {
-        setWordsLearned(wordsLearned + 1);
+        //setWordsLearned(wordsLearned + 1);
+        const array = [...wordsLearned];
+        array.push(id);
+        let result = [];
+        for (let str of array) {
+            if (!result.includes(str)) {
+            result.push(str);
+            }
+        }
+        setWordsLearned(result);
+        setLearnedNumber(result.length);
     }
 
 
@@ -34,8 +45,9 @@ const AppGame = ({words}) => {
         return (
                 <Card
                     key={id}
+                    id={id}
                     {...wordProps}
-                    onCheck={addLearned}
+                    addLearned={addLearned}
                     />
         )
     })
@@ -44,7 +56,7 @@ const AppGame = ({words}) => {
         <div className="app__game game">
             <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
             <div>{cards[slideIndex-1]}
-                <div className="game_counter">Вы выучили {wordsLearned}/{words.length} слов</div>
+                <div className="game_counter">Вы выучили {learnedNumber}/{words.length} слов</div>
             </div>
             <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
         </div>
