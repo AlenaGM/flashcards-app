@@ -38,6 +38,21 @@ const AppGame = ({words}) => {
         setLearnedNumber(result.length);
     }
 
+    function declOfNum(n, text_arr) {
+        n = Math.abs(n) % 100
+        var n1 = n % 10
+        if (n > 10 && n < 20) {
+            return text_arr[2]
+        }
+        if (n1 > 1 && n1 < 5) {
+            return text_arr[1]
+        }
+        if (n1 === 1) {
+            return text_arr[0]
+        }
+        return text_arr[2]
+    }
+
 
     const cards = words.map((word) => {
         const {id, ...wordProps} = word;
@@ -55,7 +70,7 @@ const AppGame = ({words}) => {
         <div className="app__game game">
             <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
             <div>{cards[slideIndex-1]}
-                <div className="game_counter">Вы выучили {learnedNumber}/{words.length} слов</div>
+                <div className="game_counter">Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}</div>
             </div>
             <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
         </div>
