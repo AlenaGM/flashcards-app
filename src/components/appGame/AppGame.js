@@ -6,8 +6,8 @@ import './appGame.scss';
 const AppGame = ({words}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
-    const [learnedNumber, setLearnedNumber] = useState(0);
     const [wordsLearned, setWordsLearned] = useState([]);
+    const [learnedNumber, setLearnedNumber] = useState(0);
 
     const nextSlide = () => {
         if (slideIndex !== words.length) {
@@ -26,13 +26,12 @@ const AppGame = ({words}) => {
     };
 
     const addLearned = (id) => {
-        //setWordsLearned(wordsLearned + 1);
-        const array = [...wordsLearned];
-        array.push(id);
+        const checkedWords = [...wordsLearned];
+        checkedWords.push(id);
         let result = [];
-        for (let str of array) {
-            if (!result.includes(str)) {
-            result.push(str);
+        for (let newCheck of checkedWords) {
+            if (!result.includes(newCheck)) {
+            result.push(newCheck);
             }
         }
         setWordsLearned(result);
