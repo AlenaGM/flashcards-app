@@ -3,11 +3,6 @@ import {useState} from "react";
 const Row = (props) => {
 
   const [state, setState] = useState(props);
-  //const [id, setId] = useState(props.id);
-  //const [english, setEnglish] = useState(props.english);
-  //const [transcription, setTranscription] = useState(props.transcription);
-  //const [russian, setRussian] = useState(props.russian);
-  //const [tags, setTags] = useState(props.tags);
   const [isEdit, setEdit] = useState(false);
 
   const onEdit = () => {
@@ -43,15 +38,18 @@ const Row = (props) => {
     classNames += ' row_edit';
   }
 
+  const {id, english, transcription, russian, tags} = state;
+
   return (
+
     <tr className={classNames}>
       {isEdit ?
         <>
-          <td><input type="text" className="input_edit" data-name={"id"} defaultValue={state.id} onChange={handleChange}/></td>
-          <td><input type="text" className="input_edit" data-name={"english"} defaultValue={state.english} onChange={handleChange}/></td>
-          <td><input type="text" className="input_edit" data-name={"transcription"} defaultValue={state.transcription} onChange={handleChange}/></td>
-          <td><input type="text" className="input_edit" data-name={"russian"} defaultValue={state.russian} onChange={handleChange}/></td>
-          <td><input type="text" className="input_edit" data-name={"tags"} defaultValue={state.tags} onChange={handleChange}/></td>
+          <td><input type="text" className="input_edit" data-name={"id"} defaultValue={id} onChange={handleChange}/></td>
+          <td><input type="text" className="input_edit" data-name={"english"} defaultValue={english} onChange={handleChange}/></td>
+          <td><input type="text" className="input_edit" data-name={"transcription"} defaultValue={transcription} onChange={handleChange}/></td>
+          <td><input type="text" className="input_edit" data-name={"russian"} defaultValue={russian} onChange={handleChange}/></td>
+          <td><input type="text" className="input_edit" data-name={"tags"} defaultValue={tags} onChange={handleChange}/></td>
           <td>
               <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
@@ -59,11 +57,11 @@ const Row = (props) => {
         </>
         :
         <>
-          <td>{state.id}</td>
-          <td>{state.english}</td>
-          <td>{state.transcription}</td>
-          <td>{state.russian}</td>
-          <td>{state.tags}</td>
+          <td>{id}</td>
+          <td>{english}</td>
+          <td>{transcription}</td>
+          <td>{russian}</td>
+          <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {props.onDelete}></i>
