@@ -18,46 +18,27 @@ const Row = (props) => {
     });
   };
 
-  const checkValidation = () => {
-    const newErrors = Object.keys(state).reduce((errorsList, item) => {
-      // eslint-disable-next-line default-case
-      switch (item) {
-        case 'id':
-        case 'english':
-        case 'transcription':
-        case 'russian':
-        case 'tags':
-          errorsList = {
-            ...errorsList,
-            [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
-          };
-      }
-      return errorsList;
-    }, {});
-    setErrors(newErrors);
-  };
-
-
-//  state.english === "" && console.log (`error English`);
-//  state.transcription === "" && console.log (`error Transcription`);
-//  state.russian === "" && console.log (`error Russian`);
-//  state.tags === "" && console.log (`error Tags`);
-
+//  const checkValidation = () => {
+//    const newErrors = Object.keys(state).reduce((errorsList, item) => {
+//      // eslint-disable-next-line default-case
+//      switch (item) {
+//        case 'id':
+//        case 'english':
+//        case 'transcription':
+//        case 'russian':
+//        case 'tags':
+//          errorsList = {
+//            ...errorsList,
+//            [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
+//          };
+//      }
+//      return errorsList;
+//    }, {});
+//    setErrors(newErrors);
+//  };
 
   const onSave = (e) => {
-    checkValidation();
-
-    if(!errors.english && !errors.transcription && !errors.russian && !errors.tags) {
-      setEdit(!isEdit);
-      console.log(`
-        id: ${state.id},
-        english: ${state.english},
-        transcription: ${state.transcription},
-        russian: ${state.russian},
-        collection: ${state.tags}`);
-    } else {
-      console.log(errors.english, errors.transcription, errors.russian, errors.tags);
-    }
+    setEdit(!isEdit);
   };
 
   const onCancel = () => {
@@ -87,46 +68,38 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={errors.english ? inputClassNames + ' input_error' : inputClassNames}
+              className={english==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
-              <label>
-                {errors.english}
-              </label>
+            {english==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={errors.transcription ? inputClassNames + ' input_error' : inputClassNames}
+              className={transcription==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
-              <label>
-                {errors.transcription}
-              </label>
+            {transcription==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={errors.russian ? inputClassNames + ' input_error' : inputClassNames}
+              className={russian==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
-              <label>
-                {errors.russian}
-              </label>
+            {russian==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={errors.tags ? inputClassNames + ' input_error' : inputClassNames}
+              className={tags==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
-            <label>
-              {errors.tags}
-            </label>
+            {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
               <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
