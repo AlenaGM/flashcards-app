@@ -52,7 +52,6 @@
     &__row {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         text-align: left;
         border-bottom: 1px solid $row-border;
         padding: 14px;
@@ -99,7 +98,6 @@
     width:100%;
     border: solid 1px $table-border;
     padding: 8px 5px;
-    margin-bottom: 8px;
 }
 
 .input_error {

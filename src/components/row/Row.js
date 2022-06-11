@@ -11,15 +11,11 @@ const Row = (props) => {
   }
 
   const handleChange = (e) => {
+    e.stopPropagation();
     setState({
       ...state,
       [e.target.dataset.name]: e.target.value,
     });
-  };
-
-  const onSave = (e) => {
-    checkValidation();
-    setEdit(!isEdit);
   };
 
   const checkValidation = () => {
@@ -35,12 +31,16 @@ const Row = (props) => {
             ...errorsList,
             [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
           };
-          break;
       }
       return errorsList;
     }, {});
 
     setErrors(newErrors);
+  };
+
+  const onSave = (e) => {
+    checkValidation();
+    setEdit(!isEdit);
   };
 
   const onCancel = () => {
@@ -75,7 +75,7 @@ const Row = (props) => {
               defaultValue={english}
               onChange={handleChange}/>
               <label>
-                Пустое поле!!
+                {errors.english}
               </label>
           </td>
           <td>
@@ -86,7 +86,7 @@ const Row = (props) => {
               defaultValue={transcription}
               onChange={handleChange}/>
               <label>
-                Пустое поле!!
+                {errors.transcription}
               </label>
           </td>
           <td>
@@ -97,7 +97,7 @@ const Row = (props) => {
               defaultValue={russian}
               onChange={handleChange}/>
               <label>
-                Пустое поле!!
+                {errors.russian}
               </label>
           </td>
           <td>
@@ -108,11 +108,11 @@ const Row = (props) => {
               defaultValue={tags}
               onChange={handleChange}/>
             <label>
-              Пустое поле!!
+              {errors.tags}
             </label>
           </td>
           <td>
-              <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
+              <i className="fas fa-check icon icon__save" onClick={onSave} disabled> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
           </td>
         </>
