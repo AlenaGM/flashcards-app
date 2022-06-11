@@ -5,6 +5,8 @@ const Row = (props) => {
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
 
+  const {id, english, transcription, russian, tags} = state;
+
   const onEdit = () => {
     setEdit(!isEdit);
   }
@@ -45,7 +47,9 @@ const Row = (props) => {
     classNames += ' row_edit';
   }
 
-  const {id, english, transcription, russian, tags} = state;
+  if(english ===''|| transcription==='' || russian==='' || tags===''){
+    saveIconClassNames += ' icon__disabled';
+  }
 
   return (
     <tr className={classNames}>
@@ -91,7 +95,7 @@ const Row = (props) => {
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
-              <i className={english ===''|| transcription==='' || russian==='' || tags==='' ? saveIconClassNames + ' icon__disabled' : saveIconClassNames} onClick={onSave}> </i>
+              <i className={saveIconClassNames} onClick={onSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
           </td>
         </>
