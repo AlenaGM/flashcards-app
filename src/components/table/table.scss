@@ -82,6 +82,9 @@
                 display: inline-flex;
                 justify-content: space-evenly;
             }
+            label {
+                color: $error;
+            }
         }
     }
 }
@@ -96,5 +99,9 @@
     width:100%;
     border: solid 1px $table-border;
     padding: 8px 5px;
+    margin-bottom: 8px;
 }
 
+.input_error {
+    border: solid 1px $error;
+}
