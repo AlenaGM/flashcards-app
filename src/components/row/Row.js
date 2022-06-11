@@ -4,7 +4,6 @@ const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-//  const [errors, setErrors] = useState({});
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -17,24 +16,6 @@ const Row = (props) => {
       [e.target.dataset.name]: e.target.value,
     });
   };
-
-//  const checkValidation = () => {
-//    const newErrors = Object.keys(state).reduce((errorsList, item) => {
-//      switch (item) {
-//        case 'id':
-//        case 'english':
-//        case 'transcription':
-//        case 'russian':
-//        case 'tags':
-//          errorsList = {
-//            ...errorsList,
-//            [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
-//          };
-//      }
-//      return errorsList;
-//    }, {});
-//    setErrors(newErrors);
-//  };
 
   const onSave = (e) => {
     if (english.length < 1 || transcription.length < 1 || russian.length < 1 || tags.length < 1 ) return;
@@ -66,7 +47,6 @@ const Row = (props) => {
   const {id, english, transcription, russian, tags} = state;
 
   return (
-
     <tr className={classNames}>
       {isEdit ?
         <>
@@ -132,3 +112,22 @@ const Row = (props) => {
 }
 
 export default Row;
+
+//  const [errors, setErrors] = useState({});
+//  const checkValidation = () => {
+//    const newErrors = Object.keys(state).reduce((errorsList, item) => {
+//      switch (item) {
+//        case 'id':
+//        case 'english':
+//        case 'transcription':
+//        case 'russian':
+//        case 'tags':
+//          errorsList = {
+//            ...errorsList,
+//            [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
+//          };
+//      }
+//      return errorsList;
+//    }, {});
+//    setErrors(newErrors);
+//  };
