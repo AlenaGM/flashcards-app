@@ -71,6 +71,17 @@
             color: $text-color;
         }
     }
+    &__disabled {
+        color:$text-second;
+        &:hover {
+            color: $text-second;
+            transform: none;
+            cursor: not-allowed;
+        }
+        &:active {
+            top: 0;
+        }
+    }
 }
 
 

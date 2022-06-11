@@ -39,6 +39,7 @@ const Row = (props) => {
 
   let classNames ='table__row';
   let inputClassNames ='input_edit';
+  let saveIconClassNames = 'fas fa-check icon icon__save';
 
   if(isEdit){
     classNames += ' row_edit';
@@ -90,7 +91,7 @@ const Row = (props) => {
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
-              <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
+              <i className={english ===''|| transcription==='' || russian==='' || tags==='' ? saveIconClassNames + ' icon__disabled' : saveIconClassNames} onClick={onSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
           </td>
         </>
