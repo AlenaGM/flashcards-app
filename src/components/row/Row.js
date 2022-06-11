@@ -4,7 +4,7 @@ const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-  const [errors, setErrors] = useState({});
+//  const [errors, setErrors] = useState({});
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -20,7 +20,6 @@ const Row = (props) => {
 
 //  const checkValidation = () => {
 //    const newErrors = Object.keys(state).reduce((errorsList, item) => {
-//      // eslint-disable-next-line default-case
 //      switch (item) {
 //        case 'id':
 //        case 'english':
@@ -38,7 +37,16 @@ const Row = (props) => {
 //  };
 
   const onSave = (e) => {
+    if (english.length < 1 || transcription.length < 1 || russian.length < 1 || tags.length < 1 ) return;
+
     setEdit(!isEdit);
+
+    console.log(`
+    id: ${state.id},
+    english: ${state.english},
+    transcription: ${state.transcription},
+    russian: ${state.russian},
+    collection: ${state.tags}`);
   };
 
   const onCancel = () => {
