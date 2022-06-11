@@ -15,12 +15,12 @@ const Row = (props) => {
     e.stopPropagation();
     setState({
       ...state,
-      [e.target.dataset.name]: e.target.value,
+      [e.target.dataset.name]: e.target.value.trim(),
     });
   };
 
   const onSave = (e) => {
-    if (english.length < 1 || transcription.length < 1 || russian.length < 1 || tags.length < 1 ) return;
+    if (english ===''|| transcription==='' || russian==='' || tags==='') return;
 
     setEdit(!isEdit);
 
