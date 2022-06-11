@@ -31,12 +31,18 @@ const Row = (props) => {
             ...errorsList,
             [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
           };
-        break;
       }
       return errorsList;
     }, {});
     setErrors(newErrors);
   };
+
+
+//  state.english === "" && console.log (`error English`);
+//  state.transcription === "" && console.log (`error Transcription`);
+//  state.russian === "" && console.log (`error Russian`);
+//  state.tags === "" && console.log (`error Tags`);
+
 
   const onSave = (e) => {
     checkValidation();
@@ -81,7 +87,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={inputClassNames}
+              className={errors.english ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
@@ -92,7 +98,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={inputClassNames}
+              className={errors.transcription ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
@@ -103,7 +109,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={inputClassNames}
+              className={errors.russian ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
@@ -114,7 +120,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={inputClassNames}
+              className={errors.tags ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
@@ -123,7 +129,7 @@ const Row = (props) => {
             </label>
           </td>
           <td>
-              <i className="fas fa-check icon icon__save" onClick={onSave} disabled> </i>
+              <i className="fas fa-check icon icon__save" onClick={onSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
           </td>
         </>
