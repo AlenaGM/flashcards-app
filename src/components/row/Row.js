@@ -31,16 +31,27 @@ const Row = (props) => {
             ...errorsList,
             [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
           };
+        break;
       }
       return errorsList;
     }, {});
-
     setErrors(newErrors);
   };
 
   const onSave = (e) => {
     checkValidation();
-    setEdit(!isEdit);
+
+    if(!errors.english && !errors.transcription && !errors.russian && !errors.tags) {
+      setEdit(!isEdit);
+      console.log(`
+        id: ${state.id},
+        english: ${state.english},
+        transcription: ${state.transcription},
+        russian: ${state.russian},
+        collection: ${state.tags}`);
+    } else {
+      console.log(errors.english, errors.transcription, errors.russian, errors.tags);
+    }
   };
 
   const onCancel = () => {
