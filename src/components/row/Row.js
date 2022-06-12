@@ -15,7 +15,7 @@ const Row = (props) => {
     e.stopPropagation();
     setState({
       ...state,
-      [e.target.dataset.name]: e.target.value.trim(),
+      [e.target.dataset.name]: e.target.value.trim().toLowerCase(),
     });
   };
 
