@@ -1,10 +1,9 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-//import { useState } from "react";
 
 import {HomePage, GamePage, Page404} from '../pages';
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
-//import WordsContext from "../../context/wordsContext";
+
 import { WordsContextProvider } from '../../context/WordsContext';
 
 import './App.scss';
