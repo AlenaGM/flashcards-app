@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-const WordsContext = React.createContext();
+import { createContext } from 'react';
 
-function WordsContextProvider(props) {
+const WordsContext = createContext({
+        "id": "111",
+        "english": "butterflyTEST",
+        "transcription": "[ ˈkærət ]",
+        "russian": "морковь",
+        "tags": "овощи"
+});
 
-}
-
-export { WordsContextProvider, WordsContext };
+export default WordsContext;

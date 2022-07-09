@@ -1,8 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
+import {useState, useRef, useEffect, useContext} from "react";
+import WordsContext from "../../context/wordsContext";
 import '../../styles/button.scss';
 
-const Card = (props) => {
 
+const Card = (props) => {
+    const context = useContext(WordsContext);
     const [pressed, setPressed] = useState(false);
     const btnRef = useRef();
 
@@ -17,11 +19,11 @@ const Card = (props) => {
 
     return (
         <div className="game__card card">
-            <div>{props.english}</div>
-            <div>{props.transcription}</div>
+            <div>{context.english}</div>
+            <div>{context.transcription}</div>
             <div onClick = {handleClick}>
                 {pressed ?
-                    <div className="card_translation">{props.russian}</div> :
+                    <div className="card_translation">{context.russian}</div> :
                     <button className="button" ref={btnRef}>Проверить</button>}
             </div>
         </div>
