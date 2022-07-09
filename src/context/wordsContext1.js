@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-const WordsContext = React.createContext();
+import { useState, useEffect, createContext } from 'react';
+
+const WordsContext = createContext();
 
 function WordsContextProvider(props) {
   const [words, setWords] = useState([]);
