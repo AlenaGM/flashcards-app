@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Card from '../card/Card';
+import { WordsContext } from '../../context/wordsContext';
 import './appGame.scss';
 
 
-const AppGame = ({words}) => {
+const AppGame = () => {
+
+    const {words, editWords, deleteWords} = useContext (WordsContext);
+    console.log(words);
 
     const [slideIndex, setSlideIndex] = useState(1);
     const [wordsLearned, setWordsLearned] = useState([]);
