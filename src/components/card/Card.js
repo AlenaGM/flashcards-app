@@ -1,6 +1,6 @@
 import {useState, useRef, useEffect, useContext} from "react";
 //import WordsContext from "../../context/wordsContext";
-import { WordsContext } from "../../context/wordsContext1";
+import { WordsContext } from "../../context/wordsContext";
 import '../../styles/button.scss';
 
 
