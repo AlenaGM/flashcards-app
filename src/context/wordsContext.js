@@ -57,4 +57,4 @@ function WordsContextProvider(props) {
     );
 }
 
-export { WordsContextProvider, WordsContext };
+export {WordsContextProvider, WordsContext} ;

@@ -5,19 +5,11 @@ import {HomePage, GamePage, Page404} from '../pages';
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
 //import WordsContext from "../../context/wordsContext";
-import { WordsContextProvider } from '../../context/wordsContext';
+import { WordsContextProvider } from '../../context/WordsContext';
 
 import './App.scss';
 
 function App() {
-
-//    const [words, setWords] = useState ({
-//        "id": "111",
-//        "english": "catTEST",
-//        "transcription": "[ ˈkærət ]",
-//        "russian": "морковь",
-//        "tags": "овощи"
-//    })
 
     return (
         <WordsContextProvider>
