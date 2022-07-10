@@ -1,9 +1,11 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
+import { WordsContext } from "../../context/wordsContext";
 
 const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
+  const { editWords } = useContext(WordsContext);
 
   const {id, english, transcription, russian, tags} = state;
 
@@ -24,12 +26,7 @@ const Row = (props) => {
 
     setEdit(!isEdit);
 
-    console.log(`
-    id: ${state.id},
-    english: ${state.english},
-    transcription: ${state.transcription},
-    russian: ${state.russian},
-    collection: ${state.tags}`);
+    editWords(state);
   };
 
   const onCancel = () => {
@@ -38,6 +35,10 @@ const Row = (props) => {
       ...props,
     });
   }
+
+  const onDelete = () => {
+    props.onDelete(props.id);
+  };
 
   let classNames ='table__row';
   let inputClassNames ='input_edit';
@@ -108,7 +109,7 @@ const Row = (props) => {
           <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {props.onDelete}></i>
+              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
           </td>
         </>
       }
@@ -117,22 +118,3 @@ const Row = (props) => {
 }
 
 export default Row;
-
-//  const [errors, setErrors] = useState({});
-//  const checkValidation = () => {
-//    const newErrors = Object.keys(state).reduce((errorsList, item) => {
-//      switch (item) {
-//        case 'id':
-//        case 'english':
-//        case 'transcription':
-//        case 'russian':
-//        case 'tags':
-//          errorsList = {
-//            ...errorsList,
-//            [item]: state[item].trim().length > 0 ? undefined : 'Пустое поле',
-//          };
-//      }
-//      return errorsList;
-//    }, {});
-//    setErrors(newErrors);
-//  };

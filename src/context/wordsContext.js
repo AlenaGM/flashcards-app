@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 
-const WordsContext = createContext();
+export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
     const [words, setWords] = useState([]);
@@ -13,7 +13,7 @@ function WordsContextProvider(props) {
 
     const getWords = () => {
       setLoading(true);
-      fetch('itgirlschool/api/words')
+      fetch('https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words')
         .then((response) => response.json())
         .then((response) => {
           setWords(response);
@@ -25,7 +25,7 @@ function WordsContextProvider(props) {
     };
 
     const editWords = (word) => {
-      fetch(`itgirlschool/api/words/${word.id}/update`, {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`, {
         method: 'POST', // или 'PUT'
         body: JSON.stringify(word), // данные могут быть 'строкой' или {объектом}!
       })
@@ -35,8 +35,8 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
-    const deleteWords = (word) => {
-      fetch(`itgirlschool/api/words/${word.id}/delete`, {
+    const deleteWords = (id) => {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
         method: 'POST', // или 'PUT'
       })
         .then(() => {
@@ -45,7 +45,6 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
-
     return (
     <WordsContext.Provider value={{words, loading, error, editWords, deleteWords}}>
         {props.children}
@@ -53,5 +52,5 @@ function WordsContextProvider(props) {
     );
 }
 
-export {WordsContextProvider, WordsContext} ;
+export default WordsContextProvider;
 

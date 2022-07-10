@@ -1,19 +1,32 @@
+import {useState, useEffect, useContext} from "react";
 import Row from '../row/Row';
+import { WordsContext } from "../../context/wordsContext";
 import './table.scss';
 
-const Table = ({words, onDelete}) => {
+const Table = () => {
 
-    const elements = words.map(word => {
-    const {id, ...wordProps} = word;
+    const { words, deleteWords } = useContext(WordsContext);
+    const [wordCollection, setwordCollection] = useState(words);
 
-    return (
-        <Row
-            key={id}
-            id={id}
-            {...wordProps}
-            onDelete={()=> onDelete(id)}/>
-        )
-    })
+    useEffect(() => {
+        setwordCollection(words);
+        }, [words]);
+
+        const onDelete = (id) => {
+        deleteWords(id);
+    };
+
+    //const elements = words.map(word => {
+    //const {id, ...wordProps} = word;
+
+    //return (
+    //    <Row
+    //        key={id}
+    //        id={id}
+    //        {...wordProps}
+    //        />
+    //    )
+    //})
 
     return (
         <table className="app__table table">
@@ -28,7 +41,9 @@ const Table = ({words, onDelete}) => {
                 </tr>
             </thead>
             <tbody>
-                {elements}
+                {wordCollection.map((word, index) => (
+                    <Row index={index} key={word.id} {...word} onDelete={onDelete}></Row>
+                    ))}
             </tbody>
             <tfoot>
                 <tr className="table__row">

@@ -13,10 +13,6 @@ const HomePage = () => {
     const [words, setWords] = useState(WordsContext);
     const context = useContext(WordsContext).words;
 
-    const deleteItem = (id) => {
-        setWords(words.filter(word => word.id !== id));
-    }
-
     const addItem = (english, transcription, russian, tags, id) => {
 
         const newWord = {
@@ -31,17 +27,12 @@ const HomePage = () => {
         setWords(newArr);
     }
 
-    const saveItem = (id) => {
-        console.log(`save me! ${id}`)
-    }
-
 
     return (
         <div className="app__home">
             <Table
                 words={context}
-                onDelete={deleteItem}
-                onSave={saveItem}/>
+                />
             <AddForm onAdd={addItem}/>
         </div>
     )
