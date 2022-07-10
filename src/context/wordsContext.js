@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 
-const WordsContext = React.createContext();
+const WordsContext = createContext();
 
 function WordsContextProvider(props) {
     const [words, setWords] = useState([]);
@@ -32,6 +32,9 @@ function WordsContextProvider(props) {
         {props.children}
     </WordsContext.Provider>
     );
+
+
 }
 
 export {WordsContextProvider, WordsContext} ;
+
