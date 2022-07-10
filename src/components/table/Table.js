@@ -6,27 +6,22 @@ import './table.scss';
 const Table = () => {
 
     const { words, deleteWords } = useContext(WordsContext);
-    const [wordCollection, setwordCollection] = useState(words);
+    const [wordList, setWordList] = useState(words);
 
     useEffect(() => {
-        setwordCollection(words);
+        setWordList(words);
         }, [words]);
 
         const onDelete = (id) => {
         deleteWords(id);
     };
 
-    //const elements = words.map(word => {
-    //const {id, ...wordProps} = word;
-
-    //return (
-    //    <Row
-    //        key={id}
-    //        id={id}
-    //        {...wordProps}
-    //        />
-    //    )
-    //})
+    const elements = wordList.map(word => (
+        <Row
+            key={word.id}
+            {...word}
+            onDelete={onDelete}/>
+        ))
 
     return (
         <table className="app__table table">
@@ -41,9 +36,7 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                {wordCollection.map((word, index) => (
-                    <Row index={index} key={word.id} {...word} onDelete={onDelete}></Row>
-                    ))}
+                {elements}
             </tbody>
             <tfoot>
                 <tr className="table__row">

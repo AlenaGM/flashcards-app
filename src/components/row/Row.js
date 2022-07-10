@@ -23,9 +23,7 @@ const Row = (props) => {
 
   const onSave = (e) => {
     if (english ===''|| transcription==='' || russian==='' || tags==='') return;
-
     setEdit(!isEdit);
-
     editWords(state);
   };
 
