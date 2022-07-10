@@ -18,7 +18,7 @@ function WordsContextProvider(props) {
         .then((response) => response.json())
         .then((response) => {
           console.log(response);
-          setWords(response.results);
+          setWords(response);
         })
         .catch((errors) => console.log(errors))
         .finally(() => {
