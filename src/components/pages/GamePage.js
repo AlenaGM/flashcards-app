@@ -1,6 +1,6 @@
 import AppGame from '../appGame/AppGame';
 //import wordsList from '../../resources/data/words.json';
-import { WordsContext } from '../../context/WordsContext';
+import { WordsContext } from '../../context/wordsContext';
 import { useContext } from 'react';
 import '../App/App.scss';
 
