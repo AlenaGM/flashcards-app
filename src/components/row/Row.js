@@ -1,10 +1,6 @@
-import {useState, useContext} from "react";
-//import WordsContext from "../../context/wordsContext";
-import { WordsContext } from "../../context/WordsContext";
+import {useState} from "react";
 
 const Row = (props) => {
-
-  const context = useContext(WordsContext);
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
@@ -67,7 +63,7 @@ const Row = (props) => {
               type="text"
               className={english==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"english"}
-              defaultValue={props.english}
+              defaultValue={english}
               onChange={handleChange}/>
             {english==="" && <label>Поле не заполнено</label>}
           </td>
@@ -76,7 +72,7 @@ const Row = (props) => {
               type="text"
               className={transcription==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"transcription"}
-              defaultValue={props.transcription}
+              defaultValue={transcription}
               onChange={handleChange}/>
             {transcription==="" && <label>Поле не заполнено</label>}
           </td>
@@ -85,7 +81,7 @@ const Row = (props) => {
               type="text"
               className={russian==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"russian"}
-              defaultValue={props.russian}
+              defaultValue={russian}
               onChange={handleChange}/>
             {russian==="" && <label>Поле не заполнено</label>}
           </td>
@@ -94,7 +90,7 @@ const Row = (props) => {
               type="text"
               className={tags==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"tags"}
-              defaultValue={props.tags}
+              defaultValue={tags}
               onChange={handleChange}/>
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
@@ -105,11 +101,11 @@ const Row = (props) => {
         </>
         :
         <>
-          <td>{props.id}</td>
-          <td>{props.english}</td>
-          <td>{props.transcription}</td>
-          <td>{props.russian}</td>
-          <td>{props.tags}</td>
+          <td>{id}</td>
+          <td>{english}</td>
+          <td>{transcription}</td>
+          <td>{russian}</td>
+          <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {props.onDelete}></i>
