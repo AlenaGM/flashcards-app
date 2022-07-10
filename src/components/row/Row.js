@@ -67,7 +67,7 @@ const Row = (props) => {
               type="text"
               className={english==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"english"}
-              defaultValue={context.english}
+              defaultValue={props.english}
               onChange={handleChange}/>
             {english==="" && <label>Поле не заполнено</label>}
           </td>
@@ -76,7 +76,7 @@ const Row = (props) => {
               type="text"
               className={transcription==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"transcription"}
-              defaultValue={context.transcription}
+              defaultValue={props.transcription}
               onChange={handleChange}/>
             {transcription==="" && <label>Поле не заполнено</label>}
           </td>
@@ -85,7 +85,7 @@ const Row = (props) => {
               type="text"
               className={russian==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"russian"}
-              defaultValue={context.russian}
+              defaultValue={props.russian}
               onChange={handleChange}/>
             {russian==="" && <label>Поле не заполнено</label>}
           </td>
@@ -94,7 +94,7 @@ const Row = (props) => {
               type="text"
               className={tags==="" ? inputClassNames + ' input_error' : inputClassNames}
               data-name={"tags"}
-              defaultValue={context.tags}
+              defaultValue={props.tags}
               onChange={handleChange}/>
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
@@ -105,11 +105,11 @@ const Row = (props) => {
         </>
         :
         <>
-          <td>{context.id}</td>
-          <td>{context.english}</td>
-          <td>{context.transcription}</td>
-          <td>{context.russian}</td>
-          <td>{context.tags}</td>
+          <td>{props.id}</td>
+          <td>{props.english}</td>
+          <td>{props.transcription}</td>
+          <td>{props.russian}</td>
+          <td>{props.tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {props.onDelete}></i>
