@@ -1,11 +1,16 @@
 import AppGame from '../appGame/AppGame';
-import words from '../../resources/data/words.json';
+//import wordsList from '../../resources/data/words.json';
+import { WordsContext } from '../../context/WordsContext';
+import { useContext } from 'react';
 import '../App/App.scss';
+
 
 const GamePage = () => {
 
+    const context = useContext(WordsContext).words;
+
     return (
-        <AppGame words={words}/>
+        <AppGame words={context}/>
     )
 }
 

@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 
 import Table from '../table/Table';
 import AddForm from '../addForm/AddForm';
-import library from '../../resources/data/words.json';
+//import library from '../../resources/data/words.json';
 import { WordsContext } from '../../context/WordsContext';
 
 import '../App/App.scss';
