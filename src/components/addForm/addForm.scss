@@ -14,7 +14,7 @@
     text-align: left;
 
     background-color: $table-bg;
-    padding: 12px 14px 0px 14px;
+    padding: 12px 14px 12px 14px;
 
     border-bottom: 1px solid $row-border;
     border-radius: 6px;
@@ -30,7 +30,6 @@
         border: solid 1px $table-border;
         padding: 8px 5px;
         margin-right: 5px;
-        margin-bottom: 12px;
     }
     div {
         width: 8%;
@@ -39,6 +38,13 @@
         font-size: larger;
         display: inline-flex;
         justify-content: space-evenly;
-        margin-bottom: 12px;
+    }
+}
+
+.label {
+    display:none;
+    &_visible {
+        display: block;
+        color: $error;
     }
 }

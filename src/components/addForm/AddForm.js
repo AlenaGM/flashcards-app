@@ -49,9 +49,11 @@ const AddForm = () => {
     }
 
     let addIconClassNames = 'fas fa-plus icon icon__save';
+    let labelClassNames = 'label';
 
     if(english ===''|| transcription==='' || russian==='' || tags===''){
         addIconClassNames += ' icon__disabled';
+        labelClassNames += '_visible';
     }
 
     return(
@@ -90,6 +92,7 @@ const AddForm = () => {
             <div>
                 <i className={addIconClassNames} onClick = {onSubmit}></i>
             </div>
+            <label className={labelClassNames}>* Для того, чтобы добавить слово, заполните все поля</label>
         </form>
     )
 }
