@@ -54,7 +54,7 @@ function WordsContextProvider(props) {
           getWords();
         })
         .catch((errors) => setError(errors));
-        console.log('добавили слово');
+        console.log(`добавили слово`);
     };
 
 

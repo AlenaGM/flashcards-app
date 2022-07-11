@@ -36,6 +36,7 @@ const AddForm = () => {
             russian,
             tags
         }
+
         addWords(newWord);
     }
 
