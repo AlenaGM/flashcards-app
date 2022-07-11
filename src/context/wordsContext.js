@@ -27,7 +27,7 @@ function WordsContextProvider(props) {
     const editWords = (word) => {
       fetch(`itgirlschool/api/words/${word.id}/update`, {
         method: 'POST',
-        body: JSON.stringify(word), // данные могут быть 'строкой' или {объектом}!
+        body: JSON.stringify(word),
       })
         .then(() => {
           getWords();
@@ -48,13 +48,12 @@ function WordsContextProvider(props) {
     const addWords = (word) => {
       fetch(`itgirlschool/api/words/add`, {
         method: 'POST',
-        body: JSON.stringify(word), // данные могут быть 'строкой' или {объектом}!
+        body: JSON.stringify(word),
       })
         .then(() => {
           getWords();
         })
         .catch((errors) => setError(errors));
-        console.log(`добавили слово`);
     };
 
 
