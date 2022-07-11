@@ -1,9 +1,10 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import {HomePage, GamePage, Page404} from '../pages';
+
+import WordsContextProvider from '../../context/wordsContext';
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
-import WordsContextProvider from '../../context/wordsContext';
 
 import './App.scss';
 

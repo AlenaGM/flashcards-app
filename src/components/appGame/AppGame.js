@@ -57,12 +57,11 @@ const AppGame = ({words}) => {
     const cards = words.map((word) => {
         const {id, ...wordProps} = word;
         return (
-                <Card
-                    key={id}
-                    id={id}
-                    {...wordProps}
-                    addLearned={addLearned}
-                    />
+            <Card
+                key={id}
+                id={id}
+                {...wordProps}
+                addLearned={addLearned}/>
         )
     })
 
@@ -70,7 +69,9 @@ const AppGame = ({words}) => {
         <div className="app__game game">
             <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
             <div>{cards[slideIndex-1]}
-                <div className="game_counter">Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}</div>
+                <div className="game_counter">
+                    Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}
+                </div>
             </div>
             <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
         </div>
