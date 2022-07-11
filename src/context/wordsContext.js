@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
-import Spinner from '../components/spinner/Spinner';
+import Spinner from '../components/loader/Spinner';
 
 
 export const WordsContext = createContext();
@@ -22,8 +22,8 @@ function WordsContextProvider(props) {
         })
         .catch((errors) => setError(errors))
         .finally(() => {
-          setLoading(false);
-          //setLoading(true);
+          //setLoading(false);
+          setLoading(true);
         });
     };
 
