@@ -1,16 +1,21 @@
 import AppGame from '../appGame/AppGame';
-//import wordsList from '../../resources/data/words.json';
 import { WordsContext } from '../../context/wordsContext';
 import { useContext } from 'react';
+import Spinner from '../spinner/Spinner';
 import '../App/App.scss';
 
 
 const GamePage = () => {
 
-    const context = useContext(WordsContext).words;
+    const {loading, words} = useContext(WordsContext);
+    const spinner = loading ? <Spinner/> : null;
+    const content = !(loading) ? <AppGame words={words}/> : null;
 
     return (
-        <AppGame words={context}/>
+        <>
+            {spinner}
+            {content}
+        </>
     )
 }
 

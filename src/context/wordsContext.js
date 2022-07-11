@@ -1,4 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
+import Spinner from '../components/spinner/Spinner';
+
 
 export const WordsContext = createContext();
 
@@ -21,6 +23,7 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors))
         .finally(() => {
           setLoading(false);
+          //setLoading(true);
         });
     };
 
@@ -55,7 +58,6 @@ function WordsContextProvider(props) {
         })
         .catch((errors) => setError(errors));
     };
-
 
     return (
     <WordsContext.Provider value={{words, loading, error, editWords, deleteWords, addWords}}>

@@ -3,9 +3,10 @@ import Row from '../row/Row';
 import { WordsContext } from "../../context/wordsContext";
 import './table.scss';
 
+
 const Table = () => {
 
-    const { words, deleteWords } = useContext(WordsContext);
+    const { words, deleteWords} = useContext(WordsContext);
     const [wordList, setWordList] = useState(words);
 
     useEffect(() => {
