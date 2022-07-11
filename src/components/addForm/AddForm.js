@@ -4,19 +4,15 @@ import './addForm.scss';
 
 const AddForm = () => {
 
-    //const [state, setState] = useState({english: '',transcription: '',russian: '',tags:''});
+    const {addWords}  = useContext(WordsContext);
+
     const [english, setEnglish] = useState("");
     const [transcription, setTranscription] = useState("")
     const [russian, setRussian] = useState("")
     const [tags, setTags] = useState("")
 
-    const {addWords}  = useContext(WordsContext);
-
     const handleChangeEnglish = (e) => {
         setEnglish(e.target.value.trim().toLowerCase());
-        //setTranscription(e.target.value.trim().toLowerCase());
-        //setRussian(e.target.value.trim().toLowerCase());
-        //setTags(e.target.value.trim().toLowerCase());
     }
 
     const handleChangeTranscription = (e) => {
@@ -31,22 +27,8 @@ const AddForm = () => {
         setTags(e.target.value.trim().toLowerCase());
     }
 
-    const addItem = (english, transcription, russian, tags) => {
-
-        const newWord = {
-            english,
-            transcription,
-            russian,
-            tags
-        }
-        console.log(newWord)
-//        const newArr = [...words, newWord];
-//        setWords(newArr);
-    }
-
     const onSubmit = () => {
-        //if (state.english ===''|| state.transcription==='' || state.russian==='' || state.tags==='') return;
-        //addItem(english, transcription, russian, tags);
+        if (english ===''|| transcription==='' || russian==='' || tags==='') return;
 
         const newWord = {
             english,
@@ -54,12 +36,8 @@ const AddForm = () => {
             russian,
             tags
         }
-        console.log(newWord);
-
         addWords(newWord);
     }
-
-//    const {english, russian, transcription, tags} = state;
 
     return(
         <form className="app__table table form" onSubmit = {onSubmit}>
