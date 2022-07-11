@@ -26,7 +26,7 @@ function WordsContextProvider(props) {
 
     const editWords = (word) => {
       fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`, {
-        method: 'POST', // или 'PUT'
+        method: 'POST',
         body: JSON.stringify(word), // данные могут быть 'строкой' или {объектом}!
       })
         .then(() => {
@@ -37,7 +37,7 @@ function WordsContextProvider(props) {
 
     const deleteWords = (id) => {
       fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
-        method: 'POST', // или 'PUT'
+        method: 'POST',
       })
         .then(() => {
           getWords();
@@ -45,8 +45,21 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
+    const addWords = (word) => {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/add`, {
+        method: 'POST',
+        body: JSON.stringify(word), // данные могут быть 'строкой' или {объектом}!
+      })
+        .then(() => {
+          getWords();
+        })
+        .catch((errors) => setError(errors));
+        console.log('добавили слово');
+    };
+
+
     return (
-    <WordsContext.Provider value={{words, loading, error, editWords, deleteWords}}>
+    <WordsContext.Provider value={{words, loading, error, editWords, deleteWords, addWords}}>
         {props.children}
     </WordsContext.Provider>
     );

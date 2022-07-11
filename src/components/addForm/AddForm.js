@@ -1,84 +1,104 @@
-import { Component } from 'react';
+import { useState, useContext } from 'react';
+import { WordsContext } from '../../context/wordsContext';
 import './addForm.scss';
 
-class AddForm extends Component {
+const AddForm = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            english: '',
-            transcription: '',
-            russian: '',
-            tags:'',
-            id:''
+    //const [state, setState] = useState({english: '',transcription: '',russian: '',tags:''});
+    const [english, setEnglish] = useState("");
+    const [transcription, setTranscription] = useState("")
+    const [russian, setRussian] = useState("")
+    const [tags, setTags] = useState("")
+
+    const {addWords}  = useContext(WordsContext);
+
+    const handleChangeEnglish = (e) => {
+        setEnglish(e.target.value.trim().toLowerCase());
+        //setTranscription(e.target.value.trim().toLowerCase());
+        //setRussian(e.target.value.trim().toLowerCase());
+        //setTags(e.target.value.trim().toLowerCase());
+    }
+
+    const handleChangeTranscription = (e) => {
+        setTranscription(e.target.value.trim().toLowerCase());
+    }
+
+    const handleChangeRussian = (e) => {
+        setRussian(e.target.value.trim().toLowerCase());
+    }
+
+    const handleChangeTags = (e) => {
+        setTags(e.target.value.trim().toLowerCase());
+    }
+
+    const addItem = (english, transcription, russian, tags) => {
+
+        const newWord = {
+            english,
+            transcription,
+            russian,
+            tags
         }
+        console.log(newWord)
+//        const newArr = [...words, newWord];
+//        setWords(newArr);
     }
 
-    onValueChange = (e) => {
-        this.setState({
-            [e.target.name] : e.target.value.trim().toLowerCase()
-        })
+    const onSubmit = () => {
+        //if (state.english ===''|| state.transcription==='' || state.russian==='' || state.tags==='') return;
+        //addItem(english, transcription, russian, tags);
+
+        const newWord = {
+            english,
+            transcription,
+            russian,
+            tags
+        }
+        console.log(newWord);
+
+        addWords(newWord);
     }
 
-    onSubmit = () => {
+//    const {english, russian, transcription, tags} = state;
 
-        if (this.state.english.length < 1 || this.state.english.length < 1 || !this.state.id) return;
-        this.props.onAdd(this.state.english, this.state.transcription, this.state.russian, this.state.tags, this.state.id);
-        this.setState({
-            english: '',
-            transcription: '',
-            russian: '',
-            tags:'',
-            id:''
-        })
-    }
-
-    render() {
-        const {english, russian, transcription, tags, id} = this.state;
-
-        return(
-            <form className="app__table table form" onSubmit = {this.onSubmit}>
-                <input
-                    type="number"
-                    className="input_edit"
-                    placeholder="ID"
-                    name="id"
-                    defaultValue={id}
-                    onChange={this.onValueChange}/>
-                <input
-                    type="text"
-                    className="input_edit"
-                    placeholder="English"
-                    name="english"
-                    defaultValue={english}
-                    onChange={this.onValueChange}/>
-                <input
-                    type="text"
-                    className="input_edit"
-                    placeholder="Transcription"
-                    name="transcription"
-                    defaultValue={transcription}
-                    onChange={this.onValueChange}/>
-                <input
-                    type="text"
-                    className="input_edit"
-                    placeholder="Russian"
-                    name="russian"
-                    defaultValue={russian}
-                    onChange={this.onValueChange}/>
-                <input
-                    type="text"
-                    className="input_edit"
-                    placeholder="Collection"
-                    name="tags"
-                    defaultValue={tags}
-                    onChange={this.onValueChange}/>
-                <div>
-                    <i className="fas fa-plus icon icon__save" onClick = {this.onSubmit}></i>
-                </div>
-            </form>
-        )
-    }
+    return(
+        <form className="app__table table form" onSubmit = {onSubmit}>
+            <input
+                type="text"
+                className="input_edit"
+                placeholder="English"
+                name="english"
+                defaultValue={english}
+                onChange={handleChangeEnglish}/>
+            <input
+                type="text"
+                className="input_edit"
+                placeholder="Transcription"
+                name="transcription"
+                defaultValue={transcription}
+                onChange={handleChangeTranscription}
+                />
+            <input
+                type="text"
+                className="input_edit"
+                placeholder="Russian"
+                name="russian"
+                defaultValue={russian}
+                onChange={handleChangeRussian}
+                />
+            <input
+                type="text"
+                className="input_edit"
+                placeholder="Collection"
+                name="tags"
+                defaultValue={tags}
+                onChange={handleChangeTags}
+                />
+            <div>
+                <i className="fas fa-plus icon icon__save" onClick = {onSubmit}></i>
+            </div>
+        </form>
+    )
 }
 
 export default AddForm;
