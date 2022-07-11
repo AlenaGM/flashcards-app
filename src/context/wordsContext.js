@@ -1,13 +1,11 @@
 import { useState, useEffect, createContext } from 'react';
-import Spinner from '../components/loader/Spinner';
-
 
 export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(true);
+    const [errors, setError] = useState(true);
 
     useEffect(() => {
       getWords();
@@ -22,8 +20,8 @@ function WordsContextProvider(props) {
         })
         .catch((errors) => setError(errors))
         .finally(() => {
-          //setLoading(false);
-          setLoading(true);
+          setLoading(false);
+          //setLoading(true);
         });
     };
 
@@ -60,7 +58,7 @@ function WordsContextProvider(props) {
     };
 
     return (
-    <WordsContext.Provider value={{words, loading, error, editWords, deleteWords, addWords}}>
+    <WordsContext.Provider value={{words, loading, errors, editWords, deleteWords, addWords}}>
         {props.children}
     </WordsContext.Provider>
     );
