@@ -1,12 +1,13 @@
 import {useState, useEffect, useContext} from "react";
-import Row from '../row/Row';
 import { WordsContext } from "../../context/wordsContext";
-import './table.scss';
 
+import Row from '../row/Row';
+
+import './table.scss';
 
 const Table = () => {
 
-    const { words, deleteWords} = useContext(WordsContext);
+    const {words, deleteWords} = useContext(WordsContext);
     const [wordList, setWordList] = useState(words);
 
     useEffect(() => {

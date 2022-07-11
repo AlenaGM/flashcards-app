@@ -5,8 +5,8 @@ const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-  const { editWords } = useContext(WordsContext);
 
+  const { editWords } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
