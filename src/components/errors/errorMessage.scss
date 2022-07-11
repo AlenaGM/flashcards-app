@@ -2,11 +2,11 @@ img {
     display: block;
     max-width: 360px;
     object-fit: contain;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     border-radius: 8px;
 }
 
-.errorMessage {
+.noWordsMessage {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -21,6 +21,15 @@ img {
         font-weight: bold;
         font-size: 24px;
         color: #FB7575;
-        margin-top: 30px;
+        margin-bottom: 20px;
     }
+}
+
+.backHomeLink {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #3ABDB5;
+    margin-top: 24px;
 }

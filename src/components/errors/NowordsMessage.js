@@ -3,9 +3,11 @@ import './errorMessage.scss';
 
 const NowordsMessage = () => {
     return (
-        <div className="errorMessage">
+        <div className="noWordsMessage">
             <img  src={img} alt="Error"/>
-            <p>Sorry, we could't get words from our server!</p>
+            <p>Sorry, we don't get or send words today! </p>
+            <p>No connection! Or we are very busy! </p>
+            <p>Or your words are simply not good enough! </p>
         </div>
     )
 }
