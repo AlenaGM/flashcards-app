@@ -5,7 +5,7 @@ export const WordsContext = createContext();
 function WordsContextProvider(props) {
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [errors, setError] = useState(true);
+    const [errors, setError] = useState(false);
 
     useEffect(() => {
       getWords();
