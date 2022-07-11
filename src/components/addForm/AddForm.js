@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { WordsContext } from '../../context/wordsContext';
 import './addForm.scss';
+import '../../styles/button.scss';
 
 const AddForm = () => {
 
@@ -48,16 +49,17 @@ const AddForm = () => {
         clearForm();
     }
 
-    let addIconClassNames = 'fas fa-plus icon icon__save';
+    let addButtonClassNames = 'button button__size-small';
     let labelClassNames = 'label';
 
     if(english ===''|| transcription==='' || russian==='' || tags===''){
-        addIconClassNames += ' icon__disabled';
+        addButtonClassNames += ' button__disabled';
         labelClassNames += '_visible';
     }
 
     return(
         <form className="app__table table form" onSubmit = {onSubmit}>
+            <div>
             <input
                 type="text"
                 className={"input_edit"}
@@ -89,10 +91,9 @@ const AddForm = () => {
                 value={tags}
                 onChange={handleChangeTags}
                 />
-            <div>
-                <i className={addIconClassNames} onClick = {onSubmit}></i>
             </div>
             <label className={labelClassNames}>* Для того, чтобы добавить слово, заполните все поля</label>
+            <button className={addButtonClassNames} onClick = {onSubmit}>Добавить</button>
         </form>
     )
 }
