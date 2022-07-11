@@ -48,11 +48,17 @@ const AddForm = () => {
         clearForm();
     }
 
+    let addIconClassNames = 'fas fa-plus icon icon__save';
+
+    if(english ===''|| transcription==='' || russian==='' || tags===''){
+        addIconClassNames += ' icon__disabled';
+    }
+
     return(
         <form className="app__table table form" onSubmit = {onSubmit}>
             <input
                 type="text"
-                className="input_edit"
+                className={"input_edit"}
                 placeholder="English"
                 name="english"
                 value={english}
@@ -82,7 +88,7 @@ const AddForm = () => {
                 onChange={handleChangeTags}
                 />
             <div>
-                <i className="fas fa-plus icon icon__save" onClick = {onSubmit}></i>
+                <i className={addIconClassNames} onClick = {onSubmit}></i>
             </div>
         </form>
     )

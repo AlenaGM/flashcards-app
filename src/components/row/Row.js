@@ -21,7 +21,7 @@ const Row = (props) => {
     });
   };
 
-  const onSave = (e) => {
+  const onSave = () => {
     if (english ===''|| transcription==='' || russian==='' || tags==='') return;
     setEdit(!isEdit);
     editWords(state);
