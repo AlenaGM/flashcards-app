@@ -27,6 +27,13 @@ const AddForm = () => {
         setTags(e.target.value.trim().toLowerCase());
     }
 
+    const clearForm = () => {
+        setEnglish("");
+        setTranscription("");
+        setRussian("");
+        setTags("");
+    }
+
     const onSubmit = () => {
         if (english ===''|| transcription==='' || russian==='' || tags==='') return;
 
@@ -38,6 +45,7 @@ const AddForm = () => {
         }
 
         addWords(newWord);
+        clearForm();
     }
 
     return(
@@ -47,14 +55,14 @@ const AddForm = () => {
                 className="input_edit"
                 placeholder="English"
                 name="english"
-                defaultValue={english}
+                value={english}
                 onChange={handleChangeEnglish}/>
             <input
                 type="text"
                 className="input_edit"
                 placeholder="Transcription"
                 name="transcription"
-                defaultValue={transcription}
+                value={transcription}
                 onChange={handleChangeTranscription}
                 />
             <input
@@ -62,7 +70,7 @@ const AddForm = () => {
                 className="input_edit"
                 placeholder="Russian"
                 name="russian"
-                defaultValue={russian}
+                value={russian}
                 onChange={handleChangeRussian}
                 />
             <input
@@ -70,7 +78,7 @@ const AddForm = () => {
                 className="input_edit"
                 placeholder="Collection"
                 name="tags"
-                defaultValue={tags}
+                value={tags}
                 onChange={handleChangeTags}
                 />
             <div>
