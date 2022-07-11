@@ -45,6 +45,7 @@
     display:none;
     &_visible {
         display: block;
-        color: $error;
+        //color: $error;
+        color:$text-main
     }
 }
