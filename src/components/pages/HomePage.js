@@ -1,48 +1,31 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { WordsContext } from '../../context/wordsContext';
 
 import Table from '../table/Table';
+import Spinner from '../spinner/Spinner';
+import NowordsMessage from '../errors/NowordsMessage';
 import AddForm from '../addForm/AddForm';
-import library from '../../resources/data/words.json';
 
 import '../App/App.scss';
 
 
 const HomePage = () => {
 
-    const [words, setWords] = useState(library);
+    const {loading, errors} = useContext(WordsContext);
 
-    const deleteItem = (id) => {
-        setWords(words.filter(word => word.id !== id));
-    }
-
-    const addItem = (english, transcription, russian, tags, id) => {
-
-        const newWord = {
-            english,
-            transcription,
-            russian,
-            tags,
-            id
-        }
-
-        const newArr = [...words, newWord];
-        setWords(newArr);
-    }
-
-    const saveItem = (id) => {
-        console.log(`save me! ${id}`)
-    }
-
+    const spinner = loading ? <Spinner/> : null;
+    const error = errors ? <NowordsMessage/> : null;
+    const content = !(loading || errors) ? <Table/> : null;
 
     return (
         <div className="app__home">
-            <Table
-                words={words}
-                onDelete={deleteItem}
-                onSave={saveItem}/>
-            <AddForm onAdd={addItem}/>
+            {error}
+            {spinner}
+            {content}
+            <AddForm/>
         </div>
     )
 }
 
 export default HomePage;
+

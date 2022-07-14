@@ -2,8 +2,7 @@
 
 .form {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 
     width: 100%;
     max-width: 1000px;
@@ -14,7 +13,7 @@
     text-align: left;
 
     background-color: $table-bg;
-    padding: 12px 14px 0px 14px;
+    padding: 12px 14px 12px 14px;
 
     border-bottom: 1px solid $row-border;
     border-radius: 6px;
@@ -23,31 +22,38 @@
     @media screen and (max-width: 1000px){
         justify-content: flex-start
         }
-
-    input {
-        width: 22%;
-        min-width: 200px;
-        border: solid 1px $table-border;
-        padding: 8px 5px;
-        margin-right: 5px;
-        margin-bottom: 12px;
-
-        &:first-of-type {
-            width:6%;
-            min-width: 40px;
-            }
-        &:last-of-type {
-            width: 16%;
-            min-width: 150px;
-        }
-    }
     div {
-        width: 8%;
         min-width: 30px;
         text-align: center;
         font-size: larger;
-        display: inline-flex;
+        display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
-        margin-bottom: 12px;
+        &:first-of-type {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+        input {
+        width: 24%;
+        min-width: 200px;
+        border: solid 1px $table-border;
+        padding: 8px 5px;
+        margin-bottom: 8px;
+        margin-right: 5px;
+    }
+}
+
+.label {
+    display:none;
+    &_visible {
+        display: block;
+        width: 100%;
+        //color: $error;
+        color:$text-main;
+        text-align: center;
     }
 }

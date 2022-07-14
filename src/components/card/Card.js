@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import {useState, useRef, useEffect} from "react";
 import '../../styles/button.scss';
 
 const Card = (props) => {

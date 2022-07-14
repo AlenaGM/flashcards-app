@@ -1,19 +1,29 @@
+import {useState, useEffect, useContext} from "react";
+import { WordsContext } from "../../context/wordsContext";
+
 import Row from '../row/Row';
+
 import './table.scss';
 
-const Table = ({words, onDelete}) => {
+const Table = () => {
 
-    const elements = words.map(word => {
-    const {id, ...wordProps} = word;
+    const {words, deleteWords} = useContext(WordsContext);
+    const [wordList, setWordList] = useState(words);
 
-    return (
+    useEffect(() => {
+        setWordList(words);
+        }, [words]);
+
+        const onDelete = (id) => {
+        deleteWords(id);
+    };
+
+    const elements = wordList.map(word => (
         <Row
-            key={id}
-            id={id}
-            {...wordProps}
-            onDelete={()=> onDelete(id)}/>
-        )
-    })
+            key={word.id}
+            {...word}
+            onDelete={onDelete}/>
+        ))
 
     return (
         <table className="app__table table">
