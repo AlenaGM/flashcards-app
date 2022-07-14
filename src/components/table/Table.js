@@ -14,7 +14,7 @@ const Table = () => {
         setWordList(words);
         }, [words]);
 
-        const onDelete = (id) => {
+    const onDelete = (id) => {
         deleteWords(id);
     };
 
