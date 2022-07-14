@@ -1,5 +1,6 @@
 import {useState, useContext} from "react";
 import { WordsContext } from "../../context/wordsContext";
+import classnames from 'classnames';
 
 const Row = (props) => {
 
@@ -38,20 +39,22 @@ const Row = (props) => {
     props.onDelete(props.id);
   };
 
-  let classNames ='table__row';
-  let inputClassNames ='input_edit';
-  let saveIconClassNames = 'fas fa-check icon icon__save';
+  const rowClasses = classnames({
+    'table__row': true,
+    'row_edit': isEdit
+});
 
-  if(isEdit){
-    classNames += ' row_edit';
-  }
+  const inputClasses = classnames({
+    'input_edit': true,
+});
 
-  if(english ===''|| transcription==='' || russian==='' || tags===''){
-    saveIconClassNames += ' icon__disabled';
-  }
+  const saveIconClasses = classnames({
+    'fas fa-check icon icon__save': true,
+    'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+});
 
   return (
-    <tr className={classNames}>
+    <tr className={rowClasses}>
       {isEdit ?
         <>
           <td>
@@ -60,7 +63,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={english==="" ? inputClassNames + ' input_error' : inputClassNames}
+              className={english==="" ? inputClasses + ' input_error' : inputClasses}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
@@ -69,7 +72,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={transcription==="" ? inputClassNames + ' input_error' : inputClassNames}
+              className={transcription==="" ? inputClasses + ' input_error' : inputClasses}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
@@ -78,7 +81,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={russian==="" ? inputClassNames + ' input_error' : inputClassNames}
+              className={russian==="" ? inputClasses + ' input_error' : inputClasses}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
@@ -87,14 +90,14 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={tags==="" ? inputClassNames + ' input_error' : inputClassNames}
+              className={tags==="" ? inputClasses + ' input_error' : inputClasses}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
-              <i className={saveIconClassNames} onClick={onSave}> </i>
+              <i className={saveIconClasses} onClick={onSave}> </i>
               <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
           </td>
         </>
