@@ -43,7 +43,12 @@
             padding: 8px 20px;
             font-size: 12px;
             margin: 25px auto;
+            &:focus {
+                outline: none;
+                padding: 8px 20px;
+                box-shadow: none;
             }
+        }
     }
 
 .icon {
