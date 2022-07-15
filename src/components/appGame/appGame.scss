@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .game {
+    color: $text-main;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
