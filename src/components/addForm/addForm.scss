@@ -49,7 +49,7 @@
 
 .label {
     display:none;
-    &_visible {
+    &.visible {
         display: block;
         width: 100%;
         //color: $error;

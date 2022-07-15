@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { WordsContext } from '../../context/wordsContext';
 import './addForm.scss';
 import '../../styles/button.scss';
+import classnames from 'classnames';
 
 const AddForm = () => {
 
@@ -39,13 +40,16 @@ const AddForm = () => {
         clearForm();
     }
 
-    let addButtonClassNames = 'button button__size-small';
-    let labelClassNames = 'label';
+    const labelClasses = classnames({
+        'label': true,
+        'visible': english ===''|| transcription==='' || russian==='' || tags===''
+    });
 
-    if(english ===''|| transcription==='' || russian==='' || tags===''){
-        addButtonClassNames += ' button__disabled';
-        labelClassNames += '_visible';
-    }
+    const addButtonClasses = classnames({
+        'button': true,
+        'button__size-small': true,
+        'button__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+    });
 
     return(
         <form className="app__table table form" onSubmit = {onSubmit}>
@@ -82,8 +86,8 @@ const AddForm = () => {
                 onChange={handleChange}
                 />
             </div>
-            <label className={labelClassNames}>* Для того, чтобы добавить слово, заполните все поля</label>
-            <button className={addButtonClassNames} onClick = {onSubmit}>Добавить</button>
+            <label className={labelClasses}>* Для того, чтобы добавить слово, заполните все поля</label>
+            <button className={addButtonClasses} onClick = {onSubmit}>Добавить</button>
         </form>
     )
 }
