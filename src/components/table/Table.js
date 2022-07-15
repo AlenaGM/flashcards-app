@@ -11,7 +11,7 @@ const Table = () => {
     const {words, deleteWords} = useContext(WordsContext);
     const [wordList, setWordList] = useState(words);
 
-    const [currentPage, setCurrentPage] = useState(1);
+    const {currentPage, setCurrentPage} = useContext(WordsContext);
     const [wordsPerPage] = useState(7);
 
     const indexOfLastWord = currentPage * wordsPerPage;
