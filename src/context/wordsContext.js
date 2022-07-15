@@ -7,6 +7,7 @@ function WordsContextProvider(props) {
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errors, setError] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
       getWords();
@@ -59,7 +60,7 @@ function WordsContextProvider(props) {
     };
 
     return (
-    <WordsContext.Provider value={{words, loading, errors, editWords, deleteWords, addWords}}>
+    <WordsContext.Provider value={{words, loading, errors, currentPage, editWords, deleteWords, addWords, setCurrentPage}}>
         {props.children}
     </WordsContext.Provider>
     );
