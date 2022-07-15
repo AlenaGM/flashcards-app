@@ -20,7 +20,7 @@ const AddForm = () => {
     const handleChange = (e) => {
         setWord({
             ...word,
-            [e.target.dataset.name]: e.target.value.trim().toLowerCase(),
+            [e.target.dataset.name]: e.target.value.toLowerCase(),
         });
     };
 
