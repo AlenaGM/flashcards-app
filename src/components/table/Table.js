@@ -1,8 +1,8 @@
 import {useState, useEffect, useContext} from "react";
 import { WordsContext } from "../../context/wordsContext";
-import Pagination from "../pagination/Pagination";
 
 import Row from '../row/Row';
+import Pagination from "../pagination/Pagination";
 
 import './table.scss';
 
