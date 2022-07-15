@@ -39,22 +39,13 @@ const Row = (props) => {
     props.onDelete(props.id);
   };
 
-  const rowClasses = classnames({
-    'table__row': true,
-    'row_edit': isEdit
-});
-
-  const inputClasses = classnames({
-    'input_edit': true,
-});
-
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
     'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
-});
+  });
 
   return (
-    <tr className={rowClasses}>
+    <tr className={classnames('table__row', {row_edit: isEdit})}>
       {isEdit ?
         <>
           <td>
@@ -63,7 +54,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={english==="" ? inputClasses + ' input_error' : inputClasses}
+              className={classnames('input_edit', {input_error: english===""})}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
@@ -72,7 +63,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={transcription==="" ? inputClasses + ' input_error' : inputClasses}
+              className={classnames('input_edit', {input_error: transcription===""})}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
@@ -81,7 +72,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={russian==="" ? inputClasses + ' input_error' : inputClasses}
+              className={classnames('input_edit', {input_error: russian===""})}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
@@ -90,7 +81,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={tags==="" ? inputClasses + ' input_error' : inputClasses}
+              className={classnames('input_edit', {input_error: tags===""})}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
