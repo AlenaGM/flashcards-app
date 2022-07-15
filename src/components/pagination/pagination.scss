@@ -3,6 +3,7 @@
 .pagination {
     display: flex;
     flex-direction: row;
+    align-items: center;
     &__page {
         color:$row-border;
         font-size: 14px;
@@ -22,7 +23,8 @@
     }
 }
 
-.test {
-    color:red;
+.currentPage {
+    color: #cc999e;
+    font-size: 18px;
 }
 

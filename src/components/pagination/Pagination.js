@@ -1,6 +1,7 @@
 import './pagination.scss';
+import classnames from 'classnames';
 
-const Pagination = ({wordsPerPage, totalWords, paginate}) => {
+const Pagination = ({wordsPerPage, totalWords, paginate, currentPage}) => {
 
     const pageNumbers = [];
 
@@ -12,7 +13,7 @@ const Pagination = ({wordsPerPage, totalWords, paginate}) => {
         <nav>
             <ul className="pagination">
                 {pageNumbers.map(number=>
-                    <li className="pagination__page" key={number}>
+                    <li className={classnames('pagination__page', {currentPage: number===currentPage})} key={number}>
                         <div onClick={() => paginate(number)}>
                             {number}
                         </div>

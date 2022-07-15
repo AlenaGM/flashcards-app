@@ -56,6 +56,7 @@ const Table = () => {
                         <Pagination
                             wordsPerPage={wordsPerPage}
                             totalWords={wordList.length}
+                            currentPage={currentPage}
                             paginate={paginate}/>
                     </th>
                 </tr>
