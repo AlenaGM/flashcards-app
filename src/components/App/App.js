@@ -1,4 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { observer, inject } from 'mobx-react';
+import { useEffect } from 'react';
 
 import {HomePage, GamePage, Page404} from '../pages';
 
@@ -8,7 +10,11 @@ import AppFooter from '../appFooter/AppFooter';
 import './App.scss';
 
 
-function App() {
+function App({ wordStore }) {
+
+    useEffect(() => {
+        wordStore.loadData();
+    }, []);
 
     return (
         <>
@@ -29,6 +35,7 @@ function App() {
     );
 }
 
-export default App;
+export default inject(['wordStore'])(observer(App));
+
 
 

@@ -1,4 +1,4 @@
-import {useState, useContext} from "react";
+//import {useState, useContext} from "react";
 import { observer, inject } from 'mobx-react';
 
 import Row from '../row/Row';
@@ -26,6 +26,7 @@ const Table = ({wordStore}) => {
         <Row
             key={word.id}
             {...word}
+            word={word}
             onDelete={onDelete}/>
         ))
 
