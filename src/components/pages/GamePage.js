@@ -1,6 +1,5 @@
-import { useContext } from 'react';
+import { observer, inject } from 'mobx-react';
 
-import { WordsContext } from '../../context/wordsContext';
 import AppGame from '../appGame/AppGame';
 import Spinner from '../spinner/Spinner';
 import NowordsMessage from '../errors/NowordsMessage';
@@ -8,13 +7,11 @@ import NowordsMessage from '../errors/NowordsMessage';
 import '../App/App.scss';
 
 
-const GamePage = () => {
+const GamePage = ({wordStore}) => {
 
-    const {errors, loading, words} = useContext(WordsContext);
-
-    const spinner = loading ? <Spinner/> : null;
-    const error = errors ? <NowordsMessage/> : null;
-    const content = !(loading || errors) ? <AppGame words={words}/> : null;
+    const spinner = wordStore.loading ? <Spinner/> : null;
+    const error = wordStore.errors ? <NowordsMessage/> : null;
+    const content = !(wordStore.loading || wordStore.errors) ? <AppGame words={wordStore.words}/> : null;
 
     return (
         <>
@@ -25,4 +22,4 @@ const GamePage = () => {
     )
 }
 
-export default GamePage;
+export default inject(['wordStore'])(observer(GamePage));

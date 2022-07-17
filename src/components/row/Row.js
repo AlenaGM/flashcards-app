@@ -1,16 +1,14 @@
 import {useState, useContext} from "react";
+import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 
-import { WordsContext } from "../../context/wordsContext";
+//import { WordsContext } from "../../context/wordsContext";
 
 
-const Row = (props) => {
+const Row = ({wordStore},props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-
-  const { editWords } = useContext(WordsContext);
-  const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -25,9 +23,9 @@ const Row = (props) => {
   };
 
   const onSave = () => {
-    if (english ===''|| transcription==='' || russian==='' || tags==='') return;
+    if (wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags==='') return;
     setEdit(!isEdit);
-    editWords(state);
+    wordStore.editWords(state);
   };
 
   const onCancel = () => {
@@ -43,7 +41,7 @@ const Row = (props) => {
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
-    'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+    'icon__disabled': wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags===''
   });
 
   return (
@@ -51,43 +49,43 @@ const Row = (props) => {
       {isEdit ?
         <>
           <td>
-            {id}
+            {wordStore.id}
           </td>
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: english===""})}
+              className={classnames('input_edit', {input_error: wordStore.english===""})}
               data-name={"english"}
-              defaultValue={english}
+              defaultValue={wordStore.english}
               onChange={handleChange}/>
-            {english==="" && <label>Поле не заполнено</label>}
+            {wordStore.english==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: transcription===""})}
+              className={classnames('input_edit', {input_error: wordStore.transcription===""})}
               data-name={"transcription"}
-              defaultValue={transcription}
+              defaultValue={wordStore.transcription}
               onChange={handleChange}/>
-            {transcription==="" && <label>Поле не заполнено</label>}
+            {wordStore.transcription==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: russian===""})}
+              className={classnames('input_edit', {input_error: wordStore.russian===""})}
               data-name={"russian"}
-              defaultValue={russian}
+              defaultValue={wordStore.russian}
               onChange={handleChange}/>
-            {russian==="" && <label>Поле не заполнено</label>}
+            {wordStore.russian==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: tags===""})}
+              className={classnames('input_edit', {input_error: wordStore.tags===""})}
               data-name={"tags"}
-              defaultValue={tags}
+              defaultValue={wordStore.tags}
               onChange={handleChange}/>
-            {tags==="" && <label>Поле не заполнено</label>}
+            {wordStore.tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
               <i className={saveIconClasses} onClick={onSave}> </i>
@@ -96,11 +94,11 @@ const Row = (props) => {
         </>
         :
         <>
-          <td>{id}</td>
-          <td>{english}</td>
-          <td>{transcription}</td>
-          <td>{russian}</td>
-          <td>{tags}</td>
+          <td>{wordStore.id}</td>
+          <td>{wordStore.english}</td>
+          <td>{wordStore.transcription}</td>
+          <td>{wordStore.russian}</td>
+          <td>{wordStore.tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
@@ -111,4 +109,4 @@ const Row = (props) => {
   )
 }
 
-export default Row;
+export default inject(['wordStore'])(observer(Row));

@@ -1,37 +1,35 @@
 import {useState, useContext} from "react";
-
-import { WordsContext } from "../../context/wordsContext";
+import { observer, inject } from 'mobx-react';
 
 import Row from '../row/Row';
-import Pagination from "../pagination/Pagination";
+//import Pagination from "../pagination/Pagination";
 
 import './table.scss';
 
 
-const Table = () => {
+const Table = ({wordStore}) => {
 
-    const {words, deleteWords} = useContext(WordsContext);
-    const [wordList] = useState(words);
+//    const [wordList] = useState({wordStore});
 
-    const {currentPage, setCurrentPage} = useContext(WordsContext);
-    const [wordsPerPage] = useState(7);
+//    const {currentPage, setCurrentPage} = useContext(WordsContext);
+//    const [wordsPerPage] = useState(7);
 
-    const indexOfLastWord = currentPage * wordsPerPage;
-    const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-    const currentWords = wordList.slice(indexOfFirstWord, indexOfLastWord);
+//    const indexOfLastWord = currentPage * wordsPerPage;
+//    const indexOfFirstWord = indexOfLastWord - wordsPerPage;
+//    const currentWords = wordStore.wordList.slice(indexOfFirstWord, indexOfLastWord);
 
     const onDelete = (id) => {
-        deleteWords(id);
+        wordStore.deleteWords(id);
     };
 
-    const elements = currentWords.map(word => (
+    const elements = wordStore.words.map(word => (
         <Row
             key={word.id}
             {...word}
             onDelete={onDelete}/>
         ))
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    //const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <table className="app__table table">
@@ -51,11 +49,7 @@ const Table = () => {
             <tfoot>
                 <tr className="table__row">
                     <th>
-                        <Pagination
-                            wordsPerPage={wordsPerPage}
-                            totalWords={wordList.length}
-                            currentPage={currentPage}
-                            paginate={paginate}/>
+                        Здесь была пагинация
                     </th>
                 </tr>
             </tfoot>
@@ -63,5 +57,5 @@ const Table = () => {
     )
 }
 
-export default Table;
+export default inject(['wordStore'])(observer(Table));
 

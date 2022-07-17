@@ -2,7 +2,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import {HomePage, GamePage, Page404} from '../pages';
 
-import WordsContextProvider from '../../context/wordsContext';
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
 
@@ -12,7 +11,7 @@ import './App.scss';
 function App() {
 
     return (
-        <WordsContextProvider>
+        <>
             <BrowserRouter>
                 <div className="app">
                     <AppHeader/>
@@ -26,7 +25,7 @@ function App() {
                     <AppFooter/>
                 </div>
             </BrowserRouter>
-        </WordsContextProvider>
+        </>
     );
 }
 

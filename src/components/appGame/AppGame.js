@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { observer, inject } from 'mobx-react';
 import useKeypress from 'react-use-keypress';
 
 import Card from '../card/Card';
@@ -6,16 +7,16 @@ import Card from '../card/Card';
 import './appGame.scss';
 
 
-const AppGame = ({words}) => {
+const AppGame = ({wordStore}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
     const [wordsLearned, setWordsLearned] = useState([]);
     const [learnedNumber, setLearnedNumber] = useState(0);
 
     const nextSlide = () => {
-        if (slideIndex !== words.length) {
+        if (slideIndex !== wordStore.words.length) {
         setSlideIndex(slideIndex + 1);
-        } else if (slideIndex === words.length) {
+        } else if (slideIndex === wordStore.words.length) {
         setSlideIndex(1);
         }
     };
@@ -24,7 +25,7 @@ const AppGame = ({words}) => {
         if (slideIndex !== 1) {
         setSlideIndex(slideIndex - 1);
         } else if (slideIndex === 1) {
-        setSlideIndex(words.length);
+        setSlideIndex(wordStore.words.length);
         }
     };
 
@@ -64,7 +65,7 @@ const AppGame = ({words}) => {
         return text_arr[2]
     }
 
-    const cards = words.map((word) => {
+    const cards = wordStore.words.map((word) => {
         const {id, ...wordProps} = word;
         return (
             <Card
@@ -80,7 +81,7 @@ const AppGame = ({words}) => {
             <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
             <div>{cards[slideIndex-1]}
                 <div className="game_counter">
-                    Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}
+                    Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {wordStore.words.length}
                 </div>
             </div>
             <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
@@ -88,4 +89,4 @@ const AppGame = ({words}) => {
     )
 }
 
-export default AppGame;
+export default inject(['wordStore'])(observer(AppGame));

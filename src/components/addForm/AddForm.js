@@ -1,15 +1,12 @@
 import { useState, useContext } from 'react';
+import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
-
-import { WordsContext } from '../../context/wordsContext';
 
 import './addForm.scss';
 import '../../styles/button.scss';
 
 
-const AddForm = () => {
-
-    const {addWords}  = useContext(WordsContext);
+const AddForm = ({wordStore}) => {
 
     const [word, setWord] = useState ({
         english : "",
@@ -17,8 +14,6 @@ const AddForm = () => {
         russian : "",
         tags : ""
     });
-
-    const {english, transcription, russian, tags} = word;
 
     const handleChange = (e) => {
         setWord({
@@ -37,20 +32,20 @@ const AddForm = () => {
     }
 
     const onSubmit = () => {
-        if (english ===''|| transcription==='' || russian==='' || tags==='') return;
+        if (wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags==='') return;
 
-        addWords(word);
+        wordStore.addWords(word);
         clearForm();
     }
 
     const labelClasses = classnames({
         'label': true,
-        'visible': english ===''|| transcription==='' || russian==='' || tags===''
+        'visible': wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags===''
     });
 
     const addButtonClasses = classnames({
         'button button__size-small': true,
-        'button__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+        'button__disabled': wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags===''
     });
 
     return(
@@ -61,14 +56,14 @@ const AddForm = () => {
                 className={"input_edit"}
                 placeholder="English"
                 data-name={"english"}
-                value={english}
+                value={wordStore.english}
                 onChange={handleChange}/>
             <input
                 type="text"
                 className="input_edit"
                 placeholder="Transcription"
                 data-name={"transcription"}
-                value={transcription}
+                value={wordStore.transcription}
                 onChange={handleChange}
                 />
             <input
@@ -76,7 +71,7 @@ const AddForm = () => {
                 className="input_edit"
                 placeholder="Russian"
                 data-name={"russian"}
-                value={russian}
+                value={wordStore.russian}
                 onChange={handleChange}
                 />
             <input
@@ -84,7 +79,7 @@ const AddForm = () => {
                 className="input_edit"
                 placeholder="Collection"
                 data-name={"tags"}
-                value={tags}
+                value={wordStore.tags}
                 onChange={handleChange}
                 />
             </div>
@@ -94,6 +89,6 @@ const AddForm = () => {
     )
 }
 
-export default AddForm;
+export default inject(['wordStore'])(observer(AddForm));
 
 

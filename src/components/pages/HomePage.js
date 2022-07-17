@@ -1,6 +1,5 @@
-import { useContext } from 'react';
+import { observer, inject } from 'mobx-react';
 
-import { WordsContext } from '../../context/wordsContext';
 import Table from '../table/Table';
 import Spinner from '../spinner/Spinner';
 import NowordsMessage from '../errors/NowordsMessage';
@@ -9,13 +8,11 @@ import AddForm from '../addForm/AddForm';
 import '../App/App.scss';
 
 
-const HomePage = () => {
+const HomePage = ({wordStore}) => {
 
-    const {loading, errors} = useContext(WordsContext);
-
-    const spinner = loading ? <Spinner/> : null;
-    const error = errors ? <NowordsMessage/> : null;
-    const content = !(loading || errors) ? <Table/> : null;
+    const spinner = wordStore.loading ? <Spinner/> : null;
+    const error = wordStore.errors ? <NowordsMessage/> : null;
+    const content = !(wordStore.loading || wordStore.errors) ? <Table/> : null;
 
     return (
         <div className="app__home">
@@ -27,5 +24,5 @@ const HomePage = () => {
     )
 }
 
-export default HomePage;
+export default inject(['wordStore'])(observer(HomePage));
 

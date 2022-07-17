@@ -1,8 +1,10 @@
 import {useState, useRef, useEffect} from "react";
+import { observer, inject } from 'mobx-react';
+
 import '../../styles/button.scss';
 
 
-const Card = (props) => {
+const Card = ({wordStore, word}) => {
 
     const [pressed, setPressed] = useState(false);
     const btnRef = useRef();
@@ -13,20 +15,20 @@ const Card = (props) => {
 
     const handleClick = () => {
         setPressed(!pressed);
-        props.addLearned(props.id);
+        wordStore.addLearned(wordStore.id);
     }
 
     return (
         <div className="game__card card">
-            <div>{props.english}</div>
-            <div>{props.transcription}</div>
+            <div>{wordStore.english}</div>
+            <div>{wordStore.transcription}</div>
             <div onClick = {handleClick}>
                 {pressed ?
-                    <div className="card_translation">{props.russian}</div> :
+                    <div className="card_translation">{wordStore.russian}</div> :
                     <button className="button" ref={btnRef}>Проверить</button>}
             </div>
         </div>
     )
 }
 
-export default Card;
+export default inject(['wordStore'])(observer(Card));
