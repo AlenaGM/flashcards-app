@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import Card from '../card/Card';
 import useKeypress from 'react-use-keypress';
 
-
+import Card from '../card/Card';
 
 import './appGame.scss';
 
@@ -28,6 +27,14 @@ const AppGame = ({words}) => {
         setSlideIndex(words.length);
         }
     };
+
+    useKeypress(['ArrowLeft', 'ArrowRight'], (event) => {
+        if (event.key === 'ArrowLeft') {
+            prevSlide();
+        } else {
+            nextSlide();
+        }
+    });
 
     const addLearned = (id) => {
         const checkedWords = [...wordsLearned];
@@ -56,14 +63,6 @@ const AppGame = ({words}) => {
         }
         return text_arr[2]
     }
-
-    useKeypress(['ArrowLeft', 'ArrowRight'], (event) => {
-        if (event.key === 'ArrowLeft') {
-            prevSlide();
-        } else {
-            nextSlide();
-        }
-    });
 
     const cards = words.map((word) => {
         const {id, ...wordProps} = word;

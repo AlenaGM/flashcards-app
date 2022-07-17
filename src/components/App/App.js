@@ -8,6 +8,7 @@ import AppFooter from '../appFooter/AppFooter';
 
 import './App.scss';
 
+
 function App() {
 
     return (

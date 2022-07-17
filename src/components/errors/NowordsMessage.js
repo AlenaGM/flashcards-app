@@ -1,7 +1,9 @@
 import img from '../../resources/img/tenor.gif';
 import './errorMessage.scss';
 
+
 const NowordsMessage = () => {
+
     return (
         <div className="noWordsMessage">
             <img className='.error_img' src={img} alt="Error"/>

@@ -1,6 +1,7 @@
 import {useState, useRef, useEffect} from "react";
 import '../../styles/button.scss';
 
+
 const Card = (props) => {
 
     const [pressed, setPressed] = useState(false);
@@ -27,6 +28,5 @@ const Card = (props) => {
         </div>
     )
 }
-
 
 export default Card;

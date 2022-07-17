@@ -1,6 +1,8 @@
 import {useState, useContext} from "react";
-import { WordsContext } from "../../context/wordsContext";
 import classnames from 'classnames';
+
+import { WordsContext } from "../../context/wordsContext";
+
 
 const Row = (props) => {
 

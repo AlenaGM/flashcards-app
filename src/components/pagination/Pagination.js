@@ -1,5 +1,6 @@
-import './pagination.scss';
 import classnames from 'classnames';
+import './pagination.scss';
+
 
 const Pagination = ({wordsPerPage, totalWords, paginate, currentPage}) => {
 
@@ -23,7 +24,5 @@ const Pagination = ({wordsPerPage, totalWords, paginate, currentPage}) => {
         </nav>
     )
 }
-
-
 
 export default Pagination;
