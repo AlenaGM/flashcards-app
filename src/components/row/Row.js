@@ -55,7 +55,7 @@ const Row = ({wordStore, word}) => {
               type="text"
               className={classnames('input_edit', {input_error: wordStore.english===""})}
               data-name={"english"}
-              value={english}
+              defaultValue={english}
               onChange={handleChange}/>
             {english==="" && <label>Поле не заполнено</label>}
           </td>
@@ -64,7 +64,7 @@ const Row = ({wordStore, word}) => {
               type="text"
               className={classnames('input_edit', {input_error: wordStore.transcription===""})}
               data-name={"transcription"}
-              value={transcription}
+              defaultValue={transcription}
               onChange={handleChange}/>
             {transcription==="" && <label>Поле не заполнено</label>}
           </td>
@@ -73,7 +73,7 @@ const Row = ({wordStore, word}) => {
               type="text"
               className={classnames('input_edit', {input_error: wordStore.russian===""})}
               data-name={"russian"}
-              value={russian}
+              defaultValue={russian}
               onChange={handleChange}/>
             {russian==="" && <label>Поле не заполнено</label>}
           </td>
@@ -82,7 +82,7 @@ const Row = ({wordStore, word}) => {
               type="text"
               className={classnames('input_edit', {input_error: wordStore.tags===""})}
               data-name={"tags"}
-              value={tags}
+              defaultValue={tags}
               onChange={handleChange}/>
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
