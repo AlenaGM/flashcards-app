@@ -20,9 +20,7 @@ export default class WordStore {
     }
 
     loadData = async () => {
-
         try {const result = await getWords();
-
             runInAction(() => {
                 this.words = result;
             });
@@ -45,32 +43,39 @@ export default class WordStore {
             method: 'POST',
             body: JSON.stringify(word),
         })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
+            .then(() => {
+                getWords();
             })
-            .catch(() => (this.setError(true)));
-
-        runInAction(() => {
-            this.loadData();
-        });
+            .catch(() => {
+                runInAction(() => {
+                    this.errors = true;
+                })
+            })
+            .finally(() => {
+                runInAction(() => {
+                    this.loadData();
+                })
+            })
     };
+
 
     deleteWords = async (id) => {
         await fetch(`itgirlschool/api/words/${id}/delete`, {
-            method: 'POST',
+            method: 'POST'
         })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
+            .then(() => {
+                getWords();
             })
-            .catch(() => (this.setError(true)));
-
-        runInAction(() => {
-            this.loadData();
-        });
+            .catch(() => {
+                runInAction(() => {
+                    this.errors = true;
+                })
+            })
+            .finally(() => {
+                runInAction(() => {
+                    this.loadData();
+                })
+            })
     };
 
     editWords = async (word) => {
@@ -78,16 +83,18 @@ export default class WordStore {
             method: 'POST',
             body: JSON.stringify(word),
         })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
+            .then(() => {
+                getWords();
             })
-            .catch(() => (this.setError(true)));
-
-        runInAction(() => {
-            this.loadData();
-        });
+            .catch(() => {
+                runInAction(() => {
+                    this.errors = true;
+                })
+            })
+            .finally(() => {
+                runInAction(() => {
+                    this.loadData();
+                })
+            })
     };
 }
-
