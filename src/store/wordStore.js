@@ -12,13 +12,12 @@ export default class WordStore {
 
     loadData = async () => {
         const result = await fetch(`itgirlschool/api/words`)
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
-        .then((response) => response)
-        .catch(() => (this.setError(true)));
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.words = result;
