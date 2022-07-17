@@ -11,8 +11,7 @@ const getWords = () =>
 
 export default class WordStore {
     words = [];
-    isLoading = false;
-    isLoaded = false;
+    loading = true;
     errors = false;
     currentpage = 1;
 
@@ -21,16 +20,11 @@ export default class WordStore {
     }
 
     loadData = async () => {
-        if (this.isLoaded || this.isLoading) {
-            return;
-        }
-        this.isLoading = true;
         const result = await getWords().catch((errors) => (this.setError(errors)));
 
         runInAction(() => {
             this.words = result;
-            this.isLoading = false;
-            this.isLoaded = true;
+            this.loading = false;
         });
     };
 

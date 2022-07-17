@@ -12,10 +12,8 @@ const Table = ({wordStore}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [wordsPerPage] = useState(7);
 
-
     const indexOfLastWord = currentPage * wordsPerPage;
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-
 
     const onDelete = (id) => {
         wordStore.deleteWords(id);
