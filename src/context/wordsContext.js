@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext } from 'react';
 
+
 export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
@@ -23,7 +24,6 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors))
         .finally(() => {
           setLoading(false);
-          //setLoading(true);
         });
     };
 

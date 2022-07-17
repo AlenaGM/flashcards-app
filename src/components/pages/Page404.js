@@ -3,6 +3,7 @@ import ErrorMessage from "../errors/ErrorMessage";
 import './page404.scss';
 
 const Page404 = () => {
+
     return (
         <div className="errorMessage">
             <ErrorMessage/>

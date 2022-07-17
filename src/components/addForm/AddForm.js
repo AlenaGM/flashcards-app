@@ -1,8 +1,11 @@
 import { useState, useContext } from 'react';
+import classnames from 'classnames';
+
 import { WordsContext } from '../../context/wordsContext';
+
 import './addForm.scss';
 import '../../styles/button.scss';
-import classnames from 'classnames';
+
 
 const AddForm = () => {
 
@@ -46,8 +49,7 @@ const AddForm = () => {
     });
 
     const addButtonClasses = classnames({
-        'button': true,
-        'button__size-small': true,
+        'button button__size-small': true,
         'button__disabled': english ===''|| transcription==='' || russian==='' || tags===''
     });
 
