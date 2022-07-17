@@ -7,15 +7,15 @@ import Pagination from "../pagination/Pagination";
 import './table.scss';
 
 
-const Table = ({wordStore, currentPage}) => {
+const Table = ({wordStore}) => {
 
-//    const [wordList] = useState({wordStore});
+    const [currentPage, setCurrentPage] = useState(1);
+    const [wordsPerPage] = useState(7);
 
-//    const [wordsPerPage] = useState(7);
 
-//    const indexOfLastWord = currentPage * wordsPerPage;
-//    const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-//    const currentWords = wordStore.words.slice(indexOfFirstWord, indexOfLastWord);
+    const indexOfLastWord = currentPage * wordsPerPage;
+    const indexOfFirstWord = indexOfLastWord - wordsPerPage;
+
 
     const onDelete = (id) => {
         wordStore.deleteWords(id);
@@ -24,10 +24,11 @@ const Table = ({wordStore, currentPage}) => {
     const elements = wordStore.words.map(word => (
         <Row
             key={word.id}
-            {...word}
             word={word}
             onDelete={onDelete}/>
-        ))
+        )).slice(indexOfFirstWord, indexOfLastWord);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <table className="app__table table">
@@ -47,7 +48,11 @@ const Table = ({wordStore, currentPage}) => {
             <tfoot>
                 <tr className="table__row">
                     <th>
-                        <Pagination/>
+                        <Pagination
+                            wordsPerPage={wordsPerPage}
+                            totalWords={wordStore.words.length}
+                            currentPage={currentPage}
+                            paginate={paginate}/>
                     </th>
                 </tr>
             </tfoot>
