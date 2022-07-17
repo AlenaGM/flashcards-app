@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react';
 import '../../styles/button.scss';
 
 
-const Card = ({wordStore, word}) => {
+const Card = (props) => {
 
     const [pressed, setPressed] = useState(false);
     const btnRef = useRef();
@@ -15,16 +15,16 @@ const Card = ({wordStore, word}) => {
 
     const handleClick = () => {
         setPressed(!pressed);
-        wordStore.addLearned(wordStore.id);
+        props.addLearned(props.id);
     }
 
     return (
         <div className="game__card card">
-            <div>{wordStore.english}</div>
-            <div>{wordStore.transcription}</div>
+            <div>{props.english}</div>
+            <div>{props.transcription}</div>
             <div onClick = {handleClick}>
                 {pressed ?
-                    <div className="card_translation">{wordStore.russian}</div> :
+                    <div className="card_translation">{props.russian}</div> :
                     <button className="button" ref={btnRef}>Проверить</button>}
             </div>
         </div>
