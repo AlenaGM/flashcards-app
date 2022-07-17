@@ -2,13 +2,13 @@ import {useState} from "react";
 import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
 
-//import { WordsContext } from "../../context/wordsContext";
-
 
 const Row = ({wordStore, word}) => {
 
   const [state, setState] = useState(word);
   const [isEdit, setEdit] = useState(false);
+
+  const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -22,7 +22,7 @@ const Row = ({wordStore, word}) => {
   };
 
   const onSave = () => {
-    if (state.english ===''|| state.transcription==='' || state.russian==='' || state.tags==='') return;
+    if (english ===''|| transcription==='' || russian==='' || tags==='') return;
     setEdit(!isEdit);
     wordStore.editWords(state);
   };
@@ -40,7 +40,7 @@ const Row = ({wordStore, word}) => {
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
-    'icon__disabled': state.english ===''|| state.transcription==='' || state.russian==='' || state.tags===''
+    'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
   });
 
   return (
@@ -48,43 +48,43 @@ const Row = ({wordStore, word}) => {
       {isEdit ?
         <>
           <td>
-            {state.id}
+            {id}
           </td>
           <td>
             <input
               type="text"
               className={classnames('input_edit', {input_error: wordStore.english===""})}
               data-name={"english"}
-              value={state.english}
+              value={english}
               onChange={handleChange}/>
-            {state.english==="" && <label>Поле не заполнено</label>}
+            {english==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
               className={classnames('input_edit', {input_error: wordStore.transcription===""})}
               data-name={"transcription"}
-              value={state.transcription}
+              value={transcription}
               onChange={handleChange}/>
-            {state.transcription==="" && <label>Поле не заполнено</label>}
+            {transcription==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
               className={classnames('input_edit', {input_error: wordStore.russian===""})}
               data-name={"russian"}
-              value={state.russian}
+              value={russian}
               onChange={handleChange}/>
-            {state.russian==="" && <label>Поле не заполнено</label>}
+            {russian==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
             <input
               type="text"
               className={classnames('input_edit', {input_error: wordStore.tags===""})}
               data-name={"tags"}
-              value={state.tags}
+              value={tags}
               onChange={handleChange}/>
-            {state.tags==="" && <label>Поле не заполнено</label>}
+            {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
               <i className={saveIconClasses} onClick={onSave}> </i>
@@ -93,11 +93,11 @@ const Row = ({wordStore, word}) => {
         </>
         :
         <>
-          <td>{state.id}</td>
-          <td>{state.english}</td>
-          <td>{state.transcription}</td>
-          <td>{state.russian}</td>
-          <td>{state.tags}</td>
+          <td>{id}</td>
+          <td>{english}</td>
+          <td>{transcription}</td>
+          <td>{russian}</td>
+          <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
               <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>

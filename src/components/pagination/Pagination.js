@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import './pagination.scss';
 
-
 const Pagination = ({wordsPerPage, totalWords, paginate, currentPage}) => {
 
     const pageNumbers = [];
