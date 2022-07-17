@@ -1,14 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
-const getWords = () =>
-    fetch(`itgirlschool/api/words`)
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
-        .then((response) => response);
-
 export default class WordStore {
     words = [];
     loading = true;
@@ -20,7 +11,14 @@ export default class WordStore {
     }
 
     loadData = async () => {
-        const result = await getWords().catch(() => (this.setError(true)));
+        const result = await fetch(`itgirlschool/api/words`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((response) => response)
+        .catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.words = result;
