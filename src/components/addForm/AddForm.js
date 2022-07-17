@@ -31,8 +31,10 @@ const AddForm = ({wordStore}) => {
         })
     }
 
+    const {english, transcription, russian, tags} = word;
+
     const onSubmit = () => {
-        if (wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags==='') return;
+        if (english ===''|| transcription==='' || russian==='' || tags==='') return;
 
         wordStore.addWords(word);
         clearForm();
@@ -40,12 +42,12 @@ const AddForm = ({wordStore}) => {
 
     const labelClasses = classnames({
         'label': true,
-        'visible': wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags===''
+        'visible': english ===''|| transcription==='' || russian==='' || tags===''
     });
 
     const addButtonClasses = classnames({
         'button button__size-small': true,
-        'button__disabled': wordStore.english ===''|| wordStore.transcription==='' || wordStore.russian==='' || wordStore.tags===''
+        'button__disabled': english ===''|| transcription==='' || russian==='' || tags===''
     });
 
     return(
@@ -56,14 +58,14 @@ const AddForm = ({wordStore}) => {
                 className={"input_edit"}
                 placeholder="English"
                 data-name={"english"}
-                value={wordStore.english}
+                value={english}
                 onChange={handleChange}/>
             <input
                 type="text"
                 className="input_edit"
                 placeholder="Transcription"
                 data-name={"transcription"}
-                value={wordStore.transcription}
+                value={transcription}
                 onChange={handleChange}
                 />
             <input
@@ -71,7 +73,7 @@ const AddForm = ({wordStore}) => {
                 className="input_edit"
                 placeholder="Russian"
                 data-name={"russian"}
-                value={wordStore.russian}
+                value={russian}
                 onChange={handleChange}
                 />
             <input
@@ -79,7 +81,7 @@ const AddForm = ({wordStore}) => {
                 className="input_edit"
                 placeholder="Collection"
                 data-name={"tags"}
-                value={wordStore.tags}
+                value={tags}
                 onChange={handleChange}
                 />
             </div>
