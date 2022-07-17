@@ -20,7 +20,7 @@ export default class WordStore {
     }
 
     loadData = async () => {
-        const result = await getWords().catch((errors) => (this.setError(errors)));
+        const result = await getWords().catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.words = result;
@@ -38,7 +38,7 @@ export default class WordStore {
                     return response.json();
                 }
             })
-            .catch((errors) => (this.setError(errors)));
+            .catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.loadData();
@@ -54,7 +54,7 @@ export default class WordStore {
                     return response.json();
                 }
             })
-            .catch((errors) => (this.setError(errors)));
+            .catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.loadData();
@@ -71,7 +71,7 @@ export default class WordStore {
                     return response.json();
                 }
             })
-            .catch((errors) => (this.setError(errors)));
+            .catch(() => (this.setError(true)));
 
         runInAction(() => {
             this.loadData();
