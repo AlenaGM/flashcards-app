@@ -18,10 +18,6 @@ const Table = () => {
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
     const currentWords = wordList.slice(indexOfFirstWord, indexOfLastWord);
 
-    useEffect(() => {
-        setWordList(words);
-        }, [words]);
-
     const onDelete = (id) => {
         deleteWords(id);
     };
