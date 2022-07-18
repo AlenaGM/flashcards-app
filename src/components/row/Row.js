@@ -15,8 +15,9 @@ const Row = ({wordStore, word}) => {
   }
 
   const handleChange = (e) => {
+    e.stopPropagation();
     setState({
-      ...wordStore.words,
+      ...state,
       [e.target.dataset.name]: e.target.value.toLowerCase(),
     });
   };
