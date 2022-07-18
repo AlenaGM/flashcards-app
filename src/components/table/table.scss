@@ -15,19 +15,28 @@
             border-bottom-right-radius: 0px;
             background-color: $table-border;
                 @media screen and (max-width: 500px){
-                    display: none;
+                    //display: none;
                     }
                 th {
                     width: 19%;
                     padding-right: 5px;
                     color:$text-status;
                     font-size: larger;
+                    @media screen and (max-width: 765px){
+                        width: 33%;
+                        justify-content: space-between;
+                        }
                     &:first-of-type {
                     width: 9%;
                         @media screen and (max-width: 765px){
                             display: none;
                             }
                     }
+                    &:nth-of-type(2) {
+                        @media screen and (max-width: 765px){
+                            display: none;
+                            }
+                        }
                     &:nth-of-type(5) {
                         @media screen and (max-width: 765px){
                             display: none;
@@ -59,11 +68,14 @@
         &:hover:not(.row_edit, tfoot .table__row, thead .table__row){
             background-color: $row-hover;
         }
-
         td {
             color: $text-main;
             width: 19%;
             padding-right: 5px;
+            @media screen and (max-width: 765px){
+                width: 33%;
+                justify-content: space-between;
+                }
             &:first-of-type {
             width: 9%;
             align-self: center;
@@ -71,6 +83,11 @@
                     display: none;
                     }
             }
+            &:nth-of-type(2) {
+                @media screen and (max-width: 765px){
+                    display: none;
+                    }
+                }
             &:nth-of-type(5) {
                 @media screen and (max-width: 765px){
                     display: none;
@@ -106,3 +123,4 @@
 .input_error {
     border: solid 2px $error;
 }
+
