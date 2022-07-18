@@ -31,7 +31,7 @@ const Row = ({wordStore, word}) => {
   const onCancel = () => {
     setEdit(!isEdit);
     setState({
-      ...wordStore.words,
+      ...word,
     });
   }
 
