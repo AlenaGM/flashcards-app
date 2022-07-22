@@ -10,6 +10,7 @@ const Row = (props) => {
   const [isEdit, setEdit] = useState(false);
 
   const { editWords } = useContext(WordsContext);
+  const { deleteWords } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
@@ -39,6 +40,7 @@ const Row = (props) => {
 
   const onDelete = () => {
     props.onDelete(props.id);
+    deleteWords(state);
   };
 
   const saveIconClasses = classnames({

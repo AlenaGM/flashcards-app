@@ -21,7 +21,6 @@ const Table = () => {
 
     const indexOfLastWord = currentPage * wordsPerPage;
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-//    const currentWords = wordList.slice(indexOfFirstWord, indexOfLastWord);
 
     const onDelete = (id) => {
         deleteWords(id);
@@ -34,12 +33,12 @@ const Table = () => {
             onDelete={onDelete}/>
         ))
 
-    //НОВЫЙ КОД:НАЧАЛО
+    //****НОВЫЙ КОД:НАЧАЛО****
     //Фильтруем
-    const filteredElements = term ==='all' ? elements : elements.filter(element => element.props.tags === term);
+    const filteredElements = term ==='' ? elements : elements.filter(element => element.props.tags === term);
     //Разбиваем на страницы
     const currentWords = filteredElements.slice(indexOfFirstWord, indexOfLastWord);
-    //НОВЫЙ КОД:КОНЕЦ
+    //****НОВЫЙ КОД:КОНЕЦ****
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

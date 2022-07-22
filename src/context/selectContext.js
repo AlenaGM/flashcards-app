@@ -4,7 +4,7 @@ export const SelectContext = createContext();
 
 function SelectContextProvider (props) {
 
-    const [term, setTerm] = useState('all');
+    const [term, setTerm] = useState('');
 
     const onUpdateSearch = (e) => {
         setTerm(e.target.value);

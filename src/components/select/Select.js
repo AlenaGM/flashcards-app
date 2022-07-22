@@ -13,7 +13,7 @@ const Select = () => {
         word.tags
     ))
 
-    const uniqueTags = [...new Set(tags)].filter(element => element !== "");
+    const uniqueTags = [...new Set(tags)].filter(element => element !== "").sort();
 
     const options = uniqueTags.map(tag => (
         <option value={tag} key={tag}>{tag}</option>
@@ -25,7 +25,7 @@ const Select = () => {
 
     return (
         <select className="select" onChange={onUpdateSearch}>
-            <option value="all" key="all" className="selectTitle">все коллекции</option>
+            <option value="" key="all" className="selectTitle">все коллекции</option>
             {options}
         </select>
     )
