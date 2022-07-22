@@ -58,6 +58,15 @@
             }
         }
 
+        .select {
+            border: none;
+            outline: none;
+            background-color: $table-border;
+            color:$text-status;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: larger;
+        }
+
     &__row {
         display: flex;
         justify-content: space-around;

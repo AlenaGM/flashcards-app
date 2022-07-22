@@ -3,6 +3,7 @@ import {useState, useContext} from "react";
 import { WordsContext } from "../../context/wordsContext";
 
 import Row from '../row/Row';
+import Select from "../select/Select";
 import Pagination from "../pagination/Pagination";
 
 import './table.scss';
@@ -14,22 +15,28 @@ const Table = () => {
     const [wordList] = useState(words);
 
     const {currentPage, setCurrentPage} = useContext(WordsContext);
-    const [wordsPerPage] = useState(7);
+    const [wordsPerPage] = useState(2);
 
     const indexOfLastWord = currentPage * wordsPerPage;
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-    const currentWords = wordList.slice(indexOfFirstWord, indexOfLastWord);
+//    const currentWords = wordList.slice(indexOfFirstWord, indexOfLastWord);
 
     const onDelete = (id) => {
         deleteWords(id);
     };
 
-    const elements = currentWords.map(word => (
+    const elements = wordList.map(word => (
         <Row
             key={word.id}
             {...word}
             onDelete={onDelete}/>
         ))
+
+    //НОВЫЙ КОД:НАЧАЛО
+    //Фильтруем
+    const newElements = elements.filter(element => element.props.tags === 'шахматы');
+    const currentWords = newElements.slice(indexOfFirstWord, indexOfLastWord);
+    //НОВЫЙ КОД:КОНЕЦ
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -41,19 +48,19 @@ const Table = () => {
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
-                    <th>Collection</th>
+                    <th>Collection <i className="fas fa-caret-down"></i><Select/></th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                {elements}
+                {currentWords}
             </tbody>
             <tfoot>
                 <tr className="table__row">
                     <th>
                         <Pagination
                             wordsPerPage={wordsPerPage}
-                            totalWords={wordList.length}
+                            totalWords={newElements.length}
                             currentPage={currentPage}
                             paginate={paginate}/>
                     </th>
@@ -64,4 +71,9 @@ const Table = () => {
 }
 
 export default Table;
+
+
+
+
+
 
