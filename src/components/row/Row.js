@@ -2,6 +2,7 @@ import {useState, useContext} from "react";
 import classnames from 'classnames';
 
 import { WordsContext } from "../../context/wordsContext";
+import { SelectContext } from "../../context/selectContext";
 
 
 const Row = (props) => {
@@ -10,6 +11,7 @@ const Row = (props) => {
   const [isEdit, setEdit] = useState(false);
 
   const { editWords } = useContext(WordsContext);
+  const { setTerm } = useContext(SelectContext);
   const { deleteWords } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
@@ -21,13 +23,14 @@ const Row = (props) => {
     e.stopPropagation();
     setState({
       ...state,
-      [e.target.dataset.name]: e.target.value.trim().toLowerCase(),
+      [e.target.dataset.name]: e.target.value.toLowerCase(),
     });
   };
 
-  const onSave = () => {
+  const onSave = (e) => {
     if (english ===''|| transcription==='' || russian==='' || tags==='') return;
     setEdit(!isEdit);
+    setTerm(tags);
     editWords(state);
   };
 
@@ -41,6 +44,7 @@ const Row = (props) => {
   const onDelete = () => {
     props.onDelete(props.id);
     deleteWords(state);
+    setTerm('');
   };
 
   const saveIconClasses = classnames({
