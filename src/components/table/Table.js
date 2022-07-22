@@ -17,7 +17,7 @@ const Table = () => {
     const {term} = useContext(SelectContext);
 
     const {currentPage, setCurrentPage} = useContext(WordsContext);
-    const [wordsPerPage] = useState(4);
+    const [wordsPerPage] = useState(7);
 
     const indexOfLastWord = currentPage * wordsPerPage;
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
