@@ -8,6 +8,7 @@ const Select = () => {
     const [wordList] = useState(words);
 
     const {setTerm} = useContext(SelectContext);
+    const {setCurrentPage} = useContext(WordsContext);
 
     const tags = wordList.map(word => (
         word.tags
@@ -21,6 +22,7 @@ const Select = () => {
 
     const onUpdateSearch = (e) => {
         setTerm(e.target.value);
+        setCurrentPage('1');
     }
 
     return (
