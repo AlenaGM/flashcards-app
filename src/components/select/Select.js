@@ -15,7 +15,7 @@ const Select = () => {
     const uniqueTags = [...new Set(tags)].filter(element => element !== "");
 
     const options = uniqueTags.map(tag => (
-        <option value={tag} key={tag}>{tag} </option>
+        <option value={tag} key={tag}>{tag}</option>
     ))
 
     const onUpdateSearch = (e) => {
@@ -23,12 +23,10 @@ const Select = () => {
     }
 
     return (
-        <>
         <select className="select" onChange={onUpdateSearch}>
-            <option value="all" key="all" className="selectTitle">all</option>
-                {options}
-            </select>
-        </>
+            <option value={uniqueTags} key="all" className="selectTitle">все коллекции</option>
+            {options}
+        </select>
     )
 }
 
