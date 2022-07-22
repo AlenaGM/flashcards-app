@@ -1,12 +1,13 @@
 import { useState, useContext } from "react";
 import { WordsContext } from "../../context/wordsContext";
+import { SelectContext } from "../../context/selectContext";
 
 const Select = () => {
 
     const {words} = useContext(WordsContext);
     const [wordList] = useState(words);
 
-    const [term, setTerm] = useState('');
+    const {setTerm} = useContext(SelectContext);
 
     const tags = wordList.map(word => (
         word.tags
@@ -24,7 +25,7 @@ const Select = () => {
 
     return (
         <select className="select" onChange={onUpdateSearch}>
-            <option value={uniqueTags} key="all" className="selectTitle">все коллекции</option>
+            <option value="all" key="all" className="selectTitle">все коллекции</option>
             {options}
         </select>
     )
