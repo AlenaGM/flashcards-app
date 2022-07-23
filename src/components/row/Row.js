@@ -8,7 +8,7 @@ const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-  //const {setActive} = useContext(SelectContext);
+  //const {setModalActive} = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
   const { setTerm } = useContext(SelectContext);
@@ -43,7 +43,7 @@ const Row = (props) => {
 
   const onDelete = () => {
     props.onDelete(props.id);
-    //setActive(state);
+    //setModalActive(true);
     deleteWords(state);
     setTerm('');
   };

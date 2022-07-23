@@ -14,7 +14,7 @@ const Modal = () => {
             <div className="div">Удалить слово?</div>
                 <div className="div">
                     <button className='button button__size-small'>Да</button>
-                    <button className='button button__size-small' onClick = {setModalActive(false)}>Нет</button>
+                    <button className='button button__size-small' onClick = {()=>setModalActive(false)}>Нет</button>
                 </div>
             </div>
         </div>
