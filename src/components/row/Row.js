@@ -43,12 +43,11 @@ const Row = (props) => {
   }
 
   const onDelete = () => {
-    setModalActive(true);
+    //setModalActive(true);
     //setTerm('');
     props.onDelete(props.id);
     //строчка ниже не нужна
     //deleteWords(state);
-
   };
 
 
@@ -116,7 +115,7 @@ const Row = (props) => {
           <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {onDelete} ></i>
+              <i className="fas fa-trash icon icon__delete" onClick = {()=>{setModalActive(true); onDelete()}} ></i>
           </td>
         </>
       }
