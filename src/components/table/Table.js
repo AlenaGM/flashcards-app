@@ -13,6 +13,7 @@ import './table.scss';
 const Table = () => {
 
     const {words, deleteWords} = useContext(WordsContext);
+    const { confirmDelete } = useContext(SelectContext);
     const [wordList] = useState(words);
     const {term} = useContext(SelectContext);
 
@@ -23,8 +24,8 @@ const Table = () => {
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
 
     const onDelete = (id) => {
-        deleteWords(id);
-    };
+    //deleteWords(id);
+    }
 
     const elements = wordList.map(word => (
         <Row

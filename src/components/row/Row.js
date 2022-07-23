@@ -8,11 +8,12 @@ const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-  //const {setModalActive} = useContext(SelectContext);
+  const {setModalActive} = useContext(SelectContext);
+  const { confirmDelete } = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
   const { setTerm } = useContext(SelectContext);
-  const { deleteWords } = useContext(WordsContext);
+  //const { deleteWords } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
@@ -42,11 +43,15 @@ const Row = (props) => {
   }
 
   const onDelete = () => {
+    setModalActive(true);
+    //setTerm('');
     props.onDelete(props.id);
-    //setModalActive(true);
-    deleteWords(state);
-    setTerm('');
+    //строчка ниже не нужна
+    //deleteWords(state);
+
   };
+
+
 
 
   const saveIconClasses = classnames({
@@ -111,7 +116,7 @@ const Row = (props) => {
           <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
+              <i className="fas fa-trash icon icon__delete" onClick = {onDelete} ></i>
           </td>
         </>
       }
