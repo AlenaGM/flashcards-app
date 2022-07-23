@@ -9,7 +9,6 @@ const Row = (props) => {
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
   const {setModalActive} = useContext(SelectContext);
-  const { confirmDelete } = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
   const { setTerm } = useContext(SelectContext);
