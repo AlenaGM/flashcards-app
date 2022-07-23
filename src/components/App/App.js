@@ -2,6 +2,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import {HomePage, GamePage, Page404} from '../pages';
 
+import Modal from "../modal/Modal";
+
 import WordsContextProvider from '../../context/wordsContext';
 import SelectContextProvider from "../../context/selectContext";
 import AppHeader from '../appHeader/AppHeader';
@@ -25,6 +27,7 @@ function App() {
                                 <Route path="*" element={<Page404/>}/>
                             </Routes>
                         </main>
+                        <Modal/>
                         <AppFooter/>
                     </div>
                 </BrowserRouter>

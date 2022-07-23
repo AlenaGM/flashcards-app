@@ -4,11 +4,11 @@ import classnames from 'classnames';
 import { WordsContext } from "../../context/wordsContext";
 import { SelectContext } from "../../context/selectContext";
 
-
 const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
+  //const {setActive} = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
   const { setTerm } = useContext(SelectContext);
@@ -43,9 +43,11 @@ const Row = (props) => {
 
   const onDelete = () => {
     props.onDelete(props.id);
+    //setActive(state);
     deleteWords(state);
     setTerm('');
   };
+
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,

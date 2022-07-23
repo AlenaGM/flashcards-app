@@ -43,6 +43,7 @@ const Table = () => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
+        <>
         <table className="app__table table">
             <thead>
                 <tr className="table__row">
@@ -69,6 +70,8 @@ const Table = () => {
                 </tr>
             </tfoot>
         </table>
+
+        </>
     )
 }
 
