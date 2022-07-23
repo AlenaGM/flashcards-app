@@ -13,7 +13,6 @@ import './table.scss';
 const Table = () => {
 
     const {words, deleteWords} = useContext(WordsContext);
-    const { confirmDelete } = useContext(SelectContext);
     const [wordList] = useState(words);
     const {term} = useContext(SelectContext);
 
