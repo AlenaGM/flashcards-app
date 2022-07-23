@@ -7,24 +7,22 @@ const Modal = () => {
 
     const {modalActive, setModalActive} = useContext(SelectContext);
     const { setTerm } = useContext(SelectContext);
-    const { deleteOK, setDeleteOK } = useContext(SelectContext);
+
 
     const handleConfirm = () => {
-        setDeleteOK(true);
+
         setModalActive(false);
         setTerm('');
     }
 
     const handleRefuse = () => {
-        setDeleteOK(false);
+
         setModalActive(false);
         setTerm('');
     }
 
-    console.log (deleteOK);
-
     return (
-        <div className={modalActive? "modal active" : "modal"} onClick={()=>{setModalActive(false);setDeleteOK(false);}}>
+        <div className={modalActive? "modal active" : "modal"} onClick={()=>setModalActive(false)}>
             <div className={modalActive? "modal__content active" : "modal__content"}  onClick={e => e.stopPropagation()}>
             <div className="div">Удалить слово?</div>
                 <div className="div">

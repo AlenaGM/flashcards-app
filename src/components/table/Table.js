@@ -6,6 +6,7 @@ import { SelectContext } from "../../context/selectContext";
 import Row from '../row/Row';
 import Select from "../select/Select";
 import Pagination from "../pagination/Pagination";
+import Modal from "../modal/Modal";
 
 import './table.scss';
 
@@ -70,7 +71,7 @@ const Table = () => {
                 </tr>
             </tfoot>
         </table>
-
+        <Modal/>
         </>
     )
 }
