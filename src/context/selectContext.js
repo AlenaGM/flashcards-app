@@ -5,7 +5,7 @@ export const SelectContext = createContext();
 function SelectContextProvider (props) {
 
     const [term, setTerm] = useState('');
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
 
 
     const onUpdateSearch = (e) => {
