@@ -47,6 +47,7 @@ const Table = () => {
     const [selectVisible, setSelectVisible] = useState(false);
 
     const openSelectIconClasses = classnames({
+        'showSelectIcon': true,
         'fas fa-caret-down': !selectVisible,
         'fas fa-caret-up': selectVisible
     });
@@ -60,7 +61,7 @@ const Table = () => {
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
-                    <th>Collection <i className={openSelectIconClasses} onClick={()=>setSelectVisible(!selectVisible)}></i>{selectVisible && <Select/>}</th>
+                    <th className='collection'>Collection <i className={openSelectIconClasses} onClick={()=>setSelectVisible(!selectVisible)}></i>{selectVisible && <Select/>}</th>
                     <th>Action</th>
                 </tr>
             </thead>
