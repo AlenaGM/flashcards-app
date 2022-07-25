@@ -15,14 +15,6 @@ const Select = () => {
     ))
 
     const uniqueTags = [...new Set(tags)].filter(element => element !== "" && element !== term).sort();
-    console.log(uniqueTags);
-
-
-    const makeUniq = (uniqueTags) => {
-        return uniqueTags.filter((el, key) => uniqueTags.indexOf(el) === key);
-    }
-
-    console.log(makeUniq(uniqueTags));
 
     const options = uniqueTags.map(tag => (
         <option value={tag} key={tag}>{tag}</option>
