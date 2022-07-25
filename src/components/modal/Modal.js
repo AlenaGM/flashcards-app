@@ -24,8 +24,8 @@ const Modal = () => {
     return (
         <div className={modalActive? "modal active" : "modal"} onClick={()=>setModalActive(false)}>
             <div className={modalActive? "modal__content active" : "modal__content"}  onClick={e => e.stopPropagation()}>
-            <div className="div">Удалить слово?</div>
-                <div className="div">
+            <div>Удалить слово?</div>
+                <div className="modal__content_buttons">
                     <button className='button button__size-small' onClick={handleConfirm}>Да</button>
                     <button className='button button__size-small' onClick={handleRefuse}>Нет</button>
                 </div>
