@@ -67,6 +67,10 @@
             font-size: larger;
         }
 
+        .select__close {
+            transform: rotateY(180deg)
+        }
+
     &__row {
         display: flex;
         justify-content: space-around;

@@ -3,6 +3,8 @@ import {useState, useContext} from "react";
 import { WordsContext } from "../../context/wordsContext";
 import { SelectContext } from "../../context/selectContext";
 
+import classnames from 'classnames';
+
 import Row from '../row/Row';
 import Select from "../select/Select";
 import Pagination from "../pagination/Pagination";
@@ -42,6 +44,12 @@ const Table = () => {
     //****НОВЫЙ КОД:КОНЕЦ****
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const [selectVisible, setSelectVisible] = useState(false);
+
+    const openSelectIconClasses = classnames({
+        'fas fa-caret-down': !selectVisible,
+        'fas fa-caret-up': selectVisible
+    });
 
     return (
         <>
@@ -52,7 +60,7 @@ const Table = () => {
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
-                    <th>Collection <i className="fas fa-caret-down"></i><Select/></th>
+                    <th>Collection <i className={openSelectIconClasses} onClick={()=>setSelectVisible(!selectVisible)}></i>{selectVisible && <Select/>}</th>
                     <th>Action</th>
                 </tr>
             </thead>

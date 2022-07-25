@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { WordsContext } from "../../context/wordsContext";
 import { SelectContext } from "../../context/selectContext";
+import classnames from 'classnames';
 
 const Select = () => {
 
@@ -9,6 +10,7 @@ const Select = () => {
 
     const {setTerm} = useContext(SelectContext);
     const {setCurrentPage} = useContext(WordsContext);
+    const [selectVisible] = useState(false);
 
     const tags = wordList.map(word => (
         word.tags
@@ -26,7 +28,7 @@ const Select = () => {
     }
 
     return (
-        <select className="select" onChange={onUpdateSearch}>
+        <select className='select' onChange={onUpdateSearch}>
             <option value="" key="all" className="selectTitle">все коллекции</option>
             {options}
         </select>
