@@ -14,7 +14,7 @@ const Select = () => {
         word.tags
     ))
 
-    const uniqueTags = [...new Set(tags)].filter(element => element !== "").filter(element => element !== term).sort();
+    const uniqueTags = [...new Set(tags)].filter(element => element !== "" && element !== term).sort();
     console.log(uniqueTags);
 
 
