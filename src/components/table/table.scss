@@ -61,14 +61,21 @@
         .select {
             border: none;
             outline: none;
-            background-color: $table-border;
             color:$text-status;
             font-family: "Roboto Condensed", sans-serif;
-            font-size: larger;
-        }
-
-        .select__close {
-            transform: rotateY(180deg)
+            font-size: 16px;
+            background: transparent;
+            width: 200px;
+            padding: 0px 5px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            option{
+                background-color: #fff8f9;
+                color: $text-main;
+                &:hover {
+                    background: orange;
+                    }
+            }
         }
 
     &__row {
