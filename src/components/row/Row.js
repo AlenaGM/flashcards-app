@@ -2,14 +2,17 @@ import {useState, useContext} from "react";
 import classnames from 'classnames';
 
 import { WordsContext } from "../../context/wordsContext";
-
+import { SelectContext } from "../../context/selectContext";
 
 const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
+  const {setModalActive} = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
+  const { setTerm } = useContext(SelectContext);
+  //const { deleteWords } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
@@ -20,13 +23,14 @@ const Row = (props) => {
     e.stopPropagation();
     setState({
       ...state,
-      [e.target.dataset.name]: e.target.value.trim().toLowerCase(),
+      [e.target.dataset.name]: e.target.value.toLowerCase(),
     });
   };
 
-  const onSave = () => {
+  const onSave = (e) => {
     if (english ===''|| transcription==='' || russian==='' || tags==='') return;
     setEdit(!isEdit);
+    setTerm('');
     editWords(state);
   };
 
@@ -38,8 +42,15 @@ const Row = (props) => {
   }
 
   const onDelete = () => {
+    //setModalActive(true);
+    //setTerm('');
     props.onDelete(props.id);
+    //строчка ниже не нужна
+    //deleteWords(state);
   };
+
+
+
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
@@ -103,7 +114,7 @@ const Row = (props) => {
           <td>{tags}</td>
           <td>
               <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
+              <i className="fas fa-trash icon icon__delete" onClick = {()=>{setModalActive(true); onDelete()}} ></i>
           </td>
         </>
       }
