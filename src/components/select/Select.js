@@ -14,11 +14,19 @@ const Select = () => {
         word.tags
     ))
 
-    const uniqueTags = [...new Set(tags)].filter(element => element !== "").sort();
+    const uniqueTags = [...new Set(tags)].filter(element => element !== "").filter(element => element !== term).sort();
+    console.log(uniqueTags);
+
+
+    const makeUniq = (uniqueTags) => {
+        return uniqueTags.filter((el, key) => uniqueTags.indexOf(el) === key);
+    }
+
+    console.log(makeUniq(uniqueTags));
 
     const options = uniqueTags.map(tag => (
         <option value={tag} key={tag}>{tag}</option>
-    ))
+    ));
 
     const onUpdateSearch = (e) => {
         setTerm(e.target.value);
@@ -27,7 +35,7 @@ const Select = () => {
 
     return (
         <select className='select' onChange={onUpdateSearch}>
-            {term && <option value={term} key={term}>{term}</option>}
+            {term && <option value={term}>{term}</option>}
             <option value="" key="">все коллекции</option>
             {options}
         </select>
