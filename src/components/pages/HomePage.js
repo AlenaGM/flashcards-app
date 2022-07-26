@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { WordsContext } from '../../context/WordsContext';
 import Table from '../table/Table';
 import Spinner from '../spinner/Spinner';
-import NowordsMessage from '../errors/NowordsMessage';
+import NoWordsMessage from '../errors/NoWordsMessage';
 import AddForm from '../addForm/AddForm';
 
 import '../App/App.scss';
@@ -14,7 +14,7 @@ const HomePage = () => {
     const {loading, errors} = useContext(WordsContext);
 
     const spinner = loading ? <Spinner/> : null;
-    const error = errors ? <NowordsMessage/> : null;
+    const error = errors ? <NoWordsMessage/> : null;
     const content = !(loading || errors) ? <Table/> : null;
 
     return (

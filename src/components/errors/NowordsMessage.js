@@ -2,7 +2,7 @@ import img from '../../resources/img/tenor.gif';
 import './errorMessage.scss';
 
 
-const NowordsMessage = () => {
+const NoWordsMessage = () => {
 
     return (
         <div className="noWordsMessage">
@@ -14,4 +14,4 @@ const NowordsMessage = () => {
     )
 }
 
-export default NowordsMessage;
+export default NoWordsMessage;

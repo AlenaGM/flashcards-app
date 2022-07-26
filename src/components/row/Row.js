@@ -91,8 +91,8 @@ const Row = (props) => {
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
-              <i className={saveIconClasses} onClick={onSave}> </i>
-              <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
+              <i className={saveIconClasses} onClick={onSave}/>
+              <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}/>
           </td>
         </>
         :
@@ -103,8 +103,8 @@ const Row = (props) => {
           <td>{russian}</td>
           <td>{tags}</td>
           <td>
-              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}></i>
+              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}/>
+              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}/>
           </td>
         </>
       }

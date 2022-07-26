@@ -45,12 +45,11 @@ const Table = () => {
             />
         ))
 
-    //****НОВЫЙ КОД:НАЧАЛО****
-    //Фильтруем
+
     const filteredElements = term ==='' ? elements : elements.filter(element => element.props.tags === term);
-    //Разбиваем на страницы
+
     const currentWords = filteredElements.slice(indexOfFirstWord, indexOfLastWord);
-    //****НОВЫЙ КОД:КОНЕЦ****
+
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
     const [selectVisible, setSelectVisible] = useState(false);
@@ -65,7 +64,6 @@ const Table = () => {
         setSelectVisible(!selectVisible);
     }
 
-
     return (
         <>
         <table className="app__table table">
@@ -75,7 +73,7 @@ const Table = () => {
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
-                    <th className='collection'>Collection <i className={openSelectIconClasses} onClick={onCaretClick}></i>{selectVisible && <Select/>}</th>
+                    <th className='collection'>Collection <i className={openSelectIconClasses} onClick={onCaretClick}/>{selectVisible && <Select/>}</th>
                     <th>Action</th>
                 </tr>
             </thead>
