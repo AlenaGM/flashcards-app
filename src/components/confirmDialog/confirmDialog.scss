@@ -11,15 +11,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    //opacity: 0;
-    //pointer-events: none;
-    //transition: 0.5s;
+    //
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-//.portal-overlay.active{
-//    opacity: 1;
-//    pointer-events: all;
-//}
+.portal-overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
 
 .portal-overlay .confirm-dialog {
     display: flex;
@@ -31,15 +32,16 @@
     border-radius: 6px;
     border: 1px solid $row-border;
     box-shadow: 0px 1px 2px 0px #0000001F;
-    //transform: scale(0.5);
-    //transition: 0.4s all;
+    //
+    transform: scale(0.5);
+    transition: 0.4s all;
 }
 
-//.portal-overlay .confirm-dialog.active{
-//    transform: scale(1);
-//    opacity: 1;
-//    pointer-events: all;
-//}
+.confirm-dialog.active{
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
 
 .portal-overlay .confirm-dialog__footer {
     display: inline-flex;
