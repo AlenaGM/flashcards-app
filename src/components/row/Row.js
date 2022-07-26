@@ -11,7 +11,7 @@ const Row = (props) => {
   const { editWords, setTerm  } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
-  const filledIn = !english|| !transcription || !russian || !tags;
+  const empty = !english|| !transcription || !russian || !tags;
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -26,7 +26,7 @@ const Row = (props) => {
   };
 
   const onSave = (e) => {
-    if (filledIn) return;
+    if (empty) return;
     setEdit(!isEdit);
     editWords(state);
     setTerm('');
@@ -45,16 +45,17 @@ const Row = (props) => {
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
-    'icon__disabled': filledIn
+    'icon__disabled': empty
   });
 
+  const rowClasses = classnames('table__row', {row_edit: isEdit});
   const inputEnglishClasses = classnames('input_edit', {input_error: english===""});
   const inputTranscriptionClasses = classnames('input_edit', {input_error: transcription===""});
   const inputRussianClasses = classnames('input_edit', {input_error: russian===""});
   const inputTagsClasses = classnames('input_edit', {input_error: tags===""});
 
   return (
-    <tr className={classnames('table__row', {row_edit: isEdit})}>
+    <tr className={rowClasses}>
       {isEdit ?
         <>
           <td>

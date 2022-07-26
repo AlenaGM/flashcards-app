@@ -19,6 +19,7 @@ const AddForm = () => {
     });
 
     const {english, transcription, russian, tags} = word;
+    const empty = !english || !transcription || !russian || !tags;
 
     const handleChange = (e) => {
         setWord({
@@ -37,56 +38,55 @@ const AddForm = () => {
     }
 
     const onSubmit = () => {
-        if (english ===''|| transcription==='' || russian==='' || tags==='') return;
-
+        if (empty) return;
         addWords(word);
         clearForm();
     }
 
     const labelClasses = classnames({
         'label': true,
-        'visible': english ===''|| transcription==='' || russian==='' || tags===''
+        'visible': empty
     });
 
     const addButtonClasses = classnames({
         'button button__size-small': true,
-        'button__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+        'button__disabled': empty
     });
 
     return(
         <form className="app__table table form" onSubmit = {onSubmit}>
             <div>
-            <input
-                type="text"
-                className={"input_edit"}
-                placeholder="English"
-                data-name={"english"}
-                value={english}
-                onChange={handleChange}/>
-            <input
-                type="text"
-                className="input_edit"
-                placeholder="Transcription"
-                data-name={"transcription"}
-                value={transcription}
-                onChange={handleChange}
-                />
-            <input
-                type="text"
-                className="input_edit"
-                placeholder="Russian"
-                data-name={"russian"}
-                value={russian}
-                onChange={handleChange}
-                />
-            <input
-                type="text"
-                className="input_edit"
-                placeholder="Collection"
-                data-name={"tags"}
-                value={tags}
-                onChange={handleChange}
-                />
+                <input
+                    type="text"
+                    className={"input_edit"}
+                    placeholder="English"
+                    data-name={"english"}
+                    value={english}
+                    onChange={handleChange}/>
+                <input
+                    type="text"
+                    className="input_edit"
+                    placeholder="Transcription"
+                    data-name={"transcription"}
+                    value={transcription}
+                    onChange={handleChange}
+                    />
+                <input
+                    type="text"
+                    className="input_edit"
+                    placeholder="Russian"
+                    data-name={"russian"}
+                    value={russian}
+                    onChange={handleChange}
+                    />
+                <input
+                    type="text"
+                    className="input_edit"
+                    placeholder="Collection"
+                    data-name={"tags"}
+                    value={tags}
+                    onChange={handleChange}
+                    />
             </div>
             <label className={labelClasses}>* Для того, чтобы добавить слово, заполните все поля</label>
             <button className={addButtonClasses} onClick = {onSubmit}>Добавить</button>
