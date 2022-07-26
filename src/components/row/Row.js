@@ -8,9 +8,10 @@ const Row = (props) => {
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
 
-  const { editWords } = useContext(WordsContext);
-  const { setTerm } = useContext(WordsContext);
+  const { editWords, setTerm  } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
+
+  const filledIn = !english|| !transcription || !russian || !tags;
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -25,10 +26,10 @@ const Row = (props) => {
   };
 
   const onSave = (e) => {
-    if (english ===''|| transcription==='' || russian==='' || tags==='') return;
+    if (filledIn) return;
     setEdit(!isEdit);
-    setTerm('');
     editWords(state);
+    setTerm('');
   };
 
   const onCancel = () => {
@@ -44,8 +45,13 @@ const Row = (props) => {
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
-    'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+    'icon__disabled': filledIn
   });
+
+  const inputEnglishClasses = classnames('input_edit', {input_error: english===""});
+  const inputTranscriptionClasses = classnames('input_edit', {input_error: transcription===""});
+  const inputRussianClasses = classnames('input_edit', {input_error: russian===""});
+  const inputTagsClasses = classnames('input_edit', {input_error: tags===""});
 
   return (
     <tr className={classnames('table__row', {row_edit: isEdit})}>
@@ -57,7 +63,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: english===""})}
+              className={inputEnglishClasses}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
@@ -66,7 +72,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: transcription===""})}
+              className={inputTranscriptionClasses}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
@@ -75,7 +81,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: russian===""})}
+              className={inputRussianClasses}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
@@ -84,7 +90,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: tags===""})}
+              className={inputTagsClasses}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
