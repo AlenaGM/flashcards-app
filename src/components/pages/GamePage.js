@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { WordsContext } from '../../context/WordsContext';
 import AppGame from '../appGame/AppGame';
 import Spinner from '../spinner/Spinner';
-import NoWordsMessage from '../errors/NoWordsMessage';
+import NoWordsMessage from '../errors/NowordsMessage';
 
 import '../App/App.scss';
 

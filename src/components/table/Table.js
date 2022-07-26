@@ -26,7 +26,6 @@ const Table = () => {
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
 
     const showConfirm = async (id) => {
-        console.log('showConfirm', id)
         const isConfirmed = await confirm('Удалить слово?');
 
         if (isConfirmed) {
