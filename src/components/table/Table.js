@@ -1,22 +1,23 @@
 import {useState, useContext} from "react";
+import useConfirm from "../../hooks/useConfirm";
 
-import { WordsContext } from "../../context/wordsContext";
+import { WordsContext } from "../../context/WordsContext";
 
 import classnames from 'classnames';
 
 import Row from '../row/Row';
 import Select from "../select/Select";
 import Pagination from "../pagination/Pagination";
-import Modal from "../modal/Modal";
 
 import './table.scss';
 
 
 const Table = () => {
 
+    const {confirm} = useConfirm();
     const {words, deleteWords} = useContext(WordsContext);
     const [wordList] = useState(words);
-    const {term} = useContext(WordsContext);
+    const {term, setTerm} = useContext(WordsContext);
 
     const {currentPage, setCurrentPage} = useContext(WordsContext);
     const [wordsPerPage] = useState(7);
@@ -24,15 +25,24 @@ const Table = () => {
     const indexOfLastWord = currentPage * wordsPerPage;
     const indexOfFirstWord = indexOfLastWord - wordsPerPage;
 
-    const onDelete = (id) => {
-        deleteWords(id);
+    const showConfirm = async (id) => {
+        console.log('showConfirm', id)
+        const isConfirmed = await confirm('Удалить слово?');
+
+        if (isConfirmed) {
+            deleteWords(id);
+            setTerm('');
+        } else {
+            setTerm('');
+        }
     }
 
     const elements = wordList.map(word => (
         <Row
             key={word.id}
             {...word}
-            onDelete={onDelete}/>
+            onDelete={showConfirm}
+            />
         ))
 
     //****НОВЫЙ КОД:НАЧАЛО****
@@ -84,7 +94,6 @@ const Table = () => {
                 </tr>
             </tfoot>
         </table>
-        <Modal/>
         </>
     )
 }

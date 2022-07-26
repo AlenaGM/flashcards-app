@@ -2,9 +2,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import {HomePage, GamePage, Page404} from '../pages';
 
-import Modal from "../modal/Modal";
+import Modal from "../confirmDialog/ConfirmDialog";
 
-import WordsContextProvider from '../../context/wordsContext';
+import WordsContextProvider from '../../context/WordsContext';
 import SelectContextProvider from "../../context/selectContext";
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { WordsContext } from "../../context/wordsContext";
+import { WordsContext } from "../../context/WordsContext";
 
 const Select = () => {
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { WordsContext } from '../../context/wordsContext';
+import { WordsContext } from '../../context/WordsContext';
 import Table from '../table/Table';
 import Spinner from '../spinner/Spinner';
 import NowordsMessage from '../errors/NowordsMessage';

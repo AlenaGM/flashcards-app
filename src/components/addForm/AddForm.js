@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import classnames from 'classnames';
 
-import { WordsContext } from '../../context/wordsContext';
+import { WordsContext } from '../../context/WordsContext';
 
 import './addForm.scss';
 import '../../styles/button.scss';
