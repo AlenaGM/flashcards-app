@@ -5,7 +5,6 @@ import {HomePage, GamePage, Page404} from '../pages';
 import Modal from "../confirmDialog/ConfirmDialog";
 
 import WordsContextProvider from '../../context/WordsContext';
-import SelectContextProvider from "../../context/selectContext";
 import AppHeader from '../appHeader/AppHeader';
 import AppFooter from '../appFooter/AppFooter';
 
@@ -16,7 +15,7 @@ function App() {
 
     return (
         <WordsContextProvider>
-            <SelectContextProvider>
+
                 <BrowserRouter>
                     <div className="app">
                         <AppHeader/>
@@ -31,7 +30,7 @@ function App() {
                         <AppFooter/>
                     </div>
                 </BrowserRouter>
-            </SelectContextProvider>
+
         </WordsContextProvider>
     );
 }

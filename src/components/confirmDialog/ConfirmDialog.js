@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import useConfirm from '../../hooks/useConfirm';
-import classnames from 'classnames';
+
 
 
 import './confirmDialog.scss';
