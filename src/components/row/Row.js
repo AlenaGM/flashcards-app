@@ -11,8 +11,7 @@ const Row = (props) => {
   const {setModalActive} = useContext(SelectContext);
 
   const { editWords } = useContext(WordsContext);
-  const { setTerm } = useContext(SelectContext);
-  //const { deleteWords } = useContext(WordsContext);
+  const { setTerm } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
 
   const onEdit = () => {
@@ -42,11 +41,9 @@ const Row = (props) => {
   }
 
   const onDelete = () => {
-    //setModalActive(true);
-    //setTerm('');
+    setModalActive(true);
+    setTerm('');
     props.onDelete(props.id);
-    //строчка ниже не нужна
-    //deleteWords(state);
   };
 
 

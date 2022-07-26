@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { SelectContext } from '../../context/selectContext';
+import { WordsContext } from '../../context/wordsContext';
 
 import './modal.scss';
 
 const Modal = () => {
 
     const {modalActive, setModalActive} = useContext(SelectContext);
-    const { setTerm } = useContext(SelectContext);
+    const { setTerm } = useContext(WordsContext);
 
 
     const handleConfirm = () => {

@@ -1,7 +1,6 @@
 import {useState, useContext} from "react";
 
 import { WordsContext } from "../../context/wordsContext";
-import { SelectContext } from "../../context/selectContext";
 
 import classnames from 'classnames';
 
@@ -17,7 +16,7 @@ const Table = () => {
 
     const {words, deleteWords} = useContext(WordsContext);
     const [wordList] = useState(words);
-    const {term} = useContext(SelectContext);
+    const {term} = useContext(WordsContext);
 
     const {currentPage, setCurrentPage} = useContext(WordsContext);
     const [wordsPerPage] = useState(7);

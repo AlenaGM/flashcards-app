@@ -13,7 +13,7 @@ function SelectContextProvider (props) {
     }
 
     return (
-    <SelectContext.Provider value={{term, modalActive, setTerm, onUpdateSearch, setModalActive}}>
+    <SelectContext.Provider value={{term,  setTerm, onUpdateSearch, modalActive,setModalActive}}>
         {props.children}
     </SelectContext.Provider>
     );
