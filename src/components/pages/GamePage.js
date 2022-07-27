@@ -3,7 +3,7 @@ import { WordsContext } from '../../context/WordsContext';
 
 import AppGame from '../appGame/AppGame';
 import Spinner from '../spinner/Spinner';
-import NoWordsMessage from '../errors/NowordsMessage';
+import NoWordsMessage from '../errors/NoWordsMessage';
 
 import '../App/App.scss';
 

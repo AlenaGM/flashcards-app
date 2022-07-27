@@ -11,14 +11,14 @@ const ConfirmDialog = () => {
 
     const portalElement = document.getElementById('portal');
 
-    const portalOverlayClasses = classnames('portal-overlay', {active: confirmState.show });
-    const confirmDialogClasses = classnames('confirm-dialog active', {active: confirmState.show });
+    const portalOverlayClasses = classnames('portal__overlay', {active: confirmState.show });
+    const confirmDialogClasses = classnames('portal__confirm-dialog', {active: confirmState.show });
 
     const component =
         <div className = {portalOverlayClasses} onClick={onCancel}>
             <div className={confirmDialogClasses} onClick={e => e.stopPropagation()}>
                 <p>{confirmState?.text && confirmState.text}</p>
-                <div className="confirm-dialog__footer">
+                <div className="portal__confirm-dialog__footer">
                     <button className='button button__size-small' onClick={onConfirm}>Да</button>
                     <button className='button button__size-small' onClick={onCancel}>Нет</button>
                 </div>

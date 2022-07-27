@@ -4,7 +4,7 @@ import { WordsContext } from '../../context/WordsContext';
 import Table from '../table/Table';
 import AddForm from '../addForm/AddForm';
 import Spinner from '../spinner/Spinner';
-import NoWordsMessage from '../errors/NowordsMessage';
+import NoWordsMessage from '../errors/NoWordsMessage';
 
 import '../App/App.scss';
 

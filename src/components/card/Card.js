@@ -1,4 +1,6 @@
 import {useState, useRef, useEffect} from "react";
+
+import './card.scss';
 import '../../styles/button.scss';
 
 
@@ -22,7 +24,7 @@ const Card = (props) => {
             <div>{props.transcription}</div>
             <div onClick = {handleClick}>
                 {pressed ?
-                    <div className="card_translation">{props.russian}</div> :
+                    <div className="card__translation">{props.russian}</div> :
                     <button className="button" ref={btnRef}>Проверить</button>}
             </div>
         </div>

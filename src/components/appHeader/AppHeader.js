@@ -10,7 +10,7 @@ const AppHeader = () => {
         <header className="app__header">
             <Link to="/">
                 <div>
-                    <img className="logo" src={logo} alt="logo"/>
+                    <img className="app__logo" src={logo} alt="logo"/>
                     <h1 className="app__title"><span>Wordy</span> English Vocabulary Cards</h1>
                 </div>
             </Link>
