@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import {ConfirmContext} from '../context/ConfirmContext';
 import {HIDE_CONFIRM, SHOW_CONFIRM} from "../context/Reducer";
 
+
 let resolveCallback;
 function useConfirm() {
     const [confirmState, dispatch] = useContext(ConfirmContext);
