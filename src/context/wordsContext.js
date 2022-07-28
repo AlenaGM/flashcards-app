@@ -65,7 +65,18 @@ function WordsContextProvider(props) {
     }
 
     return (
-    <WordsContext.Provider value={{words, loading, errors, currentPage, term, editWords, deleteWords, addWords, setCurrentPage, setTerm, onUpdateSearch,}}>
+    <WordsContext.Provider
+      value={{words,
+              loading,
+              errors,
+              currentPage,
+              term,
+              editWords,
+              deleteWords,
+              addWords,
+              setCurrentPage,
+              setTerm,
+              onUpdateSearch}}>
         {props.children}
     </WordsContext.Provider>
     );

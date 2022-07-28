@@ -14,9 +14,6 @@
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
             background-color: $table-border;
-                @media screen and (max-width: 500px){
-                    //display: none;
-                    }
                 th {
                     width: 19%;
                     padding-right: 5px;
@@ -137,14 +134,15 @@
     padding-bottom: 9px;
 }
 
-.input_edit {
-    width:100%;
-    border: solid 1px $table-border;
-    padding: 8px 5px;
-}
-
-.input_error {
-    border: solid 2px $error;
+.input{
+    &_edit {
+        width:100%;
+        border: solid 1px $table-border;
+        padding: 8px 5px;
+    }
+    &_error {
+        border: solid 2px $error;
+    }
 }
 
 .showSelectIcon {

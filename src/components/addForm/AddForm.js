@@ -69,24 +69,21 @@ const AddForm = () => {
                     placeholder="Transcription"
                     data-name={"transcription"}
                     value={transcription}
-                    onChange={handleChange}
-                    />
+                    onChange={handleChange}/>
                 <input
                     type="text"
                     className="input_edit"
                     placeholder="Russian"
                     data-name={"russian"}
                     value={russian}
-                    onChange={handleChange}
-                    />
+                    onChange={handleChange}/>
                 <input
                     type="text"
                     className="input_edit"
                     placeholder="Collection"
                     data-name={"tags"}
                     value={tags}
-                    onChange={handleChange}
-                    />
+                    onChange={handleChange}/>
             </div>
             <label className={labelClasses}>* Для того, чтобы добавить слово, заполните все поля</label>
             <button className={addButtonClasses} onClick = {onSubmit}>Добавить</button>

@@ -5,7 +5,10 @@ import './errorMessage.scss';
 const ErrorMessage = () => {
 
     return (
-        <img className='error_img' src={img} alt="Error"/>
+        <>
+            <img className='error_img' src={img} alt="Error"/>
+            <p>This page doesn't exist</p>
+        </>
     )
 }
 
