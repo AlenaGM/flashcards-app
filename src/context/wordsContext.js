@@ -7,7 +7,7 @@ function WordsContextProvider(props) {
 
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [errors, setError] = useState(true);
+    const [errors, setError] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [term, setTerm] = useState('');
 

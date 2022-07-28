@@ -7,9 +7,8 @@ const NoWordsMessage = () => {
     return (
         <div className="noWordsMessage">
             <img className='error_img' src={img} alt="Error"/>
-            <p>Sorry, we don't get or send words today!</p>
+            <p>Sorry, we can't upload or download words!</p>
             <p>No connection! Or we are very busy!</p>
-            <p>Or your words are simply not good enough!</p>
         </div>
     )
 }
