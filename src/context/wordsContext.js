@@ -60,10 +60,6 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
-    const onUpdateSearch = (e) => {
-      setTerm(e.target.value);
-    }
-
     return (
     <WordsContext.Provider
       value={{words,
@@ -75,8 +71,8 @@ function WordsContextProvider(props) {
               deleteWords,
               addWords,
               setCurrentPage,
-              setTerm,
-              onUpdateSearch}}>
+              setTerm
+            }}>
         {props.children}
     </WordsContext.Provider>
     );

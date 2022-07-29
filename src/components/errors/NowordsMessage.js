@@ -1,5 +1,5 @@
 import img from '../../resources/img/tenor.gif';
-import './noWordsMessage.scss';
+import './errorMessages.scss';
 
 
 const NoWordsMessage = () => {
