@@ -14,9 +14,6 @@
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
             background-color: $table-border;
-                @media screen and (max-width: 500px){
-                    //display: none;
-                    }
                 th {
                     width: 19%;
                     padding-right: 5px;
@@ -32,7 +29,7 @@
                             display: none;
                             }
                     }
-                    &:nth-of-type(2) {
+                    &:nth-of-type(3) {
                         @media screen and (max-width: 765px){
                             display: none;
                             }
@@ -75,9 +72,6 @@
             option{
                 background-color: #fff8f9;
                 color: $text-main;
-                &:hover {
-                    background: orange;
-                    }
             }
         }
 
@@ -106,7 +100,7 @@
                     display: none;
                     }
             }
-            &:nth-of-type(2) {
+            &:nth-of-type(3) {
                 @media screen and (max-width: 765px){
                     display: none;
                     }
@@ -137,12 +131,17 @@
     padding-bottom: 9px;
 }
 
-.input_edit {
-    width:100%;
-    border: solid 1px $table-border;
-    padding: 8px 5px;
+.input{
+    &_edit {
+        width:100%;
+        border: solid 1px $table-border;
+        padding: 8px 5px;
+    }
+    &_error {
+        border: solid 2px $error;
+    }
 }
 
-.input_error {
-    border: solid 2px $error;
+.showSelectIcon {
+    margin-left: 5px;
 }

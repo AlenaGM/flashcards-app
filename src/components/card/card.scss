@@ -1,20 +1,5 @@
 @import '../../styles/variables.scss';
 
-.game {
-    color: $text-main;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    width: 100%;
-    max-width: 1000px;
-    margin: 4vw auto;
-    justify-content: center;
-    align-items: center;
-    column-gap: 2vw;
-    row-gap: 4vw;
-    padding: 16px;
-}
 
 .card {
     display: flex;
@@ -51,4 +36,3 @@
         }
     }
 }
-

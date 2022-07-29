@@ -10,17 +10,17 @@
         padding: 16px;
         div{
             display: flex;
-            .logo {
-                max-width: 80px;
-                margin-right: 5px;
-                &:hover {
-                    cursor:pointer;
-                }
-                @media screen and (max-width: 450px){
-                    max-width: 60px;
-                    }
-            }
         }
+    }
+    &__logo {
+        max-width: 80px;
+        margin-right: 5px;
+        &:hover {
+            cursor:pointer;
+        }
+        @media screen and (max-width: 450px){
+            max-width: 60px;
+            }
     }
     &__title {
         display: flex;

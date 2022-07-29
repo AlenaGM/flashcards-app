@@ -1,19 +1,18 @@
 import {useState, useContext} from "react";
 import classnames from 'classnames';
 
-import { WordsContext } from "../../context/wordsContext";
-import { SelectContext } from "../../context/selectContext";
+import { WordsContext } from "../../context/WordsContext";
+
 
 const Row = (props) => {
 
   const [state, setState] = useState(props);
   const [isEdit, setEdit] = useState(false);
-  const {setModalActive} = useContext(SelectContext);
 
-  const { editWords } = useContext(WordsContext);
-  const { setTerm } = useContext(SelectContext);
-  //const { deleteWords } = useContext(WordsContext);
+  const { editWords, setTerm  } = useContext(WordsContext);
   const {id, english, transcription, russian, tags} = state;
+
+  const empty = !english|| !transcription || !russian || !tags;
 
   const onEdit = () => {
     setEdit(!isEdit);
@@ -28,10 +27,10 @@ const Row = (props) => {
   };
 
   const onSave = (e) => {
-    if (english ===''|| transcription==='' || russian==='' || tags==='') return;
+    if (empty) return;
     setEdit(!isEdit);
-    setTerm('');
     editWords(state);
+    setTerm('');
   };
 
   const onCancel = () => {
@@ -42,23 +41,22 @@ const Row = (props) => {
   }
 
   const onDelete = () => {
-    //setModalActive(true);
-    //setTerm('');
     props.onDelete(props.id);
-    //строчка ниже не нужна
-    //deleteWords(state);
   };
-
-
-
 
   const saveIconClasses = classnames({
     'fas fa-check icon icon__save': true,
-    'icon__disabled': english ===''|| transcription==='' || russian==='' || tags===''
+    'icon__disabled': empty
   });
 
+  const rowClasses = classnames('table__row', {row_edit: isEdit});
+  const inputEnglishClasses = classnames('input_edit', {input_error: english===""});
+  const inputTranscriptionClasses = classnames('input_edit', {input_error: transcription===""});
+  const inputRussianClasses = classnames('input_edit', {input_error: russian===""});
+  const inputTagsClasses = classnames('input_edit', {input_error: tags===""});
+
   return (
-    <tr className={classnames('table__row', {row_edit: isEdit})}>
+    <tr className={rowClasses}>
       {isEdit ?
         <>
           <td>
@@ -67,7 +65,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: english===""})}
+              className={inputEnglishClasses}
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
@@ -76,7 +74,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: transcription===""})}
+              className={inputTranscriptionClasses}
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
@@ -85,7 +83,7 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: russian===""})}
+              className={inputRussianClasses}
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
@@ -94,15 +92,15 @@ const Row = (props) => {
           <td>
             <input
               type="text"
-              className={classnames('input_edit', {input_error: tags===""})}
+              className={inputTagsClasses}
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
             {tags==="" && <label>Поле не заполнено</label>}
           </td>
           <td>
-              <i className={saveIconClasses} onClick={onSave}> </i>
-              <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}></i>
+              <i className={saveIconClasses} onClick={onSave}/>
+              <i className="fas fa-ban icon icon__cancel" onClick = {onCancel}/>
           </td>
         </>
         :
@@ -113,8 +111,8 @@ const Row = (props) => {
           <td>{russian}</td>
           <td>{tags}</td>
           <td>
-              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}> </i>
-              <i className="fas fa-trash icon icon__delete" onClick = {()=>{setModalActive(true); onDelete()}} ></i>
+              <i className="fas fa-pen icon icon__edit" onClick = {onEdit}/>
+              <i className="fas fa-trash icon icon__delete" onClick = {onDelete}/>
           </td>
         </>
       }

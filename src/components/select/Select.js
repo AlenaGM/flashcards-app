@@ -1,13 +1,13 @@
 import { useState, useContext } from "react";
-import { WordsContext } from "../../context/wordsContext";
-import { SelectContext } from "../../context/selectContext";
+import { WordsContext } from "../../context/WordsContext";
+
 
 const Select = () => {
 
     const {words} = useContext(WordsContext);
     const [wordList] = useState(words);
 
-    const {term,setTerm} = useContext(SelectContext);
+    const {term, setTerm} = useContext(WordsContext);
     const {setCurrentPage} = useContext(WordsContext);
 
     const tags = wordList.map(word => (

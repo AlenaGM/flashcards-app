@@ -7,7 +7,6 @@ const Page404 = () => {
     return (
         <div className="errorMessage">
             <ErrorMessage/>
-            <p>This page doesn't exist</p>
             <Link className="backHomeLink" to="/">Back to home page</Link>
         </div>
     )

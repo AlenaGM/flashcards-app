@@ -1,4 +1,6 @@
 import {useState, useRef, useEffect} from "react";
+
+import './card.scss';
 import '../../styles/button.scss';
 
 

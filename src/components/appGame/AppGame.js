@@ -3,8 +3,6 @@ import useKeypress from 'react-use-keypress';
 
 import Card from '../card/Card';
 
-import './appGame.scss';
-
 
 const AppGame = ({words}) => {
 
@@ -76,14 +74,14 @@ const AppGame = ({words}) => {
     })
 
     return (
-        <div className="app__game game">
-            <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}></i></div>
+        <div className="app__game">
+            <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}/></div>
             <div>{cards[slideIndex-1]}
-                <div className="game_counter">
+                <div>
                     Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}
                 </div>
             </div>
-            <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}></i></div>
+            <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}/></div>
         </div>
     )
 }
