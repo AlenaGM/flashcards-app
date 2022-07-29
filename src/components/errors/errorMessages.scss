@@ -12,7 +12,7 @@
     p{
         text-align: center;
         font-weight: bold;
-        font-size: 24px;
+        font-size: calc(14px + 2vmin);
         color: #FB7575;
         margin-top: 12px;
     }
@@ -20,7 +20,8 @@
 
 .error_img {
     display: block;
-    max-width: 360px;
+    width: 90%;
+    max-width: 400px;
     object-fit: contain;
     margin: 0 auto 20px auto;
     border-radius: 8px;
