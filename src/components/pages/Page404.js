@@ -8,6 +8,7 @@ const Page404 = () => {
         <div className="errorMessage">
             <ErrorMessage/>
             <Link className="backHomeLink" to="/">Back to home page</Link>
+            <p>test 15:35</p>
         </div>
     )
 }
