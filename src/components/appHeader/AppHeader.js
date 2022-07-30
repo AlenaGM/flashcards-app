@@ -8,7 +8,7 @@ const AppHeader = () => {
 
     return (
         <header className="app__header">
-            <Link to="/">
+            <Link to="/Flashcards-App/">
                 <div>
                     <img className="app__logo" src={logo} alt="logo"/>
                     <h1 className="app__title"><span>Wordy</span> English Vocabulary Cards</h1>
@@ -21,14 +21,14 @@ const AppHeader = () => {
                         style={({ isActive }) => ({
                         color: isActive ? '#3ABDB5' : 'inherit'
                         })}
-                        to="/">Home</NavLink></li>
+                        to="/Flashcards-App/">Home</NavLink></li>
                     /
                     <li><NavLink
                         end
                         style={({ isActive }) => ({
                             color: isActive ? '#3ABDB5' : 'inherit'
                             })}
-                        to="/game">Game</NavLink></li>
+                        to="/Flashcards-App/game">Game</NavLink></li>
                 </ul>
             </nav>
         </header>
