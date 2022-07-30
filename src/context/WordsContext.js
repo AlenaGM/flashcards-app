@@ -17,7 +17,7 @@ function WordsContextProvider(props) {
 
     const getWords = () => {
       setLoading(true);
-      fetch('itgirlschool/api/words')
+      fetch('https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words')
         .then((response) => response.json())
         .then((response) => {
           setWords(response);
