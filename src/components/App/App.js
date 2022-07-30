@@ -18,7 +18,7 @@ function App() {
                     <AppHeader/>
                     <main className="main">
                         <Routes>
-                            <Route path="/" element={<HomePage/>}/>
+                            <Route path="/Flashcards-App" element={<HomePage/>}/>
                             <Route path="/game" element={<GamePage/>}/>
                             <Route path="*" element={<Page404/>}/>
                         </Routes>
