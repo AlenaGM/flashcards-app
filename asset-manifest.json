@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Flashcards-App/static/css/main.9e162a29.css",
-    "main.js": "/Flashcards-App/static/js/main.6b899640.js",
-    "static/media/tenor.gif": "/Flashcards-App/static/media/tenor.66e2f987883bccaf7368.gif",
-    "static/media/card-img.svg": "/Flashcards-App/static/media/card-img.1fb676be8e6cf2770fd51b9cb0cda7e1.svg",
-    "static/media/error.gif": "/Flashcards-App/static/media/error.83f46d3c9d4dc62bf33a.gif",
-    "index.html": "/Flashcards-App/index.html",
-    "main.9e162a29.css.map": "/Flashcards-App/static/css/main.9e162a29.css.map",
-    "main.6b899640.js.map": "/Flashcards-App/static/js/main.6b899640.js.map"
+    "main.css": "/flashcards-app/static/css/main.9e162a29.css",
+    "main.js": "/flashcards-app/static/js/main.cfa09913.js",
+    "static/media/tenor.gif": "/flashcards-app/static/media/tenor.66e2f987883bccaf7368.gif",
+    "static/media/card-img.svg": "/flashcards-app/static/media/card-img.1fb676be8e6cf2770fd51b9cb0cda7e1.svg",
+    "static/media/error.gif": "/flashcards-app/static/media/error.83f46d3c9d4dc62bf33a.gif",
+    "index.html": "/flashcards-app/index.html",
+    "main.9e162a29.css.map": "/flashcards-app/static/css/main.9e162a29.css.map",
+    "main.cfa09913.js.map": "/flashcards-app/static/js/main.cfa09913.js.map"
   },
   "entrypoints": [
     "static/css/main.9e162a29.css",
-    "static/js/main.6b899640.js"
+    "static/js/main.cfa09913.js"
   ]
 }
