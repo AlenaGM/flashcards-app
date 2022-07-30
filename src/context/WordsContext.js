@@ -15,9 +15,11 @@ function WordsContextProvider(props) {
       getWords();
     }, []);
 
+    //"https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words"
+
     const getWords = () => {
       setLoading(true);
-      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words`)
+      fetch('itgirlschool/api/words')
         .then((response) => response.json())
         .then((response) => {
           setWords(response);
@@ -28,8 +30,10 @@ function WordsContextProvider(props) {
         });
     };
 
+    //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`
+
     const editWords = (word) => {
-      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`, {
+      fetch(`itgirlschool/api/words/${word.id}/update`, {
         method: 'POST',
         body: JSON.stringify(word),
       })
@@ -39,8 +43,10 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
+    //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`
+
     const deleteWords = (id) => {
-      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
+      fetch(`itgirlschool/api/words/${id}/delete`, {
         method: 'POST',
       })
         .then(() => {
@@ -49,8 +55,10 @@ function WordsContextProvider(props) {
         .catch((errors) => setError(errors));
     };
 
+    //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/add
+
     const addWords = (word) => {
-      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/add`, {
+      fetch('itgirlschool/api/words/add', {
         method: 'POST',
         body: JSON.stringify(word),
       })
