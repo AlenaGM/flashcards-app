@@ -1,7 +1,7 @@
 {
   "name": "flashcards-app",
   "version": "0.1.0",
-  "homepage": "http://alenagm.github.io/Flashcards-App/",
+  "homepage": "https://alenagm.github.io/Flashcards-App/",
   "private": true,
   "proxy": "http://itgirlschool.justmakeit.ru",
   "dependencies": {
