@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { HashRouter, Routes, Route} from "react-router-dom";
 
 import WordsContextProvider from '../../context/WordsContext';
 import {HomePage, GamePage, Page404} from '../pages';
@@ -13,19 +13,19 @@ function App() {
 
     return (
         <WordsContextProvider>
-            <BrowserRouter>
+            <HashRouter>
                 <div className="app">
                     <AppHeader/>
                     <main className="main">
                         <Routes>
-                            <Route path="/flashcards-app/" element={<HomePage/>}/>
-                            <Route path="/flashcards-app/game" element={<GamePage/>}/>
+                            <Route path="/" element={<HomePage/>}/>
+                            <Route path="/game" element={<GamePage/>}/>
                             <Route path="/*" element={<Page404/>}/>
                         </Routes>
                     </main>
                     <AppFooter/>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         </WordsContextProvider>
     );
 }
