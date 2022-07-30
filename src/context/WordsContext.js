@@ -29,7 +29,7 @@ function WordsContextProvider(props) {
     };
 
     const editWords = (word) => {
-      fetch(`/itgirlschool/api/words/${word.id}/update`, {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`, {
         method: 'POST',
         body: JSON.stringify(word),
       })
@@ -40,7 +40,7 @@ function WordsContextProvider(props) {
     };
 
     const deleteWords = (id) => {
-      fetch(`/itgirlschool/api/words/${id}/delete`, {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
         method: 'POST',
       })
         .then(() => {
@@ -50,7 +50,7 @@ function WordsContextProvider(props) {
     };
 
     const addWords = (word) => {
-      fetch(`/itgirlschool/api/words/add`, {
+      fetch(`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/add`, {
         method: 'POST',
         body: JSON.stringify(word),
       })
