@@ -5,6 +5,8 @@ export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
 
+  const url = 'http://itgirlschool.justmakeit.ru/api/words';
+
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errors, setError] = useState(false);
@@ -19,7 +21,7 @@ function WordsContextProvider(props) {
 
     const getWords = () => {
       setLoading(true);
-      fetch('itgirlschool/api/words')
+      fetch(url)
         .then((response) => response.json())
         .then((response) => {
           setWords(response);
@@ -33,7 +35,7 @@ function WordsContextProvider(props) {
     //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${word.id}/update`
 
     const editWords = (word) => {
-      fetch(`itgirlschool/api/words/${word.id}/update`, {
+      fetch(`${url}/${word.id}/update`, {
         method: 'POST',
         body: JSON.stringify(word),
       })
@@ -46,7 +48,7 @@ function WordsContextProvider(props) {
     //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/${id}/delete`
 
     const deleteWords = (id) => {
-      fetch(`itgirlschool/api/words/${id}/delete`, {
+      fetch(`${url}/${id}/delete`, {
         method: 'POST',
       })
         .then(() => {
@@ -58,7 +60,7 @@ function WordsContextProvider(props) {
     //`https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words/add
 
     const addWords = (word) => {
-      fetch('itgirlschool/api/words/add', {
+      fetch(`${url}/add`, {
         method: 'POST',
         body: JSON.stringify(word),
       })

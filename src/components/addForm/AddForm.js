@@ -86,7 +86,7 @@ const AddForm = () => {
                     onChange={handleChange}/>
             </div>
             <label className={labelClasses}>* Для того, чтобы добавить слово, заполните все поля</label>
-            <button className={addButtonClasses} onClick = {onSubmit}>Добавить</button>
+            <button className={addButtonClasses} onClick = {onSubmit}>Add</button>
         </form>
     )
 }
