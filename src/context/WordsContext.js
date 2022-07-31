@@ -5,7 +5,7 @@ export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
 
-  const url = 'http://itgirlschool.justmakeit.ru/api/words';
+  const url = 'https://cors-everywhere.herokuapp.com/http://itgirlschool.justmakeit.ru/api/words';
 
     const [words, setWords] = useState([]);
     const [loading, setLoading] = useState(true);
