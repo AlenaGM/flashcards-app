@@ -28,7 +28,7 @@ const Select = () => {
     return (
         <select className='select' onChange={onUpdateSearch}>
             {term && <option value={term}>{term}</option>}
-            <option value="" key="">все коллекции</option>
+            <option value="" key="">all collections</option>
             {options}
         </select>
     )

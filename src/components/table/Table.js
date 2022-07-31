@@ -28,7 +28,7 @@ const Table = () => {
     const [selectVisible, setSelectVisible] = useState(false);
 
     const showConfirm = async (id) => {
-        const isConfirmed = await confirm('Удалить слово?');
+        const isConfirmed = await confirm(`Are you sure you want to delete this word?`);
 
         if (isConfirmed) {
             deleteWords(id);

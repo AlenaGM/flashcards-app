@@ -25,7 +25,7 @@ const Card = (props) => {
             <div onClick = {handleClick}>
                 {pressed ?
                     <div className="card_translation">{props.russian}</div> :
-                    <button className="button" ref={btnRef}>Проверить</button>}
+                    <button className="button" ref={btnRef}>Check</button>}
             </div>
         </div>
     )

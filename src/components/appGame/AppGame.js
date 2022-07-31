@@ -48,18 +48,10 @@ const AppGame = ({words}) => {
     }
 
     function declOfNum(n, text_arr) {
-        n = Math.abs(n) % 100
-        var n1 = n % 10
-        if (n > 10 && n < 20) {
-            return text_arr[2]
-        }
-        if (n1 > 1 && n1 < 5) {
-            return text_arr[1]
-        }
-        if (n1 === 1) {
+        if (n === 1) {
             return text_arr[0]
         }
-        return text_arr[2]
+        return text_arr[1]
     }
 
     const cards = words.map((word) => {
@@ -78,7 +70,7 @@ const AppGame = ({words}) => {
             <div><i className="fas fa-arrow-left icon icon__arrow" onClick = {prevSlide}/></div>
             <div>{cards[slideIndex-1]}
                 <div>
-                    Вы выучили {learnedNumber} {declOfNum(learnedNumber, ['слово', 'слова', 'слов'])} из {words.length}
+                    You've learned {learnedNumber} out of {words.length} {declOfNum(words.length, ['word', 'words'])}
                 </div>
             </div>
             <div><i className="fas fa-arrow-right icon icon__arrow" onClick = {nextSlide}/></div>

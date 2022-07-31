@@ -69,7 +69,7 @@ const Row = (props) => {
               data-name={"english"}
               defaultValue={english}
               onChange={handleChange}/>
-            {english==="" && <label>Поле не заполнено</label>}
+            {english==="" && <label>The field is empty</label>}
           </td>
           <td>
             <input
@@ -78,7 +78,7 @@ const Row = (props) => {
               data-name={"transcription"}
               defaultValue={transcription}
               onChange={handleChange}/>
-            {transcription==="" && <label>Поле не заполнено</label>}
+            {transcription==="" && <label>The field is empty</label>}
           </td>
           <td>
             <input
@@ -87,7 +87,7 @@ const Row = (props) => {
               data-name={"russian"}
               defaultValue={russian}
               onChange={handleChange}/>
-            {russian==="" && <label>Поле не заполнено</label>}
+            {russian==="" && <label>The field is empty</label>}
           </td>
           <td>
             <input
@@ -96,7 +96,7 @@ const Row = (props) => {
               data-name={"tags"}
               defaultValue={tags}
               onChange={handleChange}/>
-            {tags==="" && <label>Поле не заполнено</label>}
+            {tags==="" && <label>The field is empty</label>}
           </td>
           <td>
               <i className={saveIconClasses} onClick={onSave}/>

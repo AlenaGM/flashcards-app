@@ -19,8 +19,8 @@ const ConfirmDialog = () => {
             <div className={confirmDialogClasses} onClick={e => e.stopPropagation()}>
                 <p>{confirmState?.text && confirmState.text}</p>
                 <div className="portal__confirmDialog_footer">
-                    <button className='button button__size-small' onClick={onConfirm}>Да</button>
-                    <button className='button button__size-small' onClick={onCancel}>Нет</button>
+                    <button className='button button__size-small' onClick={onConfirm}>Delete</button>
+                    <button className='button button__size-small' onClick={onCancel}>Cancel</button>
                 </div>
             </div>
         </div>
