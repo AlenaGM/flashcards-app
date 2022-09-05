@@ -1,34 +1,37 @@
-import {useState, useRef, useEffect} from "react";
-import { observer, inject } from 'mobx-react';
+import { useState, useRef, useEffect } from "react";
+import { observer, inject } from "mobx-react";
 
-import '../../styles/button.scss';
-
+import "./card.scss";
+import "../../styles/button.scss";
 
 const Card = (props) => {
+  const [pressed, setPressed] = useState(false);
+  const btnRef = useRef();
 
-    const [pressed, setPressed] = useState(false);
-    const btnRef = useRef();
+  useEffect(() => {
+    btnRef.current.focus();
+  }, []);
 
-    useEffect(()=>{
-        btnRef.current.focus();
-    }, []);
+  const handleClick = () => {
+    setPressed(!pressed);
+    props.addLearned(props.id);
+  };
 
-    const handleClick = () => {
-        setPressed(!pressed);
-        props.addLearned(props.id);
-    }
+  return (
+    <div className="game__card card">
+      <div>{props.english}</div>
+      <div>{props.transcription}</div>
+      <div onClick={handleClick}>
+        {pressed ? (
+          <div className="card_translation">{props.russian}</div>
+        ) : (
+          <button className="button" ref={btnRef}>
+            Проверить
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <div className="game__card card">
-            <div>{props.english}</div>
-            <div>{props.transcription}</div>
-            <div onClick = {handleClick}>
-                {pressed ?
-                    <div className="card_translation">{props.russian}</div> :
-                    <button className="button" ref={btnRef}>Проверить</button>}
-            </div>
-        </div>
-    )
-}
-
-export default inject(['wordStore'])(observer(Card));
+export default inject(["wordStore"])(observer(Card));
