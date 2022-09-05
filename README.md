@@ -24,6 +24,8 @@ React application for learning english words. English Flashcards Application bui
 In the project directory, you can run:
 
 ```bash
+  git clone https://github.com/AlenaGM/flashcards-app.git
+  cd flashcards-app
   npm install
-  npm run start
+  npm start
 ```
