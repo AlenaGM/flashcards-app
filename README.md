@@ -2,8 +2,8 @@
 
 React application for learning english words. English Flashcards Application built with React. W26+ in ITGirlSchool
 
-![Optional Text](../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg)
 <img width="700" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
+<img width="700" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
 
 
 ## Tasks
