@@ -27,16 +27,7 @@ English Flashcards Single Page Application built with React.
 - React context
 - Mobx (in separate branch)
 
-## Getting started
-
-In the project directory run:
-
-```bash
-  git clone https://github.com/AlenaGM/flashcards-app.git
-  cd flashcards-app
-  npm install
-  npm start
-```
+##
 
   \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
 
