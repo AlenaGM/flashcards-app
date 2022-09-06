@@ -1,21 +1,9 @@
-<h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
-<img width="600" alt="logo" src="../main/screenshots/logo_alenagm.github.io.png">
-  <br><br><strong>Wordy</strong>
-</h1>
-
 # WORDY - Flashcard App
 
 English Flashcards Single Page Application built with React. 
-
-<img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
-<img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
-
-
-## Tasks
-
-- task 1
-- task 2
-- task 3
+<img width="600" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
+<img width="600" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
+<img width="600" alt="Capture web_6-9-2022" src="../main/screenshots/Capture web_6-9-2022_114127_localhost.jpeg">
 
 ## Demo
 
@@ -23,23 +11,26 @@ English Flashcards Single Page Application built with React.
 
 ## Features
 
-&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp;no dependencies<br>
+-
+-
+-
 
-## Tech
+## Tech stack
 
-- React
-- Functional Components
-- Custom Hooks
-- SASS
-- Fetch API, Get and Post requests
-- React Router
-- React Context
-- Mobx (in separate branch)
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; React<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Functional Components<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Custom Hooks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; SASS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Fetch API, Get and Post requests<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; React Router<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; React Context<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Mobx (in separate branch)<br>
 
 ##
 
+  
   \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
+   [wordy]: <https://alenagm.github.io/flashcards-app/?)>
