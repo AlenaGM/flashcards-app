@@ -1,9 +1,9 @@
 # WORDY - Flashcard App
 
 English Flashcards Single Page Application built with React. 
-<img width="600" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
-<img width="600" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
-<img width="600" alt="Capture web_6-9-2022" src="../main/screenshots/Capture web_6-9-2022_114127_localhost.jpeg">
+<br><br>
+<img width="500" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
+
 
 ## Demo
 
@@ -26,10 +26,33 @@ English Flashcards Single Page Application built with React.
 &nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; React Context<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Mobx (in separate branch)<br>
 
+## Getting started
+
+The following commands install and run the development version:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/AlenaGM/flashcards-app.git)
+
+# Go into the repository
+$ cd flashcards-app
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
+
+## License
+
+Wordy is released under the under terms of the [MIT License](LICENSE).
+<br><br><br>
+
 ##
 
   
-  \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
+  \* _Weeks 26-34 Learning Project in [ITGirlSchool]_ 
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
