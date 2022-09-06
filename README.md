@@ -1,6 +1,7 @@
 # WORDY - Flashcard App
 
-React application for learning english words. English Flashcards Application built with React. W26+ in ITGirlSchool
+English Flashcards Single Page Application built with React. 
+Weeks 26-34 Study Project in [ITGirlSchool]
 
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
@@ -11,6 +12,10 @@ React application for learning english words. English Flashcards Application bui
 - task 1
 - task 2
 - task 3
+
+## Demo
+
+[alenagm.github.io/flashcards-app/]
 
 ## Tech
 
@@ -33,3 +38,5 @@ In the project directory, you can run:
   npm install
   npm start
 ```
+
+   [ITGirlSchool]: <https://itgirlschool.com/en>
