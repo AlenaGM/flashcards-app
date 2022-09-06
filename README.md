@@ -46,6 +46,8 @@ $ npm start
 
 ## Contributing
 
+Contributions are always welcome! If you want to contribute:
+
 ```bash
 # Clone repo and create a new branch:
 $ git checkout https://github.com/AlenaGM/flashcards-app -b name_for_new_branch
@@ -53,6 +55,8 @@ $ git checkout https://github.com/AlenaGM/flashcards-app -b name_for_new_branch
 #  Make changes
 #  Submit Pull Request with description of changes
 ```
+
+Use the GitHub issue tracker to request a new feature or report a bug
 
 ## License
 
