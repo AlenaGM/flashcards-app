@@ -1,5 +1,5 @@
 <h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
-<a name="logo" href="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.png" alt="Wordy Logo" style="width:100%;height:100%"/></a>
+<img width="600" alt="logo" src="../main/screenshots/logo_alenagm.github.io.png">
   <br><br><strong>Wordy</strong>
 </h1>
 
