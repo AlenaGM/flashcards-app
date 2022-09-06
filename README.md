@@ -26,7 +26,7 @@ English Flashcards Single Page Application built with React.
 &nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; React Context<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp; Mobx (in separate branch)<br>
 
-## Getting started
+## Installation
 
 The following commands install and run the development version:
 
@@ -42,6 +42,16 @@ $ npm install
 
 # Run the app
 $ npm start
+```
+
+## Contributing
+
+```bash
+# Clone repo and create a new branch:
+$ git checkout https://github.com/AlenaGM/flashcards-app -b name_for_new_branch
+
+#  Make changes
+#  Submit Pull Request with description of changes
 ```
 
 ## License
