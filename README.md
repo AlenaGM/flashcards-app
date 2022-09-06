@@ -29,7 +29,7 @@ English Flashcards Single Page Application built with React.
 
 ## Getting started
 
-In the project directory, you can run:
+In the project directory run:
 
 ```bash
   git clone https://github.com/AlenaGM/flashcards-app.git
