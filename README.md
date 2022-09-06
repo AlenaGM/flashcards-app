@@ -16,6 +16,10 @@ English Flashcards Single Page Application built with React.
 
 [Wordy]
 
+## Features
+
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp;no dependencies<br>
+
 ## Tech
 
 - React
@@ -24,12 +28,13 @@ English Flashcards Single Page Application built with React.
 - SASS
 - Fetch API, Get and Post requests
 - React Router
-- React context
+- React Context
 - Mobx (in separate branch)
 
 ##
 
   \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
+  
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
    [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
