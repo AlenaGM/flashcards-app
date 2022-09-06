@@ -38,9 +38,7 @@ In the project directory, you can run:
   npm start
 ```
 
-<div align="right">
   \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
-</div>
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
    [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
