@@ -1,7 +1,14 @@
+<h1 align="center" style="display: block; font-size: 2.5em; font-weight: bold; margin-block-start: 1em; margin-block-end: 1em;">
+<a name="logo" href="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.png" alt="Wordy Logo" style="width:100%;height:100%"/></a>
+  <br><br><strong>Wordy</strong>
+</h1>
+
 # WORDY - Flashcard App
 
-React application for learning english words. English Flashcards Application built with React. W26+ in ITGirlSchool
+English Flashcards Single Page Application built with React. 
 
+<img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
+<img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
 
 
 ## Tasks
@@ -10,18 +17,29 @@ React application for learning english words. English Flashcards Application bui
 - task 2
 - task 3
 
-## Technologies
+## Demo
 
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
-<code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
-<code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
+[Wordy]
 
-## Getting started
+## Features
 
-In the project directory, you can run:
+&nbsp;&nbsp;&nbsp;&nbsp;&check;&nbsp;&nbsp;no dependencies<br>
 
-```bash
-  npm install
-  npm run start
-```
+## Tech
+
+- React
+- Functional Components
+- Custom Hooks
+- SASS
+- Fetch API, Get and Post requests
+- React Router
+- React Context
+- Mobx (in separate branch)
+
+##
+
+  \* _Weeks 26-34 Study Project in [ITGirlSchool]_ 
+  
+
+   [ITGirlSchool]: <https://itgirlschool.com/en>
+   [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
