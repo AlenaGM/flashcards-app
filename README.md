@@ -2,8 +2,6 @@
 
 English Flashcards Single Page Application built with React. 
 
-_Weeks 26-34 Study Project in [ITGirlSchool]_
-
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
 
@@ -39,6 +37,8 @@ In the project directory, you can run:
   npm install
   npm start
 ```
+
+\*_Weeks 26-34 Study Project in [ITGirlSchool]_
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
    [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
