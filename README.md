@@ -1,7 +1,7 @@
 # WORDY - Flashcard App
 
 English Flashcards Single Page Application built with React. 
-Weeks 26-34 Study Project in [ITGirlSchool]
+> Weeks 26-34 Study Project in [ITGirlSchool]
 
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151026_alenagm.github.io.jpeg">
 <img width="600" alt="Capture web_5-9-202" src="../main/screenshots/Capture web_5-9-2022_151255_alenagm.github.io.jpeg">
@@ -15,7 +15,7 @@ Weeks 26-34 Study Project in [ITGirlSchool]
 
 ## Demo
 
-[alenagm.github.io/flashcards-app/]
+[Wordy]
 
 ## Tech
 
@@ -40,3 +40,4 @@ In the project directory, you can run:
 ```
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
+   [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
