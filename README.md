@@ -12,12 +12,16 @@ React application for learning english words. English Flashcards Application bui
 - task 2
 - task 3
 
-## Technologies
+## Tech
 
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
-<code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
-<code><img height="25" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
+- React
+- Functional Components
+- Custom Hooks
+- SASS
+- Fetch API, Get and Post requests
+- React Router
+- React context
+- Mobx (in separate branch)
 
 ## Getting started
 
