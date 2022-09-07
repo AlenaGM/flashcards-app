@@ -1,6 +1,7 @@
-# WORDY - Flashcard App
-
+# WORDY
 English Flashcards Single Page Application built with React. 
+
+
 <br><br>
 <img width="500" alt="Capture web_5-9-2022" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
 
@@ -11,9 +12,9 @@ English Flashcards Single Page Application built with React.
 
 ## Features
 
--
--
--
+- Possibility to edit, add and delete words in a list;
+- All words or a single collection of words can be shown at a time;
+- A counter of words learned during one training session.
 
 ## Tech stack
 
