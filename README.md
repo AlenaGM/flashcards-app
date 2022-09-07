@@ -2,14 +2,14 @@
 
 Wordy is a Single Page Application built with React that serves to learn English words with the help of flashcards.
 
-Home page contains a list of all words with their translations and transcriptions.
+[Homepage] contains a list of all words with their translations and transcriptions.
 Data are fetched from an external server with the help of an API.
 
 Note that all the words are grouped by collection. If you want, you can select only one single collection to be shown.
 
 You can both edit, delete and add words to the list (realised with React Context, but if you prefer MobX - just switch to mobx branch).
 
-Game Page is a training mode: flashcards are shown one by one. You can have a look at translation by clicking "check" button. A counter shows the number of words learned during one session.
+[Gamepage] is a training mode: flashcards are shown one by one. You can have a look at translation by clicking "check" button. A counter shows the number of words learned during one session.
 <br><br>
 <img width="45%" alt="HomePage" src="../main/screenshots/Capture web_5-9-2022_1591_alenagm.github.io.jpeg">
 <img width="44.5%" alt="ErrorPage" src="../main/screenshots/Capture web_6-9-2022_114127_localhost.jpeg">
@@ -78,4 +78,6 @@ Wordy is released under the under terms of the [MIT License](LICENSE).
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [wordy]: <https://alenagm.github.io/flashcards-app/?)>
+   [Wordy]: <https://alenagm.github.io/flashcards-app/?)>
+   [Homepage]: <https://alenagm.github.io/flashcards-app/?)>
+   [Gamepage]: <https://alenagm.github.io/flashcards-app/?)#/game>
