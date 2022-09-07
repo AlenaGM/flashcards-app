@@ -56,8 +56,6 @@ $ git checkout https://github.com/AlenaGM/flashcards-app -b name_for_new_branch
 #  Submit Pull Request with description of changes
 ```
 
-Use the GitHub issue tracker to request a new feature or report a bug
-
 ## License
 
 Wordy is released under the under terms of the [MIT License](LICENSE).
