@@ -1,6 +1,6 @@
 # WORDY - English Flashcards 
 
-Wordy is a Single Page Application built with React that serves to learn English words with the help of flashcards.
+_Wordy is a Single Page Application built with React that serves to learn English words with the help of flashcards._
 
 [Homepage] contains a list of all words with their translations and transcriptions.
 Data are fetched from an external server with the help of an API. Note, that all the words are grouped by collection. If you want, you can select only one single collection to be shown. You can both edit, delete and add words to the list (realised with React Context, but if you prefer MobX - just switch to mobx branch).
