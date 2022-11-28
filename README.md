@@ -38,7 +38,7 @@ The following commands install and run the development version:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/AlenaGM/flashcards-app.git)
+$ git clone https://github.com/AlenaGM/flashcards-app.git
 
 # Go into the repository
 $ cd flashcards-app
