@@ -17,7 +17,9 @@ function WordsContextProvider(props) {
 
   const getWords = () => {
     setLoading(true);
-    fetch(url)
+    fetch(url, {
+      headers: { Origin: window.location.host },
+    })
       .then((response) => response.json())
       .then((response) => {
         setWords(response);
