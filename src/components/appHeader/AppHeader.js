@@ -10,7 +10,7 @@ const AppHeader = () => {
         <div>
           <img className="app__logo" src={logo} alt="logo" />
           <h1 className="app__title">
-            <span>Wordy!</span> English Vocabulary Cards
+            <span>Wordy</span> English Vocabulary Cards
           </h1>
         </div>
       </Link>
