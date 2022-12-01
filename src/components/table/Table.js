@@ -67,7 +67,7 @@ const Table = () => {
       <thead>
         <tr className="table__row">
           <th>#</th>
-          <th>EnglishT</th>
+          <th>English</th>
           <th>Transcription</th>
           <th>Russian</th>
           <th className="collection">
