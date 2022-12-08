@@ -3,7 +3,7 @@ import { useState, useEffect, createContext } from "react";
 export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
-  const url = "http://itgirlschool.justmakeit.ru/api/words:splat  200";
+  const url = "http://itgirlschool.justmakeit.ru/api/words";
 
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
