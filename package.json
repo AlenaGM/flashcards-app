@@ -1,7 +1,7 @@
 {
   "name": "flashcards-app",
   "version": "0.1.0",
-  "homepage": "AlenaGM.github.io/flashcards-app/",
+  "homepage": "https://alenas-flashcards-app.netlify.app/",
   "private": true,
   "proxy": "http://itgirlschool.justmakeit.ru",
   "dependencies": {
