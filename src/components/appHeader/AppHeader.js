@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
-import logo from "../../resources/img/card-img.svg";
+import logo from "../../resources/img/card-img.png";
 import "./appHeader.scss";
 
 const AppHeader = () => {
