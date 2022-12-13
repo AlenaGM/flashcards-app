@@ -29,7 +29,7 @@ function WordsContextProvider(props) {
   };
 
   const editWords = (word) => {
-    fetch(`${url}/${word.id}/update`, {
+    fetch(`/itgirlschool/${word.id}/update`, {
       method: "POST",
       body: JSON.stringify(word),
     })
