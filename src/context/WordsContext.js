@@ -3,7 +3,7 @@ import { useState, useEffect, createContext } from "react";
 export const WordsContext = createContext();
 
 function WordsContextProvider(props) {
-  const url = "/itgirlschool/";
+  const url = "http://itgirlschool.justmakeit.ru/api/words";
 
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ function WordsContextProvider(props) {
   };
 
   const editWords = (word) => {
-    fetch(`/itgirlschool/${word.id}/update`, {
+    fetch(`${url}/${word.id}/update`, {
       method: "POST",
       body: JSON.stringify(word),
     })
