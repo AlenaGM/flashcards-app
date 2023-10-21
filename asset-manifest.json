@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/flashcards-app/static/css/main.2bd8c979.css",
-    "main.js": "/flashcards-app/static/js/main.738a12e0.js",
-    "static/media/tenor.gif": "/flashcards-app/static/media/tenor.66e2f987883bccaf7368.gif",
-    "static/media/card-img.svg": "/flashcards-app/static/media/card-img.1fb676be8e6cf2770fd51b9cb0cda7e1.svg",
-    "static/media/error.gif": "/flashcards-app/static/media/error.83f46d3c9d4dc62bf33a.gif",
-    "index.html": "/flashcards-app/index.html",
-    "main.2bd8c979.css.map": "/flashcards-app/static/css/main.2bd8c979.css.map",
-    "main.738a12e0.js.map": "/flashcards-app/static/js/main.738a12e0.js.map"
+    "main.css": "/static/css/main.ff51eb8d.css",
+    "main.js": "/static/js/main.a2c60228.js",
+    "static/media/tenor.gif": "/static/media/tenor.66e2f987883bccaf7368.gif",
+    "static/media/card-img.png": "/static/media/card-img.aefbd79c342022389f90.png",
+    "static/media/error.gif": "/static/media/error.83f46d3c9d4dc62bf33a.gif",
+    "index.html": "/index.html",
+    "main.ff51eb8d.css.map": "/static/css/main.ff51eb8d.css.map",
+    "main.a2c60228.js.map": "/static/js/main.a2c60228.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bd8c979.css",
-    "static/js/main.738a12e0.js"
+    "static/css/main.ff51eb8d.css",
+    "static/js/main.a2c60228.js"
   ]
 }
